@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-TW" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>影片</title>
+    <title>Videos</title>
     <link rel="stylesheet" href="../static/css/style.css?v=20260704">
     <link rel="icon" type="image/png" href="../static/favicon.png">
 </head>
@@ -31,36 +31,36 @@
     </video>
 
     <!-- Language Toggle Button -->
-    <a href="../en/videos/">
-        EN
+    <a href="../zh/videos/">
+        中文
     </a>
 
     <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
 
     <!-- Main Content (only this container is replaced during SPA navigation) -->
     <main class="main-content" id="app-content">
         
 
 <div class="page-header">
-    <h2>全部影片</h2>
-    <p>7 部影片</p>
+    <h2>All Videos</h2>
+    <p>7 videos</p>
 </div>
 
 <!-- Filter Bar -->
 <form class="filter-bar" method="get" action="../videos/">
     <select name="sort" id="sort-select">
-        <option value="created_at" selected>最新優先</option>
-        <option value="time_spent_minutes" >花費時間</option>
-        <option value="map_name" >地圖名稱</option>
-        <option value="title" >標題</option>
+        <option value="created_at" selected>Newest First</option>
+        <option value="time_spent_minutes" >Time Spent</option>
+        <option value="map_name" >Map Name</option>
+        <option value="title" >Title</option>
     </select>
     <select name="order" id="order-select">
-        <option value="DESC" selected>降冪</option>
-        <option value="ASC" >升冪</option>
+        <option value="DESC" selected>Descending</option>
+        <option value="ASC" >Ascending</option>
     </select>
     <select name="map" id="map-filter">
-        <option value="">全部地圖</option>
+        <option value="">All Maps</option>
         
         <option value="Naigtal" >Naigtal (1)</option>
         
@@ -74,8 +74,8 @@
         
     </select>
     
-    <button type="button" class="btn btn-secondary btn-sm" onclick="applyFilters()">套用</button>
-    <a href="../videos/" class="btn btn-secondary btn-sm">重設</a>
+    <button type="button" class="btn btn-secondary btn-sm" onclick="applyFilters()">Apply</button>
+    <a href="../videos/" class="btn btn-secondary btn-sm">Reset</a>
 </form>
 
 
@@ -86,22 +86,22 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">12.07隱藏解謎「輪椅喵」+遲到5年回歸的小歪比哇嗚！</div>
+                <div class="video-title">Patch 12.07 Hidden Puzzle: Wheelchair Cat + Baa'l Returns After 5 Years!</div>
                 <div class="card-meta">
                     
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
-                    <span class="tag map">時光之穴</span>
+                    <span class="tag map">Caverns of Time</span>
                     
                     
                     <span class="tag time">45 分鐘</span>
                     
                     
-                    <span class="tag reward">輪椅喵</span>
+                    <span class="tag reward">Patch</span>
                     
-                    <span class="tag reward">小歪比哇嗚</span>
+                    <span class="tag reward">Baa'l</span>
                     
                 </div>
             </div>
@@ -113,20 +113,20 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">第139集 | 12.07最新解密小貓[泰然深潛貓] 隱藏超簡單3分鐘獲取</div>
+                <div class="video-title">Ep.139 | 12.07 Secret Pet [Placid Deep Cat] — Easy 3-Minute Guide</div>
                 <div class="card-meta">
-                    作者 魔獸阿落 · 
+                    by 魔獸阿落 · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
-                    <span class="tag map">多恩島</span>
+                    <span class="tag map">Isle of Dorn</span>
                     
                     
                     <span class="tag time">00:54</span>
                     
                     
-                    <span class="tag reward">泰然深潛貓</span>
+                    <span class="tag reward">Placid Deep Cat</span>
                     
                 </div>
             </div>
@@ -138,20 +138,20 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">德魯伊水棲外觀酣夢鯢鯛獲取方法</div>
+                <div class="video-title">Druid Aquatic Form — Dreaming Salamander Unlock Guide</div>
                 <div class="card-meta">
-                    作者 雷帝gege (38.4K粉絲) · 
+                    by 雷帝gege (38.4K粉絲) · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
-                    <span class="tag map">瓦德拉肯</span>
+                    <span class="tag map">Valdrakken</span>
                     
                     
                     <span class="tag time">1分21秒</span>
                     
                     
-                    <span class="tag reward">酣夢鯢鯛</span>
+                    <span class="tag reward">Dreaming Salamander</span>
                     
                 </div>
             </div>
@@ -163,16 +163,16 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">魔獸隱藏盲盒變身玩具｜原始祈咒精華</div>
+                <div class="video-title">Hidden WoW Blind Box Toy | Primordial Anima Essence</div>
                 <div class="card-meta">
-                    作者 魔獸塔塔 · 
+                    by 魔獸塔塔 · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
                     
                     
-                    <span class="tag reward">原始祈咒精華</span>
+                    <span class="tag reward">Primordial Anima Essence</span>
                     
                 </div>
             </div>
@@ -184,18 +184,18 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">虛空扭曲幼龍獲取</div>
+                <div class="video-title">Void-Twisted Whelpling Acquisition</div>
                 <div class="card-meta">
-                    作者 珂了不得 · 
+                    by 珂了不得 · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
-                    <span class="tag map">虛影風暴</span>
+                    <span class="tag map">Voidstorm</span>
                     
                     
                     
-                    <span class="tag reward">虛空扭曲幼龍</span>
+                    <span class="tag reward">Void-Twisted Whelpling</span>
                     
                 </div>
             </div>
@@ -207,9 +207,9 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">第56集 | 星河幻化白嫖 無限空投躺刷 小號250裝等拉滿 超級幽靈寶箱</div>
+                <div class="video-title">Ep 56 | Star River Transmog Free Unlock — Infinite Airdrop AFK Farm — Alt 250 iLvl Max — Super Ghost Chest</div>
                 <div class="card-meta">
-                    作者 魔獸阿落 (Warcraft Aluo) · 
+                    by 魔獸阿落 (Warcraft Aluo) · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
@@ -218,9 +218,9 @@
                     <span class="tag time">00:56</span>
                     
                     
-                    <span class="tag reward">星河幻化</span>
+                    <span class="tag reward">Star River Transmog</span>
                     
-                    <span class="tag reward">超級幽靈寶箱</span>
+                    <span class="tag reward">Super Ghost Chest</span>
                     
                 </div>
             </div>
@@ -232,14 +232,14 @@
             
             <div class="video-thumb-placeholder" ></div>
             <div class="video-body">
-                <div class="video-title">12.07全部6款稀有隐藏外观幻化 奈格塔尔 新地图宝藏幻化 快速获取指南</div>
+                <div class="video-title">Naigtal - 6 Rare Hidden Transmogs in Patch 12.0.7</div>
                 <div class="card-meta">
-                    作者 魔兽阿落 · 
+                    by 魔兽阿落 · 
                     2026-07-03
                 </div>
                 <div class="video-tags">
                     
-                    <span class="tag map">奈格塔尔</span>
+                    <span class="tag map">Naigtal</span>
                     
                     
                     <span class="tag time">1-2 ??</span>
@@ -265,20 +265,20 @@
     <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
     <nav class="bottom-nav">
         <div class="nav-indicator"></div>
-        <a href="../" class="active">
-            <span class="nav-icon">📊</span> 主頁
+        <a href="../../" class="active">
+            <span class="nav-icon">📊</span> Dashboard
         </a>
         <a href="../videos/" class="">
-            <span class="nav-icon">🎬</span> 影片
+            <span class="nav-icon">🎬</span> Videos
         </a>
         <a href="../maps/" class="">
-            <span class="nav-icon">🗺️</span> 地圖
+            <span class="nav-icon">🗺️</span> Maps
         </a>
         <a href="../rewards/" class="">
-            <span class="nav-icon">🎁</span> 獎勵
+            <span class="nav-icon">🎁</span> Rewards
         </a>
             <a href="../guides/" class="">
-            <span class="nav-icon">🧭</span> 指南
+            <span class="nav-icon">🧭</span> Guides
         </a>
     </nav>
 

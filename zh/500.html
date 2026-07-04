@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伺服器錯誤</title>
+    <link rel="stylesheet" href="../../../static/css/style.css?v=20260704">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../">
+        EN
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+<div class="empty-state" style="padding-top:100px;">
+    <div class="icon" style="font-size:5rem;">💀</div>
+    <h3>需要靈魂醫者</h3>
+    <p>出了點問題。伺服器正在復活中。</p>
+    <a href="../../" class="btn btn-primary">返回營地</a>
+</div>
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="../../../videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="../../../maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="../../../rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>獎勵</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../rewards/">
+        EN
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="page-header">
+    <h2>追蹤的獎勵</h2>
+    <p>來自追蹤影片的坐騎、玩具、幻化和成就。點擊查看對應攻略。</p>
+</div>
+
+
+
+<!-- Category Section -->
+<div class="reward-category-section">
+    <div class="reward-category-header">
+        <span class="reward-cat-icon">
+            🎁
+        </span>
+        <span class="reward-cat-label">
+            
+                其他
+            
+        </span>
+        <span class="reward-cat-count">10</span>
+    </div>
+
+    <div class="reward-grid">
+        
+        <a class="reward-card" href="../../rewards/item/other/Pointy Half-Shell/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_cape_special_turtleshell_c_02.jpg"
+                     alt="Pointy Half-Shell"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">Pointy Half-Shell</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/Soltian Wrangler's Grip/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_weapon_hand_11.jpg"
+                     alt="Soltian Wrangler's Grip"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">Soltian Wrangler's Grip</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/Ancient Crypt Reliquary/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_zulgurubtrinket.jpg"
+                     alt="Ancient Crypt Reliquary"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">Ancient Crypt Reliquary</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/星河幻化/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg"
+                     alt="星河幻化"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">星河幻化</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/超級幽靈寶箱/">
+            
+            <span class="reward-time-badge" title="MoP Remix活動限定物品，活動已於2024年8月30日結束 / MoP Remix exclusive item, event ended Aug 30, 2024">限時</span>
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_chest_mail_raidshaman_k_01.jpg"
+                     alt="超級幽靈寶箱"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">超級幽靈寶箱</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/空投/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/ability_hisek_aim.jpg"
+                     alt="空投"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">空投</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/魔法石哨/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg"
+                     alt="魔法石哨"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">魔法石哨</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/四豐裕小號超級練功房/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_book_07.jpg"
+                     alt="四豐裕小號超級練功房"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">四豐裕小號超級練功房</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/原始祈咒精華/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg"
+                     alt="原始祈咒精華"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">原始祈咒精華</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/other/酣夢鯢鯛/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg"
+                     alt="酣夢鯢鯛"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">酣夢鯢鯛</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+    </div>
+</div>
+
+<!-- Category Section -->
+<div class="reward-category-section">
+    <div class="reward-category-header">
+        <span class="reward-cat-icon">
+            🐎
+            
+        </span>
+        <span class="reward-cat-label">
+            
+                坐騎
+                
+            
+        </span>
+        <span class="reward-cat-count">1</span>
+    </div>
+
+    <div class="reward-grid">
+        
+        <a class="reward-card" href="../../rewards/item/mount/虛空扭曲幼龍/">
+            
+            <span class="reward-time-badge" title="MoP Remix限定坐騎，活動已於2024年8月19日結束 / MoP Remix exclusive mount, event ended Aug 19, 2024">限時</span>
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_charmbeast.jpg"
+                     alt="虛空扭曲幼龍"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">虛空扭曲幼龍</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+    </div>
+</div>
+
+<!-- Category Section -->
+<div class="reward-category-section">
+    <div class="reward-category-header">
+        <span class="reward-cat-icon">
+            🐾
+            
+        </span>
+        <span class="reward-cat-label">
+            
+                寵物
+                
+            
+        </span>
+        <span class="reward-cat-count">3</span>
+    </div>
+
+    <div class="reward-grid">
+        
+        <a class="reward-card" href="../../rewards/item/pet/泰然深潛貓/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_pet_babyblizzardbear.jpg"
+                     alt="泰然深潛貓"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">泰然深潛貓</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/pet/輪椅喵/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_pet_mechanical.jpg"
+                     alt="輪椅喵"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">輪椅喵</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+        <a class="reward-card" href="../../rewards/item/pet/小歪比哇嗚/">
+            
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="https://wow.zamimg.com/images/wow/icons/large/inv_pet_lordoftherains_green.jpg"
+                     alt="小歪比哇嗚"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">小歪比哇嗚</div>
+            <div class="reward-card-count">1x</div>
+        </a>
+        
+    </div>
+</div>
+
+
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="../../videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="../../maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="../../rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../static/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原始祈咒精華攻略 | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../guides/primordial-anima-essence/">
+        EN
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        原始祈咒精華 — 隱藏變身玩具
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        隨機變身元素生物 · 持續 20 分鐘 · 進戰鬥不取消
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">來源影片</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            作者: 魔獸塔塔 · 1,286 粉絲 · 時長: 00:25 · 點讚: 261 · 收藏: 328 · 評論: 16 · 轉發: 60
+        </p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">發佈時間: 2026-06-28</p>
+        <a href="https://www.douyin.com/video/7656413672668253113" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            在抖音開啟
+        </a>
+    </div>
+
+    <!-- Overview -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">概述</h2>
+        
+        <p style="font-size: 0.95rem; line-height: 1.7;"><strong>原始祈咒精華</strong>是一款隱藏<strong>變身玩具</strong>，玩法如同開盲盒 — 每次使用都會隨機變身為各類<strong>元素生物</strong>。變身持續 <strong>20 分鐘</strong>，<strong>進入戰鬥不會取消</strong>，變身狀態下可正常顯示武器，外觀氛圍感拉滿！</p>
+        <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>核心玩法：</strong>盲盒式變身 — 你永遠不知道下一次會變成什麼元素生物！火焰、水流、大地、風暴...每次使用都是驚喜。
+        </div>
+        
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">獎勵物品</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_toy_01.jpg"
+                     alt="原始祈咒精華"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">原始祈咒精華</div>
+                <span style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.75rem;">玩具</span>
+                <div style="margin-top: 0.75rem;">
+                    <a href="https://www.wowhead.com/search?q=Primordial+Anima+Essence" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--orange); text-decoration: none;">Wowhead →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">核心攻略</h2>
+
+        <!-- Tip 1: How to Obtain -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">1. 獲取方式</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">這是一款<strong>隱藏玩具</strong>，可從<strong>拍賣行</strong>直接購買。價格因伺服器而異，大約 <strong>1,000+ 金幣</strong>即可入手。建議多比價後購買。</p>
+            
+        </div>
+
+        <!-- Tip 2: Usage Effect -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">2. 使用效果</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">每次使用隨機變身為不同的<strong>元素生物</strong>。變身效果如下：</p>
+            <ul style="font-size: 0.85rem; margin-top: 0.5rem;">
+                <li>持續 <strong>20 分鐘</strong></li>
+                <li><strong>進入戰鬥不會取消</strong>變身</li>
+                <li>變身狀態下<strong>可正常顯示武器</strong></li>
+                <li>元素特效氛圍感拉滿，視覺效果極佳</li>
+            </ul>
+            
+        </div>
+
+        <!-- Tip 3: Cooldown -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">3. 冷卻時間</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">玩具冷卻時間為 <strong>1 小時</strong>。每隔一小時就能再玩一次盲盒變身！</p>
+            
+        </div>
+
+        <!-- Tip 4: AH Price -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">4. 拍賣行價格</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">拍賣行價格約 <strong>1,000+ 金幣</strong>，各伺服器略有差異。評論區玩家確認 1,000 金左右是常見行情，建議貨比三家後入手。</p>
+            
+        </div>
+
+        <!-- Tip 5: Author Series -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">5. 更多隱藏玩具</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">本影片為作者<strong>魔獸塔塔</strong>的系列作品之一，該作者持續更新魔獸冷門隱藏玩具。想看其他變身玩具可以在評論區留言，關注不迷路！</p>
+            
+        </div>
+    </div>
+
+    <!-- Hot Comments -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">熱門評論</h2>
+        
+        <div style="font-size: 0.9rem; line-height: 1.8;">
+            <p><strong>影子不語 (江蘇)：</strong>「第一步就卡住了」— 作者讚過</p>
+            <p><strong>無咎 (廣東)：</strong>「1個小時冷卻時間」— 作者讚過</p>
+            <p><strong>油條 (安徽)：</strong>「一個一千多金？」— 作者讚過</p>
+            <p><strong>下一階段 (湖南)：</strong>「雷龍哪裡領取」— 作者回覆：「過年可能還會有」</p>
+            <p><strong>魔獸塔塔 (作者)：</strong>「持續更新魔獸冷門隱藏玩具，想看其他變身玩具可以評論區留言，關注不迷路～」</p>
+        </div>
+        
+    </div>
+
+    <!-- Tags -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">標籤</h2>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界攻略</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界玩具</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#原始祈咒精華</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界變身玩具</span>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">資料來源</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7656413672668253113" target="_blank" rel="noopener" style="color: var(--orange);">抖音: 魔獸塔塔</a>
+            · <a href="https://www.wowhead.com/search?q=Primordial+Anima+Essence" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../../" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="../../../videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="../../../maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="../../../rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>

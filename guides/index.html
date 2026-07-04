@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-TW" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>攻略</title>
+    <title>Guides</title>
     <link rel="stylesheet" href="../static/css/style.css?v=20260704">
     <link rel="icon" type="image/png" href="../static/favicon.png">
 </head>
@@ -29,85 +29,85 @@
     </video>
 
     <!-- Language Toggle Button -->
-    <a href="../en/guides/">
-        EN
+    <a href="../zh/guides/">
+        中文
     </a>
 
     <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
 
     <!-- Main Content (only this container is replaced during SPA navigation) -->
     <main class="main-content" id="app-content">
         
 <div class="page-header">
-    <h2>攻略</h2>
-    <p>隱藏幻化獲取指南</p>
+    <h2>Guides</h2>
+    <p>Hidden Transmog Acquisition Guides</p>
 </div>
 
 <div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
     <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        奈格塔爾隱藏幻化攻略
+        Naigtal Hidden Transmog Guide
     </h1>
     <p style="color: var(--text-muted); margin-bottom: 2rem;">
-        Patch 12.0.7 — 真相之幕 · 6 款稀有外觀
+        Patch 12.0.7 — Veil of Truth &middot; 6 Rare Appearances
     </p>
 
     <!-- index -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">快速索引</h2>
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Quick Index</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">01</div>
-                <div style="font-weight: 600;">尖刺半殼</div>
+                <div style="font-weight: 600;">Pointy Half-Shell</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">披風</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">Cloak</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">文諾拉克斯殘骸</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Venorax Wreckage</div>
                 <button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
             </div>
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">02</div>
-                <div style="font-weight: 600;">索爾提亞牧人握柄</div>
+                <div style="font-weight: 600;">Soltian Wrangler's Grip</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">拳套</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">Fist Weapon</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">巨型蘑菇頂部</div>
-                <div style="font-family: monospace; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">蠕動軟體怪</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Giant Mushroom Tops</div>
+                <div style="font-family: monospace; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">Shambling Ooze</div>
             </div>
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">03</div>
-                <div style="font-weight: 600;">艾隆納斯防衛者之劍</div>
+                <div style="font-weight: 600;">Aelronas Defender's Sword</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">單手劍</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">1H Sword</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">維爾拉頓地穴</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Verladon Crypt</div>
                 <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
             </div>
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">04</div>
-                <div style="font-weight: 600;">被遺忘的維爾拉頓之劍</div>
+                <div style="font-weight: 600;">Forgotten Verladon Sword</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">單手劍</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">1H Sword</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">維爾拉頓地穴</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Verladon Crypt</div>
                 <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
             </div>
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">05</div>
-                <div style="font-weight: 600;">塔爾維洛水晶匠之錘</div>
+                <div style="font-weight: 600;">Tal'Velo Crystal Crafter's Hammer</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">單手錘</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">1H Mace</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">維爾拉頓地穴</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Verladon Crypt</div>
                 <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
             </div>
             <div class="glass-card" style="padding: 1rem;">
                 <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">06</div>
-                <div style="font-weight: 600;">塔爾維洛祝福之刃</div>
+                <div style="font-weight: 600;">Tal'Velo Blessed Blade</div>
                 <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">單手劍</span>
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">1H Sword</span>
                 </div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">維爾拉頓地穴</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">Verladon Crypt</div>
                 <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
             </div>
         </div>
@@ -115,89 +115,89 @@
 
     <!-- Item 1 -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
-        <h2 style="color: var(--purple);">1. 尖刺半殼</h2>
+        <h2 style="color: var(--purple);">1. Pointy Half-Shell</h2>
         <div style="margin-top: 1rem;">
-            <p><strong>類型:</strong> 背部（披風）</p>
-            <p><strong>獲取:</strong> 地面拾取</p>
-            <p><strong>位置:</strong> 文諾拉克斯殘骸</p>
-            <p><strong>座標:</strong> <button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></p>
-            <p><strong>物件:</strong> 尖刺貝殼</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">從晦暗大本營向南前往文諾拉克斯殘骸區。在殘骸左側的大型動物骸骨下方找到閃亮的尖刺貝殼物件，點擊拾取即可。</p>
+            <p><strong>Type:</strong> Back (Cloak)</p>
+            <p><strong>Acquisition:</strong> Ground Pickup</p>
+            <p><strong>Location:</strong> Venorax Wreckage</p>
+            <p><strong>Coordinates:</strong> <button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></p>
+            <p><strong>Object:</strong> Spiky Shell</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Head south from the Dread Camp toward the Venorax Wreckage area. Look for a glowing Spiky Shell object beneath the large animal bones on the left side of the wreckage. Click to pick it up.</p>
         </div>
     </div>
 
     <!-- Item 2 -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
-        <h2 style="color: var(--purple);">2. 索爾提亞牧人握柄</h2>
+        <h2 style="color: var(--purple);">2. Soltian Wrangler's Grip</h2>
         <div style="margin-top: 1rem;">
-            <p><strong>類型:</strong> 拳套</p>
-            <p><strong>獲取:</strong> 擊殺拾取</p>
-            <p><strong>位置:</strong> 奈格塔爾全境巨型蘑菇頂部</p>
-            <p><strong>NPC:</strong> 蠕動軟體怪</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">使用彈跳蘑菇、氣孢或抓鉤攀爬至巨型蘑菇頂部。擊殺上面的蠕動軟體怪有機會掉落拳套幻化。</p>
+            <p><strong>Type:</strong> Fist Weapon</p>
+            <p><strong>Acquisition:</strong> Kill Loot</p>
+            <p><strong>Location:</strong> Giant Mushroom Tops across Naigtal</p>
+            <p><strong>NPC:</strong> Shambling Ooze</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Use bounce mushrooms, air spores, or grappling hooks to climb to the top of giant mushrooms. Killing Shambling Oozes on top has a chance to drop the fist weapon transmog.</p>
             <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.9rem;">
-                影片作者阿落只給了座標但沒提到在蘑菇頂上。NGA 多位玩家表示在地上找了好久才發現要在蘑菇上。
+                Video author A'Luo only gave coordinates but didn't mention the mushroom tops. Several NGA players reported searching on the ground for a long time before realizing they needed to be on the mushrooms.
             </div>
         </div>
     </div>
 
     <!-- Items 3-6 -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
-        <h2 style="color: var(--purple);">3–6. 古代地穴聖物箱</h2>
+        <h2 style="color: var(--purple);">3&ndash;6. Ancient Crypt Reliquary</h2>
         <div style="margin-top: 1rem;">
-            <p><strong>類型:</strong> 寶箱（內含 4+ 把武器）</p>
-            <p><strong>位置:</strong> 維爾拉頓地穴</p>
-            <p><strong>座標:</strong> <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></p>
-            <p><strong>物件:</strong> 古代地穴聖物箱</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">進入維爾拉頓地穴，仔細探索所有分支通道。寶箱<strong>不會顯示在小地圖上</strong>，必須肉眼搜尋最深處的每個角落。</p>
-            <p style="margin-top: 0.75rem; font-weight: 600;">內含:</p>
+            <p><strong>Type:</strong> Chest (contains 4+ weapons)</p>
+            <p><strong>Location:</strong> Verladon Crypt</p>
+            <p><strong>Coordinates:</strong> <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></p>
+            <p><strong>Object:</strong> Ancient Crypt Reliquary</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Enter Verladon Crypt and carefully explore all branching passages. The chest <strong>does not appear on the minimap</strong>; you must visually search every corner of the deepest chambers.</p>
+            <p style="margin-top: 0.75rem; font-weight: 600;">Contains:</p>
             <table style="width: 100%; font-size: 0.9rem;">
-                <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;"><th style="text-align: left; padding: 0.3rem 0.5rem;">#</th><th style="text-align: left; padding: 0.3rem 0.5rem;">物品</th><th style="text-align: left; padding: 0.3rem 0.5rem;">類型</th></tr>
-                <tr><td style="padding: 0.3rem 0.5rem;">3</td><td style="padding: 0.3rem 0.5rem;">艾隆納斯防衛者之劍</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
-                <tr><td style="padding: 0.3rem 0.5rem;">4</td><td style="padding: 0.3rem 0.5rem;">被遺忘的維爾拉頓之劍</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
-                <tr><td style="padding: 0.3rem 0.5rem;">5</td><td style="padding: 0.3rem 0.5rem;">塔爾維洛水晶匠之錘</td><td style="padding: 0.3rem 0.5rem;">單手錘</td></tr>
-                <tr><td style="padding: 0.3rem 0.5rem;">6</td><td style="padding: 0.3rem 0.5rem;">塔爾維洛祝福之刃</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
+                <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;"><th style="text-align: left; padding: 0.3rem 0.5rem;">#</th><th style="text-align: left; padding: 0.3rem 0.5rem;">Item</th><th style="text-align: left; padding: 0.3rem 0.5rem;">Type</th></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">3</td><td style="padding: 0.3rem 0.5rem;">Aelronas Defender's Sword</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">4</td><td style="padding: 0.3rem 0.5rem;">Forgotten Verladon Sword</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">5</td><td style="padding: 0.3rem 0.5rem;">Tal'Velo Crystal Crafter's Hammer</td><td style="padding: 0.3rem 0.5rem;">1H Mace</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">6</td><td style="padding: 0.3rem 0.5rem;">Tal'Velo Blessed Blade</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
             </table>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><em>寶箱可能還會掉落其他德萊尼風格武器。</em></p>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><em>The chest may also drop other Draenei-style weapons.</em></p>
         </div>
     </div>
 
     <!-- table -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
-        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">總表</h2>
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Summary Table</h2>
         <table style="width: 100%; font-size: 0.9rem;">
             <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">
                 <th style="text-align: left; padding: 0.5rem;">#</th>
-                <th style="text-align: left; padding: 0.5rem;">物品</th>
-                <th style="text-align: left; padding: 0.5rem;">類型</th>
+                <th style="text-align: left; padding: 0.5rem;">Item</th>
+                <th style="text-align: left; padding: 0.5rem;">Type</th>
                 <th style="text-align: left; padding: 0.5rem;">/way</th>
-                <th style="text-align: left; padding: 0.5rem;">位置</th>
+                <th style="text-align: left; padding: 0.5rem;">Location</th>
             </tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">1</td><td>尖刺半殼</td><td>披風</td><td><button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></td><td>文諾拉克斯殘骸</td></tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">2</td><td>索爾提亞牧人握柄</td><td>拳套</td><td><em>巨型蘑菇</em></td><td>蠕動軟體怪</td></tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">3</td><td>艾隆納斯防衛者之劍</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">4</td><td>被遺忘的維爾拉頓之劍</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">5</td><td>塔爾維洛水晶匠之錘</td><td>單手錘</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
-            <tr><td style="padding: 0.4rem 0.5rem;">6</td><td>塔爾維洛祝福之刃</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">1</td><td>Pointy Half-Shell</td><td>Cloak</td><td><button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></td><td>Venorax Wreckage</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">2</td><td>Soltian Wrangler's Grip</td><td>Fist Weapon</td><td><em>Giant Mushrooms</em></td><td>Shambling Ooze</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">3</td><td>Aelronas Defender's Sword</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Verladon Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">4</td><td>Forgotten Verladon Sword</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Verladon Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">5</td><td>Tal'Velo Crystal Crafter's Hammer</td><td>1H Mace</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Verladon Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">6</td><td>Tal'Velo Blessed Blade</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Verladon Crypt</td></tr>
         </table>
     </div>
 
     <!-- No-Fly -->
     <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
-        <h2 style="color: var(--danger); font-size: 1.2rem; margin-bottom: 0.5rem;">禁飛警告</h2>
+        <h2 style="color: var(--danger); font-size: 1.2rem; margin-bottom: 0.5rem;">No-Fly Warning</h2>
         <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0;">
-            奈格塔爾<strong>禁止飛行</strong>，所有移動需使用地面坐騎。
+            Naigtal is a <strong>no-fly zone</strong>; all movement must use ground mounts.
         </div>
     </div>
 
     <!-- src -->
     <div class="glass-card" style="padding: 1.5rem;">
-        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">資料來源</h2>
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Sources</h2>
         <p style="font-size: 0.8rem; color: var(--text-muted);">
             <a href="https://www.icy-veins.com/wow/news/how-to-obtain-all-collectibles-from-the-naigtal-showdown-zone" target="_blank" rel="noopener" style="color: var(--orange);">Icy Veins</a>
-            · <a href="https://www.wowhead.com/object=658802/ancient-crypt-reliquary" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
-            · <a href="https://www.bilibili.com/video/BV1xL7K6MEqH" target="_blank" rel="noopener" style="color: var(--orange);">B站: 魔獸阿落</a>
-            · <a href="https://nga.178.com/read.php?tid=47033024" target="_blank" rel="noopener" style="color: var(--orange);">NGA</a>
+            &middot; <a href="https://www.wowhead.com/object=658802/ancient-crypt-reliquary" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+            &middot; <a href="https://www.bilibili.com/video/BV1xL7K6MEqH" target="_blank" rel="noopener" style="color: var(--orange);">Bilibili: A'Luo</a>
+            &middot; <a href="https://nga.178.com/read.php?tid=47033024" target="_blank" rel="noopener" style="color: var(--orange);">NGA</a>
         </p>
     </div>
 </div>
@@ -239,19 +239,19 @@ function copyWay(btn) {
     <nav class="bottom-nav">
         <div class="nav-indicator"></div>
         <a href="../" class="">
-            <span class="nav-icon">📊</span> 主頁
+            <span class="nav-icon">📊</span> Dashboard
         </a>
         <a href="../videos/" class="">
-            <span class="nav-icon">🎬</span> 影片
+            <span class="nav-icon">🎬</span> Videos
         </a>
         <a href="../maps/" class="">
-            <span class="nav-icon">🗺️</span> 地圖
+            <span class="nav-icon">🗺️</span> Maps
         </a>
         <a href="../rewards/" class="">
-            <span class="nav-icon">🎁</span> 獎勵
+            <span class="nav-icon">🎁</span> Rewards
         </a>
             <a href="../guides/" class="">
-            <span class="nav-icon">🧭</span> 指南
+            <span class="nav-icon">🧭</span> Guides
         </a>
     </nav>
 
