@@ -100,12 +100,16 @@
 /* Site is already dark-theme; adapt tokens for prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
     :root {
+        --body-bg:          #0a0a12;
         --lg-bg-primary:    rgba(255, 255, 255, 0.09);
         --lg-bg-secondary:  rgba(255, 255, 255, 0.05);
         --lg-bg-hover:      rgba(255, 255, 255, 0.12);
         --lg-bg-card:       rgba(255, 255, 255, 0.07);
         --lg-border-color:  rgba(255, 255, 255, 0.10);
         --lg-border-strong: rgba(255, 255, 255, 0.18);
+        --text-primary:     rgba(255, 255, 255, 0.92);
+        --text-secondary:   rgba(255, 255, 255, 0.72);
+        --text-muted:       rgba(255, 255, 255, 0.48);
         --text-inverse:     rgba(255, 255, 255, 0.92);
     }
 
@@ -188,18 +192,7 @@
 }
 
 /* ─── Manual Theme Toggle Support ──────────────────────────────────────── */
-html.lg-dark :root,
-:root .lg-dark {
-    --lg-bg-primary:    rgba(255, 255, 255, 0.09);
-    --lg-bg-secondary:  rgba(255, 255, 255, 0.05);
-    --lg-bg-hover:      rgba(255, 255, 255, 0.12);
-    --lg-bg-card:       rgba(255, 255, 255, 0.07);
-    --lg-border-color:  rgba(255, 255, 255, 0.10);
-    --text-primary:     rgba(255, 255, 255, 0.92);
-    --text-secondary:   rgba(255, 255, 255, 0.72);
-    --text-muted:       rgba(255, 255, 255, 0.48);
-    --text-inverse:     rgba(255, 255, 255, 0.92);
-}
+/* Theme switching handled by html[data-theme=dark|light] blocks below */
 
 /* ─── Body & Base ──────────────────────────────────────────────────────── */
 html { font-size: 16px; scroll-behavior: smooth; }
