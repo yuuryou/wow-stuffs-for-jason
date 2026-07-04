@@ -150,13 +150,29 @@ function initGlobalLinkInterceptor() {
 }
 
 function updateNavActive(url) {
+    // Normalize URL: resolve relative paths to absolute pathname
+    let absUrl;
+    try {
+        absUrl = new URL(url, window.location.href).pathname;
+    } catch (e) {
+        absUrl = url;
+    }
+
     const navLinks = document.querySelectorAll('.bottom-nav a');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === '/') {
-            link.classList.toggle('active', url === '/');
+        // Resolve relative href to absolute pathname for comparison
+        let absHref;
+        try {
+            absHref = new URL(href, window.location.href).pathname;
+        } catch (e) {
+            absHref = href;
+        }
+
+        if (absHref === '/') {
+            link.classList.toggle('active', absUrl === '/');
         } else {
-            link.classList.toggle('active', url.startsWith(href));
+            link.classList.toggle('active', absUrl === absHref || absUrl.startsWith(absHref + '/'));
         }
     });
 
