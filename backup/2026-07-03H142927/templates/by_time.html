@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}依花費時間{% else %}By Time Spent{% endif %}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+    <h2>{% if lang == 'zh' %}時間投入{% else %}Time Investment{% endif %}</h2>
+    <p>{% if lang == 'zh' %}按遊戲內完成內容所需時間排序的影片。{% else %}Videos sorted by in-game time spent to complete the content.{% endif %}</p>
+</div>
+
+<div style="margin-bottom:20px;">
+    <a href="/videos?sort=time_spent_minutes&order=DESC" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}最長優先{% else %}Longest First{% endif %}</a>
+    <a href="/videos?sort=time_spent_minutes&order=ASC" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}最短優先{% else %}Shortest First{% endif %}</a>
+</div>
+
+<p style="color:var(--text-muted);font-size:0.85rem;">
+    {% if lang == 'zh' %}時間排序可在 <a href="/videos">影片頁面</a> 使用排序篩選器操作。從下拉選單中選擇「花費時間」。{% else %}Time-based sorting is available on the <a href="/videos">Videos page</a> using the sort filter. Select "Time Spent" from the dropdown.{% endif %}
+</p>
+
+{% endblock %}

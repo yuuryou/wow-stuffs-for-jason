@@ -1,0 +1,74 @@
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Void-Twisted Whelpling — Fishing Mount Guide{% else %}虛空扭曲幼龍 — 釣魚坐騎獲取攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Patch 12.0 — The Darkest Night · Voidstorm Rare Fishing Mount{% else %}Patch 12.0 — 至暗之夜 · 虛影風暴稀有釣魚坐騎{% endif %}
+    </p>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">🎯 {% if lang == 'en' %}Quick Summary{% else %}快速摘要{% endif %}</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Map{% else %}地圖{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">{% if lang == 'en' %}Voidstorm{% else %}虛影風暴{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Coordinates{% else %}座標{% endif %}</td>
+                <td style="padding: 8px 12px; font-family: var(--font-mono); font-weight: 700;">
+                    <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 50 30</span>
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Method{% else %}獲取方式{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}Fishing{% else %}釣魚{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Required{% else %}所需物品{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}Fishing Rod{% else %}魚竿{% endif %}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Reward{% else %}獎勵{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">{% if lang == 'en' %}Void-Twisted Whelpling{% else %}虛空扭曲幼龍{% endif %} 🐉</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">📋 {% if lang == 'en' %}Step-by-Step Guide{% else %}步驟說明{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Travel to Voidstorm{% else %}前往虛影風暴{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Use your map or flight path to reach the Voidstorm zone.{% else %}使用地圖或飛行點前往虛影風暴區域。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Go to coordinates (50, 30){% else %}前往座標 (50, 30){% endif %}</strong><br>
+                <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;font-family:var(--font-mono);font-size:0.85rem;color:var(--orange);" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 50 30</span>
+                <br><span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Paste this into chat while in-game to set a waypoint.{% else %}在遊戲內聊天框中貼上此指令以設置導航點。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Equip your Fishing Rod and cast{% else %}裝備魚竿並開始釣魚{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}The Void-Twisted Whelpling is a rare fishing drop. Keep casting until you reel it in!{% else %}虛空扭曲幼龍是稀有釣魚掉落物。持續拋竿直到釣起為止！{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Mount collected — enjoy!{% else %}坐騎入手 — 享受吧！{% endif %}</strong>
+            </li>
+        </ol>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">💡 {% if lang == 'en' %}Tips{% else %}小提示{% endif %}</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>{% if lang == 'en' %}No fishing skill level requirement — any level can catch it.{% else %}無釣魚技能等級限制 — 任何等級均可釣獲。{% endif %}</li>
+            <li>{% if lang == 'en' %}Drop rate may be low; patience is key.{% else %}掉落率可能較低，耐心是關鍵。{% endif %}</li>
+            <li>{% if lang == 'en' %}Can be obtained in any realm / layer.{% else %}任何伺服器/位面均可獲取。{% endif %}</li>
+        </ul>
+    </div>
+</div>

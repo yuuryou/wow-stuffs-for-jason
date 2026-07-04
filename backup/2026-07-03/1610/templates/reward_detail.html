@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ reward_type|capitalize }} {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block content %}
+
+<a href="/rewards" class="back-link">← {% if lang == 'zh' %}返回獎勵{% else %}Back to Rewards{% endif %}</a>
+
+<div class="page-header">
+    <h2>
+        {% if reward_type == 'mount' %}🐎 {% if lang == 'zh' %}坐騎{% else %}Mount{% endif %}
+        {% elif reward_type == 'achievement' %}🏆 {% if lang == 'zh' %}成就{% else %}Achievement{% endif %}
+        {% elif reward_type == 'quest' %}📜 {% if lang == 'zh' %}任務{% else %}Quest{% endif %}
+        {% elif reward_type == 'spell' %}✨ {% if lang == 'zh' %}法術{% else %}Spell{% endif %}
+        {% else %}⚔️ {{ reward_type|capitalize }}{% endif %}
+        {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}
+    </h2>
+    <p>{% if lang == 'zh' %}{{ videos|length }} 部影片包含此類獎勵{% else %}{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} with this reward type{% endif %}</p>
+</div>
+
+{% if videos %}
+<div class="video-grid">
+    {% for v in videos %}
+    <a href="/videos/{{ v.id }}" style="text-decoration:none;">
+        <div class="video-card">
+            {% if v.thumbnail_url %}
+            <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            {% endif %}
+            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}>🐾</div>
+            <div class="video-body">
+                <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
+                <div class="video-tags">
+                    {% if v.map_name %}
+                    <span class="tag map">{{ v.map_name }}</span>
+                    {% endif %}
+                    {% for r in v.rewards %}
+                    <span class="tag reward">{{ r.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p>{% if lang == 'zh' %}尚無 {{ reward_type }} 類型的獎勵影片。{% else %}No videos with {{ reward_type }} rewards yet.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}

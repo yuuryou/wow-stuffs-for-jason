@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}編輯影片{% else %}Edit Video{% endif %} - {{ video.title or ('Untitled' if lang == 'en' else '未命名') }}{% endblock %}
+{% block content %}
+
+<a href="/videos/{{ video.id }}" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Video{% endif %}</a>
+
+<div class="page-header">
+    <h2>{% if lang == 'zh' %}編輯狩獵記錄{% else %}Edit Hunt Record{% endif %}</h2>
+</div>
+
+<form id="edit-video-form" style="max-width:700px;">
+    <input type="hidden" name="video_id" value="{{ video.id }}">
+
+    <!-- Douyin URL -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}抖音連結{% else %}Douyin URL{% endif %} *</label>
+        <input type="url" name="douyin_url" id="douyin_url" value="{{ video.douyin_url }}" required>
+    </div>
+
+    <!-- Title EN -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}標題（英文）{% else %}Title (English){% endif %}</label>
+        <input type="text" name="title_en" id="title_en" value="{{ video.title_en or video.title or '' }}"
+               placeholder="{% if lang == 'zh' %}英文影片標題{% else %}Video title in English{% endif %}">
+    </div>
+
+    <!-- Title ZH -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}標題（繁體中文）{% else %}Title (Traditional Chinese){% endif %}</label>
+        <input type="text" name="title_zh" id="title_zh" value="{{ video.title_zh or video.title or '' }}"
+               placeholder="{% if lang == 'zh' %}繁體中文影片標題{% else %}Video title in Traditional Chinese{% endif %}">
+    </div>
+
+    <!-- Description EN -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}描述（英文）{% else %}Description (English){% endif %}</label>
+        <textarea name="description_en" id="description_en"
+                  placeholder="{% if lang == 'zh' %}英文影片描述{% else %}Video description in English{% endif %}">{{ video.description_en or video.description or '' }}</textarea>
+    </div>
+
+    <!-- Description ZH -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}描述（繁體中文）{% else %}Description (Traditional Chinese){% endif %}</label>
+        <textarea name="description_zh" id="description_zh"
+                  placeholder="{% if lang == 'zh' %}繁體中文影片描述{% else %}Video description in Traditional Chinese{% endif %}">{{ video.description_zh or video.description or '' }}</textarea>
+    </div>
+
+    <!-- Author -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}作者{% else %}Author{% endif %}</label>
+        <input type="text" name="author" id="author" value="{{ video.author or '' }}" placeholder="{% if lang == 'zh' %}抖音創作者名稱{% else %}Douyin creator name{% endif %}">
+    </div>
+
+    <!-- Map EN -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}地圖 / 區域（英文）{% else %}Map / Zone (English){% endif %}</label>
+        <input type="text" name="map_name_en" id="map_name_en" value="{{ video.map_name_en or video.map_name or '' }}"
+               placeholder="e.g. Dragon Isles, Nazjatar, Ardenweald..."
+               list="map-suggestions" autocomplete="off">
+        <datalist id="map-suggestions">
+            {% for m in maps %}
+            <option value="{{ m.name }}">
+            {% endfor %}
+        </datalist>
+    </div>
+
+    <!-- Map ZH -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}地圖 / 區域（繁體中文）{% else %}Map / Zone (Traditional Chinese){% endif %}</label>
+        <input type="text" name="map_name_zh" id="map_name_zh" value="{{ video.map_name_zh or video.map_name or '' }}"
+               placeholder="{% if lang == 'zh' %}例如：巨龍群島、納沙塔爾、亞登曠野...{% else %}e.g. Dragon Isles, Nazjatar, Ardenweald...{% endif %}"
+               list="map-suggestions-zh" autocomplete="off">
+        <datalist id="map-suggestions-zh">
+            {% for m in maps %}
+            <option value="{{ m.name }}">
+            {% endfor %}
+        </datalist>
+        <div class="hint">{% if lang == 'zh' %}輸入此內容所在的魔獸世界區域。{% else %}Enter the WoW zone where this content takes place.{% endif %}</div>
+    </div>
+
+    <!-- Time Spent -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}花費時間{% else %}Time Spent{% endif %}</label>
+        <input type="text" name="time_spent_label" id="time_spent_label"
+               value="{{ video.time_spent_label or '' }}"
+               placeholder="e.g. 2小時30分 or 45分鐘 or 3h 20m">
+    </div>
+
+    <!-- Rewards -->
+    <div class="form-group">
+        <label>{% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}</label>
+        <div id="reward-chips" class="reward-list"></div>
+        <div class="reward-input-row" style="margin-top:8px;">
+            <input type="text" id="reward-name-input" placeholder="{% if lang == 'zh' %}物品 / 坐騎 / 成就名稱...{% else %}Item / Mount / Achievement name...{% endif %}">
+            <select id="reward-type-input">
+                <option value="item">{% if lang == 'zh' %}物品{% else %}Item{% endif %}</option>
+                <option value="mount">{% if lang == 'zh' %}坐騎{% else %}Mount{% endif %}</option>
+                <option value="achievement">{% if lang == 'zh' %}成就{% else %}Achievement{% endif %}</option>
+                <option value="quest">{% if lang == 'zh' %}任務{% else %}Quest{% endif %}</option>
+                <option value="spell">{% if lang == 'zh' %}法術{% else %}Spell{% endif %}</option>
+                <option value="other">{% if lang == 'zh' %}其他{% else %}Other{% endif %}</option>
+            </select>
+            <button type="button" id="add-reward-btn" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}新增{% else %}Add{% endif %}</button>
+        </div>
+        <div class="hint">{% if lang == 'zh' %}分別新增每個獎勵，wowhead 連結將自動產生。{% else %}Add each reward separately. Wowhead links will be auto-generated.{% endif %}</div>
+
+        <!-- wowhead quick search -->
+        <div style="margin-top:12px;padding:12px;background:var(--bg-panel);border-radius:var(--radius);border:1px solid var(--border-subtle);">
+            <label style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;display:block;">{% if lang == 'zh' %}快速 wowhead 搜尋{% else %}Quick wowhead Search{% endif %}</label>
+            <div style="display:flex;gap:8px;">
+                <input type="text" id="wowhead-search-input" placeholder="{% if lang == 'zh' %}在 wowhead 中搜尋物品...{% else %}Search items on wowhead...{% endif %}" style="flex:1;">
+                <button type="button" id="wowhead-search-btn" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}搜尋{% else %}Search{% endif %}</button>
+            </div>
+            <div id="wowhead-results" style="margin-top:8px;"></div>
+        </div>
+    </div>
+
+    <input type="hidden" name="rewards" id="rewards-data" value="{{ video.rewards_json or '[]' }}">
+
+    <div class="btn-group" style="margin-top:24px;">
+        <button type="submit" class="btn btn-primary">{% if lang == 'zh' %}儲存變更{% else %}Save Changes{% endif %}</button>
+        <a href="/videos/{{ video.id }}" class="btn btn-secondary">{% if lang == 'zh' %}取消{% else %}Cancel{% endif %}</a>
+    </div>
+</form>
+
+{# Pre-populate reward chips from existing video data #}
+{% if video.rewards_json %}
+<script>
+(function() {
+    try {
+        const rewards = JSON.parse('{{ video.rewards_json | tojson | safe }}');
+        if (Array.isArray(rewards) && rewards.length > 0) {
+            const chipsEl = document.getElementById('reward-chips');
+            if (chipsEl) {
+                rewards.forEach(r => {
+                    const badge = '<span class="reward-type-badge">' + (r.type || 'item') + '</span>';
+                    chipsEl.innerHTML += '<span class="reward-chip">' + escapeHtml(r.name || '') + ' × ' + badge + '</span>';
+                });
+            }
+        }
+    } catch(e) {}
+})();
+</script>
+{% endif %}
+
+<script>
+const lang = document.documentElement.getAttribute('data-lang');
+const isZh = lang === 'zh';
+
+document.getElementById('edit-video-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const chips = document.querySelectorAll('#reward-chips .reward-chip');
+    const rewards = [];
+    chips.forEach(chip => {
+        const typeBadge = chip.querySelector('.reward-type-badge');
+        const type = typeBadge ? typeBadge.textContent : 'item';
+        const textNodes = Array.from(chip.childNodes).filter(n => n.nodeType === 3);
+        const name = textNodes.map(n => n.textContent.trim()).join('').replace(/×$/, '').trim();
+        if (name) rewards.push({ name, type });
+    });
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+    data.rewards = rewards;
+
+    try {
+        const videoId = {{ video.id }};
+        const resp = await fetch('/api/videos/' + videoId, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await resp.json();
+
+        if (resp.ok) {
+            showToast(isZh ? '影片已成功更新！' : 'Video updated successfully!', 'success');
+            setTimeout(() => window.location.href = '/videos/' + videoId, 500);
+        } else {
+            showToast((isZh ? '錯誤：' : 'Error: ') + (result.error || (isZh ? '未知錯誤' : 'Unknown error')), 'error');
+        }
+    } catch(err) {
+        showToast((isZh ? '錯誤：' : 'Error: ') + err.message, 'error');
+    }
+});
+</script>
+
+{% endblock %}

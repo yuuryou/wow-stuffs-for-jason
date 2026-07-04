@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ map_name }} {% if lang == 'zh' %}影片{% else %}Videos{% endif %}{% endblock %}
+{% block content %}
+
+<a href="/maps" class="back-link">← {% if lang == 'zh' %}返回地圖{% else %}Back to Maps{% endif %}</a>
+
+<div class="page-header">
+    <h2>🗺️ {{ map_name }}</h2>
+    <p>{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} {% if lang == 'zh' %}部影片來自此區域{% else %}from this zone{% endif %}</p>
+</div>
+
+{% if videos %}
+<div class="video-grid">
+    {% for v in videos %}
+    <a href="/videos/{{ v.id }}" style="text-decoration:none;">
+        <div class="video-card">
+            {% if v.thumbnail_url %}
+            <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            {% endif %}
+            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}>🐾</div>
+            <div class="video-body">
+                <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
+                <div class="video-tags">
+                    {% if v.time_spent_label %}
+                    <span class="tag time">{{ v.time_spent_label }}</span>
+                    {% endif %}
+                    {% for r in v.rewards[:2] %}
+                    <span class="tag reward">{{ r.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p>{% if lang == 'zh' %}此地圖尚無影片。{% else %}No videos found for this map.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}

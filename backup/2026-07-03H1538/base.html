@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="{% if lang == 'en' %}en{% else %}zh-TW{% endif %}" data-lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}wow stuffs for Jason{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="/static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="/set-lang/{% if lang == 'zh' %}en{% else %}zh{% endif %}" class="lang-toggle" data-no-spa title="{% if lang == 'zh' %}Switch to English{% else %}切換為繁體中文{% endif %}">
+        {% if lang == 'zh' %}EN{% else %}中文{% endif %}
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="{% if lang == 'zh' %}切換深淺色{% else %}Toggle Theme{% endif %}" aria-label="{% if lang == 'zh' %}切換深淺色{% else %}Toggle Theme{% endif %}">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+            <span class="nav-icon">📊</span> {% if lang == 'en' %}Dashboard{% else %}主頁{% endif %}
+        </a>
+        <a href="/videos" class="{% if request.path.startswith('/videos') %}active{% endif %}">
+            <span class="nav-icon">🎬</span> {% if lang == 'en' %}Videos{% else %}影片{% endif %}
+        </a>
+        <a href="/maps" class="{% if request.path.startswith('/maps') %}active{% endif %}">
+            <span class="nav-icon">🗺️</span> {% if lang == 'en' %}Maps{% else %}地圖{% endif %}
+        </a>
+        <a href="/rewards" class="{% if request.path.startswith('/rewards') %}active{% endif %}">
+            <span class="nav-icon">🎁</span> {% if lang == 'en' %}Rewards{% else %}獎勵{% endif %}
+        </a>
+    </nav>
+
+    <script src="/static/js/main.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

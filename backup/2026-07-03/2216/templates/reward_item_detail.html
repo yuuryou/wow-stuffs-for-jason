@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ reward_name }} - {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block content %}
+
+<a href="/rewards" class="back-link">← {% if lang == 'zh' %}返回獎勵{% else %}Back to Rewards{% endif %}</a>
+
+<div class="page-header">
+    <h2>{{ reward_name }}{% if is_time_limited %}<span class="reward-time-info" title="{{ time_limited_note }}"><span class="time-icon">&#9888;</span> {% if lang == 'zh' %}限時獎勵{% else %}Time Limited{% endif %}</span>{% endif %}</h2>
+    <p>{{ videos|length }} {% if lang == 'zh' %}部影片包含此獎勵{% else %}video{{ 's' if videos|length != 1 else '' }} with this reward{% endif %}</p>
+</div>
+
+{% if videos %}
+<div class="video-grid">
+    {% for v in videos %}
+    <a href="/videos/{{ v.id }}" style="text-decoration:none;">
+        <div class="video-card">
+            {% if v.thumbnail_url %}
+            <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            {% endif %}
+            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}>🐾</div>
+            <div class="video-body">
+                <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
+                <div class="video-tags">
+                    {% if v.map_name %}
+                    <span class="tag map">{{ v.map_name }}</span>
+                    {% endif %}
+                    {% if v.time_spent_label %}
+                    <span class="tag time">{{ v.time_spent_label }}</span>
+                    {% endif %}
+                    <span class="tag reward">{{ reward_name }}</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <h3>{% if lang == 'zh' %}找不到影片{% else %}No Videos Found{% endif %}</h3>
+    <p>{% if lang == 'zh' %}目前沒有影片包含此獎勵。{% else %}No tracked videos currently include this reward.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}

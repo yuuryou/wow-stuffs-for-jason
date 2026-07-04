@@ -1,0 +1,5 @@
+# WoW Douyin Hub
+data/
+__pycache__/
+*.pyc
+.env

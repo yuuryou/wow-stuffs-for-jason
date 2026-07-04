@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}地圖{% else %}Maps{% endif %}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+    <h2>{% if lang == 'zh' %}狩獵過的地圖{% else %}Hunted Maps{% endif %}</h2>
+    <p>{% if lang == 'zh' %}已追蹤影片所在的所有魔獸世界區域。動態更新 — 新增內容時地圖會自動出現。{% else %}WoW zones where tracked videos take place. Dynamic — new maps appear as you add content.{% endif %}</p>
+</div>
+
+{% if maps %}
+<div class="item-list">
+    {% for m in maps %}
+    <a href="/maps/{{ m.name }}" style="text-decoration:none;">
+        <div class="item-entry">
+            <span class="name">🗺️ {{ m.name }}</span>
+            <span class="count">{{ m.count }} {% if lang == 'zh' %}部影片{% else %}video{{ 's' if m.count != 1 else '' }}{% endif %}</span>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <div class="icon">🗺️</div>
+    <h3>{% if lang == 'zh' %}尚無地圖{% else %}No Maps Yet{% endif %}</h3>
+    <p>{% if lang == 'zh' %}新增帶有地圖名稱的影片時，地圖會自動出現。{% else %}Maps appear automatically when videos with map names are added.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,213 @@
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Dreaming Salamander Aquatic Form Unlock Guide{% else %}酣夢鯢鯛水棲外觀解鎖攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Dragonflight · Druid Aquatic Form · True Fragrance Handbook Ep.131{% else %}巨龍時代 · 德魯伊水棲外觀 · 真香手冊第131集{% endif %}
+    </p>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">&#x1F3AF; {% if lang == 'en' %}Quick Summary{% else %}快速摘要{% endif %}</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Map{% else %}地圖{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">{% if lang == 'en' %}Valdrakken{% else %}瓦德拉肯{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}NPC{% else %}NPC{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">&#x9678;&#x4F73; (Lu Jia)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}NPC Coordinates{% else %}NPC座標{% endif %}</td>
+                <td style="padding: 8px 12px; font-family: var(--font-mono); font-weight: 700;">
+                    <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 52.6 53.8</span>
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Fishing Trainer{% else %}釣魚訓練師{% endif %}</td>
+                <td style="padding: 8px 12px; font-family: var(--font-mono); font-weight: 700;">
+                    <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 35.0 48.6</span>
+                    <span style="font-family: var(--font-sans); font-weight: 400; color: var(--text-muted); font-size: 0.85rem;"> (Sabu)</span>
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Method{% else %}獲取方式{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}Fishing + Raid Scenarios{% else %}釣魚 + 隨機團隊副本{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Required{% else %}所需物品{% endif %}</td>
+                <td style="padding: 8px 12px;">
+                    {% if lang == 'en' %}Fishing Rod, Fishing skill{% else %}魚竿、釣魚技能{% endif %}
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Items to Collect{% else %}需收集物品{% endif %}</td>
+                <td style="padding: 8px 12px;">
+                    {% if lang == 'en' %}Sleeping Moonfish x10 + Awakened Sunfish x10{% else %}沉睡月魚 x10 + 覺醒旭魚 x10{% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Reward{% else %}獎勵{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">
+                    {% if lang == 'en' %}Dreaming Salamander{% else %}酣夢鯢鯛{% endif %} &#x1F420;
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Preparation -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">&#x2699;&#xFE0F; {% if lang == 'en' %}Preparation{% else %}前置準備{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Learn Fishing{% else %}學習釣魚技能{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Go to Valdrakken and find Fishing Trainer <strong>Sabu</strong> to learn Dragon Isles Fishing.{% else %}前往瓦德拉肯，找釣魚訓練師 <strong>Sabu</strong> 學習巨龍群島釣魚。{% endif %}
+                </span>
+                <br><span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;font-family:var(--font-mono);font-size:0.85rem;color:var(--orange);" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 35.0 48.6</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">{% if lang == 'en' %} (Sabu - Fishing Trainer){% else %} (Sabu - 釣魚訓練師){% endif %}</span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Find NPC Lu Jia{% else %}找到 NPC 陸佳{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Return to Valdrakken and locate the Raid Finder NPC <strong>Lu Jia</strong>.{% else %}回到瓦德拉肯主城，找到隨機團隊 NPC <strong>陸佳</strong>。{% endif %}
+                </span>
+                <br><span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;font-family:var(--font-mono);font-size:0.85rem;color:var(--orange);" title="{% if lang == 'en' %}Click to copy{% else %}點擊複製{% endif %}">/way 52.6 53.8</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">&#x1F31F; {% if lang == 'en' %}Phase 1 — Sleeping Moonfish x10{% else %}第一階段 — 沉睡月魚 x10{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Enter the Scenario{% else %}進入團本{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Talk to Lu Jia and select the 4th option from the bottom — <strong>"化身魚波"</strong> (Avatar of Fish Wave) to enter the raid scenario.{% else %}與陸佳對話，選擇倒數第 4 個選項 <strong>「化身魚波」</strong>進入團隊副本。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Fish the Pool{% else %}釣取沉睡月魚{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}After entering, walk straight ahead to the pool of water. Use fishing to catch <strong>10 Sleeping Moonfish</strong>.{% else %}進入後直走到正前方水池，使用釣魚技能釣取 <strong>10 條沉睡月魚</strong>。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Leave the Instance{% else %}離開副本{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Click your character portrait (top-left) and select "Leave Instance Group".{% else %}點擊左上角人物頭像 → 離開副本。{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">&#x1F525; {% if lang == 'en' %}Phase 2 — Awakened Sunfish x10{% else %}第二階段 — 覺醒旭魚 x10{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Enter the Second Scenario{% else %}進入第二個團本{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Talk to Lu Jia again and select the 3rd option from the bottom — <strong>"融火侵攻"</strong> (Molten Incursion) to enter the raid.{% else %}再次與陸佳對話，選擇倒數第 3 個選項 <strong>「融火侵攻」</strong>進入團隊副本。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Navigate to the Lava Ring{% else %}前往岩漿處{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Wait for the NPC to finish talking, then the left door will open. Ignore trash mobs and go straight to the boss arena's circular lava ring.{% else %}等 NPC 說完話左邊大門打開，忽略路上小怪，直走到 BOSS 面前的圓環岩漿處。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Fish at the Lava{% else %}釣取覺醒旭魚{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Use fishing to catch <strong>10 Awakened Sunfish</strong> from the lava.{% else %}在岩漿處使用釣魚技能釣取 <strong>10 條覺醒旭魚</strong>。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Leave the Instance{% else %}離開副本{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Click your character portrait and leave the instance.{% else %}點擊人物頭像離開副本。{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">&#x1F389; {% if lang == 'en' %}Phase 3 — Unlock the Appearance{% else %}第三階段 — 解鎖外觀{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Return to the First Scenario{% else %}重返第一個團本{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Talk to Lu Jia again → <strong>"化身魚波"</strong> → re-enter the first scenario.{% else %}再次與陸佳對話 → <strong>「化身魚波」</strong> → 回到第一個團本。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Throw All Fish into the Pool{% else %}扔魚入池{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Walk to the pool and throw all <strong>20 fish</strong> (10 Moonfish + 10 Sunfish) into the water.{% else %}走到水池邊，將 <strong>20 條魚</strong>（10條沉睡月魚 + 10條覺醒旭魚）全部扔進水池。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Obtain the Synesthesia Angler Buff{% else %}獲得 Buff{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}You will receive the <strong>"Synesthesia Angler"</strong> buff (3 minutes duration) in the top-right corner.{% else %}右上角獲得 <strong>「通感錘釣客」</strong> Buff（持續 3 分鐘）。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Fish Up Qina{% else %}釣上奇娜{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Use fishing in the pool to catch <strong>"Qina"</strong> (Soulbound item).{% else %}在水池使用釣魚，釣上 <strong>「奇娜」</strong>（靈魂綁定物品）。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Use the Item{% else %}解鎖外觀{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Right-click Qina in your inventory → Appearance unlocked!{% else %}在背包中右鍵使用「奇娜」→ 外觀解鎖！{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Changing Appearance -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">&#x2702;&#xFE0F; {% if lang == 'en' %}Changing Appearance{% else %}更換外觀{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Visit the Barber Shop{% else %}前往理髮店{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Go to any Barber Shop in a major city (e.g. Valdrakken).{% else %}前往任意主城的理髮店（如瓦德拉肯）。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Select Aquatic Form{% else %}選擇水棲形態{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Navigate to Aquatic Form → select <strong>"Dreaming Salamander"</strong>.{% else %}導航至水棲形態 → 選擇 <strong>「酣夢鯢鯛」</strong>。{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">&#x1F4A1; {% if lang == 'en' %}Tips{% else %}小提示{% endif %}</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>{% if lang == 'en' %}You can fish in any form — no need to be in caster form.{% else %}任何形態都可以釣魚，不需要切回人形。{% endif %}</li>
+            <li>{% if lang == 'en' %}The <strong>Synesthesia Angler</strong> buff only lasts 3 minutes — make sure to fish immediately after throwing the fish in.{% else %}<strong>通感錘釣客</strong> Buff 僅持續 3 分鐘，扔完魚後要立刻開始釣。{% endif %}</li>
+            <li>{% if lang == 'en' %}If you fail, simply leave and re-enter the scenario to try again.{% else %}若失敗，只需離開副本重新進入即可重試。{% endif %}</li>
+            <li>{% if lang == 'en' %}No fishing skill level requirement for this quest — any level works.{% else %}此任務無釣魚技能等級限制，任何等級均可完成。{% endif %}</li>
+            <li>{% if lang == 'en' %}This is a <strong>Druid-only</strong> appearance unlock.{% else %}此為<strong>德魯伊專屬</strong>外觀解鎖。{% endif %}</li>
+        </ul>
+    </div>
+
+    <!-- Source -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}Sources{% else %}資料來源{% endif %}</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7633356145620831942" target="_blank" rel="noopener" style="color: var(--orange);">
+                {% if lang == 'en' %}Douyin: 雷帝gege — EP.131{% else %}抖音: 雷帝gege — 真香手冊第131集{% endif %}
+            </a>
+        </p>
+    </div>
+</div>

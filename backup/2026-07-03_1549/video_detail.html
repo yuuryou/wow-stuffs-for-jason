@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}{{ video.title or ('Video' if lang == 'en' else '影片') }}{% endblock %}
+{% block content %}
+
+<a href="/videos" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Videos{% endif %}</a>
+
+<div class="detail-header">
+    <h2>{{ video.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</h2>
+
+    <div style="display:flex;gap:8px;margin-bottom:16px;">
+        <a href="{{ video.douyin_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}在抖音開啟{% else %}Open in Douyin{% endif %}</a>
+        <a href="/edit/{{ video.id }}" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}編輯{% else %}Edit{% endif %}</a>
+        <button class="btn btn-danger btn-sm" data-delete-id="{{ video.id }}">{% if lang == 'zh' %}刪除{% else %}Delete{% endif %}</button>
+    </div>
+</div>
+
+<!-- Thumbnail -->
+{% if video.thumbnail_url %}
+<div style="margin-bottom:24px;">
+    <img src="{{ video.thumbnail_url }}" alt="{{ video.title }}"
+         style="border-radius:var(--radius-lg);max-height:400px;object-fit:cover;width:100%;"
+         onerror="this.style.display='none';">
+</div>
+{% endif %}
+
+<!-- Meta Grid -->
+<div class="detail-meta-grid">
+    <div class="detail-meta-item">
+        <div class="label">{% if lang == 'zh' %}地圖{% else %}Map{% endif %}</div>
+        <div class="value">{{ video.map_name or ('Unknown' if lang == 'en' else '未知') }}</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">{% if lang == 'zh' %}花費時間{% else %}Time Spent{% endif %}</div>
+        <div class="value">{{ video.time_spent_label or ('N/A' if lang == 'en' else '無') }}</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">{% if lang == 'zh' %}作者{% else %}Author{% endif %}</div>
+        <div class="value">{{ video.author or ('Unknown' if lang == 'en' else '未知') }}</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">{% if lang == 'zh' %}新增於{% else %}Added{% endif %}</div>
+        <div class="value">{{ video.created_at[:10] if video.created_at else ('N/A' if lang == 'en' else '無') }}</div>
+    </div>
+</div>
+
+<!-- Description -->
+{% if video.description %}
+<div class="card" style="margin-bottom:24px;">
+    <div class="card-title">{% if lang == 'zh' %}描述{% else %}Description{% endif %}</div>
+    <p style="font-size:0.9rem;color:var(--text-muted);white-space:pre-wrap;">{{ video.description }}</p>
+</div>
+{% endif %}
+
+<!-- Rewards -->
+{% if video.rewards %}
+<div class="card" style="margin-bottom:24px;">
+    <div class="card-title">{% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}</div>
+    <div class="video-tags" style="margin-top:8px;">
+        {% for r in video.rewards %}
+        <span class="tag reward">{{ r.name }}
+            <span style="font-size:0.65rem;opacity:0.6;">[{{ r.type }}]</span>
+        </span>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- wowhead Links -->
+{% if video.wowhead_links %}
+<div class="card">
+    <div class="card-title">{% if lang == 'zh' %}Wowhead 連結{% else %}Wowhead Links{% endif %}</div>
+    <div class="wowhead-links">
+        {% for link in video.wowhead_links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener" class="wowhead-link">
+            🔗 {{ link.name }}
+            <span style="font-size:0.65rem;opacity:0.6;">[{{ link.type }}]</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Douyin Link -->
+<div style="margin-top:24px;">
+    <div class="card">
+        <div class="card-title">{% if lang == 'zh' %}抖音連結{% else %}Douyin Link{% endif %}</div>
+        <a href="{{ video.douyin_url }}" target="_blank" rel="noopener"
+           style="font-size:0.85rem;word-break:break-all;">{{ video.douyin_url }}</a>
+    </div>
+</div>
+
+<!-- Guide Section -->
+{% include '_guide_section.html' %}
+
+{% endblock %}

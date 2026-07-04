@@ -1,0 +1,121 @@
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Placid Deep Cat — Secret Decryption Pet Guide{% else %}泰然深潛貓 — 隱藏解密寵物攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Isle of Dorn · Decryption Puzzle · ~3 Minutes · True Fragrance Handbook Ep.139{% else %}多恩島 · 解密謎題 · 約3分鐘 · 真香手冊第139集{% endif %}
+    </p>
+
+    <!-- Quick Summary -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Quick Summary{% else %}快速摘要{% endif %}</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Map{% else %}地圖{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">{% if lang == 'en' %}Isle of Dorn{% else %}多恩島{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Type{% else %}類型{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}Secret Decryption Puzzle{% else %}隱藏解密謎題{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Time Required{% else %}所需時間{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}~3 minutes{% else %}約3分鐘{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Patch{% else %}版本{% endif %}</td>
+                <td style="padding: 8px 12px;">12.07</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Reward{% else %}獎勵{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">
+                    {% if lang == 'en' %}Placid Deep Cat{% else %}泰然深潛貓{% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Reward{% else %}獎勵物品{% endif %}</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_pet_baby.jpg"
+                     alt="{% if lang == 'en' %}Placid Deep Cat{% else %}泰然深潛貓{% endif %}"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">{% if lang == 'en' %}Placid Deep Cat{% else %}泰然深潛貓{% endif %}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    <span class="badge" style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.15rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">{% if lang == 'en' %}Pet{% else %}寵物{% endif %}</span>
+                    <span class="badge" style="background: rgba(140,100,255,0.15); color: var(--purple); padding: 0.15rem 0.5rem; border-radius: 1rem; font-size: 0.7rem; margin-left: 0.25rem;">{% if lang == 'en' %}Decryption{% else %}解密{% endif %}</span>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
+            {% if lang == 'en' %}Note: This is a reskin of the Fire Cat pet from the Mists of Pandaria era.{% else %}備註：此為潘達利亞之謎時期火貓寵物的換皮版本。{% endif %}
+        </p>
+    </div>
+
+    <!-- Prerequisites -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Prerequisites{% else %}前置準備{% endif %}</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Translation Gear (Recommended){% else %}翻譯裝備（建議）{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Have <strong>"Translation - Mek-ghoulish"</strong> or similar translation items equipped to read hidden clues.{% else %}裝備 <strong>「翻譯 - 機械俠音語」</strong> 或類似翻譯道具，以閱讀隱藏線索。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Check Weekly Rotation{% else %}確認週常輪換{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    {% if lang == 'en' %}Some steps require specific weekly rotation. If the chest is missing, wait for the next reset.{% else %}部分步驟依賴特定週常輪換。若寶箱未出現，請等待下週重置。{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Steps -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Step 1 — Find the Waterlogged Note{% else %}步驟一 — 尋找浸水的筆記{% endif %}</h2>
+        <p style="font-size: 0.95rem; line-height: 1.7;">
+            {% if lang == 'en' %}Go to the northwest coastline of <strong>Isle of Dorn</strong>. Search for shipwrecks and underwater debris to find the <strong>Waterlogged Note</strong>. Read it with translation gear equipped to reveal the hidden clues leading to the next location.{% else %}前往<strong>多恩島</strong>西北方海岸線。搜尋沉船及水下殘骸，找到 <strong>「浸水的筆記」</strong>。裝備翻譯道具後閱讀，揭示通往下一地點的隱藏線索。{% endif %}
+        </p>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Step 2 — Follow Hidden Clues{% else %}步驟二 — 追蹤隱藏線索{% endif %}</h2>
+        <p style="font-size: 0.95rem; line-height: 1.7;">
+            {% if lang == 'en' %}Collect additional notes scattered across the island. Decode Morse code patterns and environmental symbols. Pay attention to references to "Deep" and "Cat" — these guide you toward an underwater cave. Use <code>/sleep</code> or other emotes if prompted by the clues.{% else %}收集散落在島上的額外筆記。解讀摩斯密碼及環境符號。注意「深處」與「貓」的提示 — 這些將引導你前往水下洞穴。必要時依線索使用 <code>/sleep</code> 或其他表情動作。{% endif %}
+        </p>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Step 3 — Obtain Placid Deep Cat{% else %}步驟三 — 獲取泰然深潛貓{% endif %}</h2>
+        <p style="font-size: 0.95rem; line-height: 1.7;">
+            {% if lang == 'en' %}Navigate the hidden underwater cave. You may need a buff that reveals invisible paths. In the deepest chamber, find the hidden treasure chest and open it to receive the <strong>Placid Deep Cat</strong> pet.{% else %}探索隱藏水下洞穴。你可能需要揭示隱形路徑的增益效果。在最深處的密室，找到隱藏寶箱，打開即可獲得 <strong>泰然深潛貓</strong> 寵物。{% endif %}
+        </p>
+    </div>
+
+    <!-- Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Tips{% else %}提示{% endif %}</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>{% if lang == 'en' %}<strong>Chest not appearing?</strong> Try after the next weekly reset. Some steps rotate weekly.{% else %}<strong>找不到寶箱？</strong>請在下週重置後再試。部分步驟每週輪換。{% endif %}</li>
+            <li>{% if lang == 'en' %}<strong>Notes are gibberish?</strong> Equip translation gear to decode them.{% else %}<strong>筆記是亂碼？</strong>裝備翻譯道具即可解碼。{% endif %}</li>
+            <li>{% if lang == 'en' %}This is a <strong>reskin</strong> of the Mists of Pandaria Fire Cat pet.{% else %}此為潘達利亞之謎<strong>火貓</strong>寵物的換皮版本。{% endif %}</li>
+            <li>{% if lang == 'en' %}No combat — pure exploration puzzle.{% else %}無需戰鬥 — 純探索解密。{% endif %}</li>
+        </ul>
+    </div>
+
+    <!-- Source -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}Sources{% else %}資料來源{% endif %}</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7653082783199350056" target="_blank" rel="noopener" style="color: var(--orange);">
+                {% if lang == 'en' %}Douyin: 魔獸阿落 — Ep.139{% else %}抖音: 魔獸阿落 — 真香手冊第139集{% endif %}
+            </a>
+        </p>
+    </div>
+</div>

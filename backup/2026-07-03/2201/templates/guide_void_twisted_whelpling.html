@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Void-Twisted Whelpling Guide{% else %}虛空扭曲幼龍攻略{% endif %} | wow stuffs for Jason{% endblock %}
+{% block content %}
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Void-Twisted Whelpling — Fishing Mount Guide{% else %}虛空扭曲幼龍 — 釣魚坐騎獲取攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Voidstorm (50, 30) — Grab your fishing rod and go!{% else %}虛影風暴 (50, 30) — 拿上你的魚竿衝衝衝！{% endif %}
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Source Video{% else %}來源影片{% endif %}</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            {% if lang == 'en' %}Author: 珂了不得 · 363 followers · Duration: 00:59 · Likes: 1,256 · Saves: 1,598 · Comments: 109 · Shares: 249{% else %}作者: 珂了不得 · 363 粉絲 · 時長: 00:59 · 點讚: 1,256 · 收藏: 1,598 · 評論: 109 · 轉發: 249{% endif %}
+        </p>
+        <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            {% if lang == 'en' %}Open in Douyin{% else %}在抖音開啟{% endif %}
+        </a>
+    </div>
+
+    <!-- Overview -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Overview{% else %}概述{% endif %}</h2>
+        {% if lang == 'en' %}
+        <p style="font-size: 0.95rem; line-height: 1.7;">The <strong>Void-Twisted Whelpling</strong> is a rare <strong>mount</strong> obtained exclusively through <strong>fishing</strong> in the <strong>Voidstorm</strong> zone. Head to coordinates <strong>(50, 30)</strong> with your fishing rod equipped — no combat required, just patience and luck.</p>
+        <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Warning:</strong> The water in this area may kill your character on contact. Some players reported dying simply by stepping into the water. Proceed with caution.
+        </div>
+        {% else %}
+        <p style="font-size: 0.95rem; line-height: 1.7;"><strong>虛空扭曲幼龍</strong>是一款稀有<strong>坐騎</strong>，僅能透過在<strong>虛影風暴</strong>區域<strong>釣魚</strong>獲取。前往座標 <strong>(50, 30)</strong>，裝備魚竿即可開始 — 無需戰鬥，只需耐心與運氣。</p>
+        <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>警告：</strong>此區域的水面可能導致角色死亡。多位玩家反映光是踩到水就會死亡，請謹慎操作。
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Reward{% else %}獎勵物品{% endif %}</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_charmbeast.jpg"
+                     alt="{% if lang == 'en' %}Void-Twisted Whelpling{% else %}虛空扭曲幼龍{% endif %}"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">{% if lang == 'en' %}Void-Twisted Whelpling{% else %}虛空扭曲幼龍{% endif %}</div>
+                <span style="background: rgba(100,200,255,0.15); color: #64c8ff; padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.75rem;">{% if lang == 'en' %}Mount{% else %}坐騎{% endif %}</span>
+                <div style="margin-top: 0.75rem;">
+                    <a href="https://www.wowhead.com/item=228656" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--orange); text-decoration: none;">Wowhead →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Key Tips{% else %}核心攻略{% endif %}</h2>
+
+        <!-- Tip 1: Fishing Location -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}1. Fishing Location{% else %}1. 釣魚位置{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Go to <strong>Voidstorm</strong> and navigate to the fishing spot at the coordinates below. Equip your fishing rod and start casting.</p>
+            <p style="margin-top: 0.5rem;"><strong>Coordinates:</strong> <button class="way-copy" data-way="/way (虚影风暴) 50, 30" onclick="copyWay(this)"></button></p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">前往<strong>虛影風暴</strong>，抵達下方座標的釣魚點。裝備魚竿後即可開始拋竿釣魚。</p>
+            <p style="margin-top: 0.5rem;"><strong>座標：</strong> <button class="way-copy" data-way="/way (虚影风暴) 50, 30" onclick="copyWay(this)"></button></p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 2: Consumables -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}2. Preparation{% else %}2. 事前準備{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Community tips from the video comments suggest preparing <strong>Perception Potions</strong> and <strong>food buffs</strong> to improve your fishing efficiency. One player mentioned crafting 40 perception potions for this grind.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">影片評論中的社群建議：準備<strong>感知藥水</strong>和<strong>食物增益</strong>以提升釣魚效率。有玩家提到為了這個坐騎準備了 40 支感知藥水。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 3: Better Fisher addon -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}3. Recommended Addon — Better Fisher{% else %}3. 推薦插件 — Better Fisher{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Use the <strong>Better Fisher</strong> addon for one-click fishing and amplified fishing sound effects. This makes the grinding process significantly more comfortable, especially for long sessions.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">使用 <strong>Better Fisher</strong> 插件，支援<strong>一鍵釣魚</strong>並能<strong>放大釣魚音效</strong>。長時間蹲釣時大幅提升體驗，不用一直盯著螢幕看浮標。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 4: Difficulty -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}4. Drop Rate & Difficulty{% else %}4. 掉落率與難度{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">The drop rate appears to be <strong>low and RNG-dependent</strong>. Comments indicate:</p>
+            <ul style="font-size: 0.85rem; margin-top: 0.5rem;">
+                <li>Some players got it within <strong>5 minutes</strong></li>
+                <li>Others reported needing <strong>3 days</strong> of continuous fishing</li>
+                <li>One player mentioned fishing <strong>from midnight until morning</strong> before it dropped</li>
+            </ul>
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.85rem;">
+                {% if lang == 'en' %}<strong>Bottom line:</strong> Your mileage may vary significantly. Don't get discouraged!{% else %}<strong>總結：</strong>運氣成分很大，每個人情況不同。耐心是關鍵！{% endif %}
+            </div>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">掉落率<strong>偏低且看臉</strong>。評論區反映出極大的個體差異：</p>
+            <ul style="font-size: 0.85rem; margin-top: 0.5rem;">
+                <li>有人<strong>五分鐘</strong>就釣到了</li>
+                <li>有人說<strong>釣了三天</strong>才出貨</li>
+                <li>還有人從<strong>半夜釣到天亮</strong>才釣到</li>
+            </ul>
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.85rem;">
+                <strong>總結：</strong>運氣成分很大，每個人情況不同。耐心是關鍵！
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Tip 5: Water hazard -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--danger); font-size: 1rem;">{% if lang == 'en' %}5. ⚠ Water Hazard{% else %}5. ⚠ 水面即死機制{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Multiple players in the comments reported that stepping into the water in this area results in <strong>instant death</strong>. The author confirmed this with a humorous reply: "I knew there'd be some rebellious little cuties trying it." Avoid walking into the water — fish from the shore.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">多位玩家在評論中反映，踩到該區域的水面會<strong>直接死亡</strong>。作者本人也幽默回應：「哈哈我就說嘛，肯定有叛逆的小可愛」。請從岸邊釣魚，不要踏入水中。</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">{% if lang == 'en' %}Tags{% else %}標籤{% endif %}</h2>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#我比你們多一個世界</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#遊戲日常</span>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}Sources{% else %}資料來源{% endif %}</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener" style="color: var(--orange);">{% if lang == 'en' %}Douyin: 珂了不得{% else %}抖音: 珂了不得{% endif %}</a>
+            · <a href="https://www.wowhead.com/item=228656" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

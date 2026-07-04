@@ -1,0 +1,183 @@
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Naigtal Hidden Transmog Guide{% else %}奈格塔爾隱藏幻化攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Patch 12.0.7 — Revelations · 6 Rare Appearances{% else %}Patch 12.0.7 — 真相之幕 · 6 款稀有外觀{% endif %}
+    </p>
+
+    <!-- index -->
+    {% if lang == 'en' %}
+    {% set items = [
+        {'num': 1, 'name': "Pointy Half-Shell", 'type': 'Back', 'loc': 'Vennorax Wreckage', 'coord': '/way #2600 29.95 29.25'},
+        {'num': 2, 'name': "Soltian Wrangler's Grip", 'type': 'Fist', 'loc': 'Giant Mushroom Tops', 'coord': 'NPC: Squirming Mollusks'},
+        {'num': 3, 'name': "Elonath's Defender's Sword", 'type': '1H Sword', 'loc': 'Vilaldoun Crypt', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 4, 'name': 'Forgotten Sword of Vilaldoun', 'type': '1H Sword', 'loc': 'Vilaldoun Crypt', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 5, 'name': "Taalvilor Crystalsmith's Mace", 'type': '1H Mace', 'loc': 'Vilaldoun Crypt', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 6, 'name': 'Blessed Blade of Taalvilor', 'type': '1H Sword', 'loc': 'Vilaldoun Crypt', 'coord': '/way #2600 27.91 49.96'}
+    ] %}
+    {% else %}
+    {% set items = [
+        {'num': 1, 'name': '尖刺半殼', 'type': '披風', 'loc': '文諾拉克斯殘骸', 'coord': '/way #2600 29.95 29.25'},
+        {'num': 2, 'name': '索爾提亞牧人握柄', 'type': '拳套', 'loc': '巨型蘑菇頂部', 'coord': '蠕動軟體怪'},
+        {'num': 3, 'name': '艾隆納斯防衛者之劍', 'type': '單手劍', 'loc': '維爾拉頓地穴', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 4, 'name': '被遺忘的維爾拉頓之劍', 'type': '單手劍', 'loc': '維爾拉頓地穴', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 5, 'name': '塔爾維洛水晶匠之錘', 'type': '單手錘', 'loc': '維爾拉頓地穴', 'coord': '/way #2600 27.91 49.96'},
+        {'num': 6, 'name': '塔爾維洛祝福之刃', 'type': '單手劍', 'loc': '維爾拉頓地穴', 'coord': '/way #2600 27.91 49.96'}
+    ] %}
+    {% endif %}
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Quick Index{% else %}快速索引{% endif %}</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            {% for item in items %}
+            <div class="glass-card" style="padding: 1rem;">
+                <div style="font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.4;">{{ item.num | zfill(2) }}</div>
+                <div style="font-weight: 600;">{{ item.name }}</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem;">{{ item.type }}</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">{{ item.loc }}</div>
+                {% if item.coord.startswith('/way') %}
+                <button class="way-copy" data-way="{{ item.coord }}" onclick="copyWay(this)" style="margin-top:0.2rem;"></button>
+                {% else %}
+                <div style="font-family: monospace; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">{{ item.coord }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Item 1 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple);">1. {% if lang == 'en' %}Pointy Half-Shell{% else %}尖刺半殼{% endif %}</h2>
+        <div style="margin-top: 1rem;">
+            {% if lang == 'en' %}
+            <p><strong>Type:</strong> Back (Cloak)</p>
+            <p><strong>Source:</strong> Ground Pickup</p>
+            <p><strong>Location:</strong> Vennorax Wreckage</p>
+            <p><strong>Coordinates:</strong> <button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></p>
+            <p><strong>Object:</strong> Spiked Shell</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Travel south from the Shadowy Encampment to Vennorax Wreckage. Look under large animal bones on the left side of the wreckage for the glowing Spiked Shell object. Click to loot.</p>
+            {% else %}
+            <p><strong>類型:</strong> 背部（披風）</p>
+            <p><strong>獲取:</strong> 地面拾取</p>
+            <p><strong>位置:</strong> 文諾拉克斯殘骸</p>
+            <p><strong>座標:</strong> <button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></p>
+            <p><strong>物件:</strong> 尖刺貝殼</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">從晦暗大本營向南前往文諾拉克斯殘骸區。在殘骸左側的大型動物骸骨下方找到閃亮的尖刺貝殼物件，點擊拾取即可。</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple);">2. {% if lang == 'en' %}Soltian Wrangler's Grip{% else %}索爾提亞牧人握柄{% endif %}</h2>
+        <div style="margin-top: 1rem;">
+            {% if lang == 'en' %}
+            <p><strong>Type:</strong> Fist Weapon</p>
+            <p><strong>Source:</strong> Kill &amp; Loot</p>
+            <p><strong>Location:</strong> Giant mushroom tops (various)</p>
+            <p><strong>NPC:</strong> Squirming Mollusks (ID: 659300)</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Use Bouncing Mushrooms, Air Spores, or Grappling Hook to scale the giant mushrooms. Kill Squirming Mollusks on top for a chance at this fist weapon transmog.</p>
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.9rem;">
+                The video by 阿落 only showed coordinates but didn't mention the NPC is on TOP of the mushrooms. Many players wasted time searching the ground.
+            </div>
+            {% else %}
+            <p><strong>類型:</strong> 拳套</p>
+            <p><strong>獲取:</strong> 擊殺拾取</p>
+            <p><strong>位置:</strong> 奈格塔爾全境巨型蘑菇頂部</p>
+            <p><strong>NPC:</strong> 蠕動軟體怪</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">使用彈跳蘑菇、氣孢或抓鉤攀爬至巨型蘑菇頂部。擊殺上面的蠕動軟體怪有機會掉落拳套幻化。</p>
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.9rem;">
+                影片作者阿落只給了座標但沒提到在蘑菇頂上。NGA 多位玩家表示在地上找了好久才發現要在蘑菇上。
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Items 3-6 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple);">3–6. {% if lang == 'en' %}Ancient Crypt Reliquary{% else %}古代地穴聖物箱{% endif %}</h2>
+        <div style="margin-top: 1rem;">
+            {% if lang == 'en' %}
+            <p><strong>Type:</strong> Chest (4+ weapons)</p>
+            <p><strong>Location:</strong> Vilaldoun Crypt</p>
+            <p><strong>Coordinates:</strong> <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></p>
+            <p><strong>Object:</strong> Ancient Crypt Reliquary (ID: 658802)</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Enter Vilaldoun Crypt and explore all branching tunnels. The chest <strong>does NOT appear on the minimap</strong> — visually search every corner of the deepest chambers.</p>
+            <p style="margin-top: 0.75rem; font-weight: 600;">Contains:</p>
+            <table style="width: 100%; font-size: 0.9rem;">
+                <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;"><th style="text-align: left; padding: 0.3rem 0.5rem;">#</th><th style="text-align: left; padding: 0.3rem 0.5rem;">Item</th><th style="text-align: left; padding: 0.3rem 0.5rem;">Type</th></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">3</td><td style="padding: 0.3rem 0.5rem;">Elonath's Defender's Sword</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">4</td><td style="padding: 0.3rem 0.5rem;">Forgotten Sword of Vilaldoun</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">5</td><td style="padding: 0.3rem 0.5rem;">Taalvilor Crystalsmith's Mace</td><td style="padding: 0.3rem 0.5rem;">1H Mace</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">6</td><td style="padding: 0.3rem 0.5rem;">Blessed Blade of Taalvilor</td><td style="padding: 0.3rem 0.5rem;">1H Sword</td></tr>
+            </table>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Additional Draenei weapons may also drop.</em></p>
+            {% else %}
+            <p><strong>類型:</strong> 寶箱（內含 4+ 把武器）</p>
+            <p><strong>位置:</strong> 維爾拉頓地穴</p>
+            <p><strong>座標:</strong> <button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></p>
+            <p><strong>物件:</strong> 古代地穴聖物箱</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">進入維爾拉頓地穴，仔細探索所有分支通道。寶箱<strong>不會顯示在小地圖上</strong>，必須肉眼搜尋最深處的每個角落。</p>
+            <p style="margin-top: 0.75rem; font-weight: 600;">內含:</p>
+            <table style="width: 100%; font-size: 0.9rem;">
+                <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;"><th style="text-align: left; padding: 0.3rem 0.5rem;">#</th><th style="text-align: left; padding: 0.3rem 0.5rem;">物品</th><th style="text-align: left; padding: 0.3rem 0.5rem;">類型</th></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">3</td><td style="padding: 0.3rem 0.5rem;">艾隆納斯防衛者之劍</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">4</td><td style="padding: 0.3rem 0.5rem;">被遺忘的維爾拉頓之劍</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">5</td><td style="padding: 0.3rem 0.5rem;">塔爾維洛水晶匠之錘</td><td style="padding: 0.3rem 0.5rem;">單手錘</td></tr>
+                <tr><td style="padding: 0.3rem 0.5rem;">6</td><td style="padding: 0.3rem 0.5rem;">塔爾維洛祝福之刃</td><td style="padding: 0.3rem 0.5rem;">單手劍</td></tr>
+            </table>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><em>寶箱可能還會掉落其他德萊尼風格武器。</em></p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- table -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Summary Table{% else %}總表{% endif %}</h2>
+        <table style="width: 100%; font-size: 0.9rem;">
+            <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;">
+                <th style="text-align: left; padding: 0.5rem;">#</th>
+                <th style="text-align: left; padding: 0.5rem;">{% if lang == 'en' %}Item{% else %}物品{% endif %}</th>
+                <th style="text-align: left; padding: 0.5rem;">{% if lang == 'en' %}Type{% else %}類型{% endif %}</th>
+                <th style="text-align: left; padding: 0.5rem;">/way</th>
+                <th style="text-align: left; padding: 0.5rem;">{% if lang == 'en' %}Location{% else %}位置{% endif %}</th>
+            </tr>
+            {% if lang == 'en' %}
+            <tr><td style="padding: 0.4rem 0.5rem;">1</td><td>Pointy Half-Shell</td><td>Back</td><td><button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></td><td>Vennorax Wreckage</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">2</td><td>Soltian Wrangler's Grip</td><td>Fist</td><td><em>Giant mushrooms</em></td><td>Squirming Mollusks</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">3</td><td>Elonath's Defender's Sword</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Vilaldoun Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">4</td><td>Forgotten Sword of Vilaldoun</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Vilaldoun Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">5</td><td>Taalvilor Crystalsmith's Mace</td><td>1H Mace</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Vilaldoun Crypt</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">6</td><td>Blessed Blade of Taalvilor</td><td>1H Sword</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>Vilaldoun Crypt</td></tr>
+            {% else %}
+            <tr><td style="padding: 0.4rem 0.5rem;">1</td><td>尖刺半殼</td><td>披風</td><td><button class="way-copy" data-way="/way #2600 29.95 29.25" onclick="copyWay(this)"></button></td><td>文諾拉克斯殘骸</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">2</td><td>索爾提亞牧人握柄</td><td>拳套</td><td><em>巨型蘑菇</em></td><td>蠕動軟體怪</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">3</td><td>艾隆納斯防衛者之劍</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">4</td><td>被遺忘的維爾拉頓之劍</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">5</td><td>塔爾維洛水晶匠之錘</td><td>單手錘</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">6</td><td>塔爾維洛祝福之刃</td><td>單手劍</td><td><button class="way-copy" data-way="/way #2600 27.91 49.96" onclick="copyWay(this)"></button></td><td>維爾拉頓地穴</td></tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <!-- No-Fly -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--danger); font-size: 1.2rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}No-Fly Warning{% else %}禁飛警告{% endif %}</h2>
+        <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0;">
+            {% if lang == 'en' %}Naigtal is a <strong>no-flying zone</strong>. All travel must be done on ground mounts.{% else %}奈格塔爾<strong>禁止飛行</strong>，所有移動需使用地面坐騎。{% endif %}
+        </div>
+    </div>
+
+    <!-- src -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}Sources{% else %}資料來源{% endif %}</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.icy-veins.com/wow/news/how-to-obtain-all-collectibles-from-the-naigtal-showdown-zone" target="_blank" rel="noopener" style="color: var(--orange);">Icy Veins</a>
+            · <a href="https://www.wowhead.com/object=658802/ancient-crypt-reliquary" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+            · <a href="https://www.bilibili.com/video/BV1xL7K6MEqH" target="_blank" rel="noopener" style="color: var(--orange);">{% if lang == 'en' %}Bilibili: 魔獸阿落{% else %}B站: 魔獸阿落{% endif %}</a>
+            · <a href="https://nga.178.com/read.php?tid=47033024" target="_blank" rel="noopener" style="color: var(--orange);">NGA</a>
+        </p>
+    </div>
+</div>

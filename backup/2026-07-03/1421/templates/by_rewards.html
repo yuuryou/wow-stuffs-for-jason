@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+    <h2>{% if lang == 'zh' %}追蹤的獎勵{% else %}Tracked Rewards{% endif %}</h2>
+    <p>{% if lang == 'zh' %}來自追蹤影片的坐騎、裝備和成就。點擊分類篩選。{% else %}Mounts, gear, and achievements from tracked videos. Click to filter by type.{% endif %}</p>
+</div>
+
+{% if rewards %}
+<div style="margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;">
+    <a href="/rewards" class="tag" style="text-decoration:none;">{% if lang == 'zh' %}全部{% else %}All{% endif %}</a>
+    <a href="/rewards/mount" class="tag" style="text-decoration:none;">🐎 {% if lang == 'zh' %}坐騎{% else %}Mounts{% endif %}</a>
+    <a href="/rewards/item" class="tag" style="text-decoration:none;">⚔️ {% if lang == 'zh' %}物品{% else %}Items{% endif %}</a>
+    <a href="/rewards/achievement" class="tag" style="text-decoration:none;">🏆 {% if lang == 'zh' %}成就{% else %}Achievements{% endif %}</a>
+</div>
+
+<div class="item-list">
+    {% for r in rewards %}
+    <a href="/rewards/{{ r.type }}" style="text-decoration:none;">
+        <div class="item-entry">
+            <span class="name">
+                {% if r.type == 'mount' %}🐎
+                {% elif r.type == 'achievement' %}🏆
+                {% elif r.type == 'quest' %}📜
+                {% else %}⚔️{% endif %}
+                {{ r.name }}
+                <span style="font-size:0.7rem;color:var(--text-muted);">[{{ r.type }}]</span>
+            </span>
+            <span class="count">{{ r.count }}x</span>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <div class="icon">🎁</div>
+    <h3>{% if lang == 'zh' %}尚無獎勵{% else %}No Rewards Yet{% endif %}</h3>
+    <p>{% if lang == 'zh' %}新增含獎勵物品的影片後，獎勵會在此顯示。{% else %}Rewards appear when videos with reward items are added.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}影片{% else %}Videos{% endif %}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+    <h2>{% if search_query %}{% if lang == 'zh' %}搜尋{% else %}Search{% endif %}: "{{ search_query }}"{% else %}{% if lang == 'zh' %}全部影片{% else %}All Videos{% endif %}{% endif %}</h2>
+    <p>{{ videos|length }} {% if lang == 'zh' %}部影片{% else %}video{{ 's' if videos|length != 1 else '' }}{% endif %}</p>
+</div>
+
+<!-- Filter Bar -->
+<form class="filter-bar" method="get" action="/videos">
+    <select name="sort" id="sort-select">
+        <option value="created_at" {% if current_sort == 'created_at' %}selected{% endif %}>{% if lang == 'zh' %}最新優先{% else %}Newest First{% endif %}</option>
+        <option value="time_spent_minutes" {% if current_sort == 'time_spent_minutes' %}selected{% endif %}>{% if lang == 'zh' %}花費時間{% else %}Time Spent{% endif %}</option>
+        <option value="map_name" {% if current_sort == 'map_name' %}selected{% endif %}>{% if lang == 'zh' %}地圖名稱{% else %}Map Name{% endif %}</option>
+        <option value="title" {% if current_sort == 'title' %}selected{% endif %}>{% if lang == 'zh' %}標題{% else %}Title{% endif %}</option>
+    </select>
+    <select name="order" id="order-select">
+        <option value="DESC" {% if current_order == 'DESC' %}selected{% endif %}>{% if lang == 'zh' %}降冪{% else %}Descending{% endif %}</option>
+        <option value="ASC" {% if current_order == 'ASC' %}selected{% endif %}>{% if lang == 'zh' %}升冪{% else %}Ascending{% endif %}</option>
+    </select>
+    <select name="map" id="map-filter">
+        <option value="">{% if lang == 'zh' %}全部地圖{% else %}All Maps{% endif %}</option>
+        {% for m in maps %}
+        <option value="{{ m.name }}" {% if current_map == m.name %}selected{% endif %}>{{ m.name }} ({{ m.count }})</option>
+        {% endfor %}
+    </select>
+    {% if search_query %}
+    <input type="hidden" name="q" value="{{ search_query }}">
+    {% endif %}
+    <button type="button" class="btn btn-secondary btn-sm" onclick="applyFilters()">{% if lang == 'zh' %}套用{% else %}Apply{% endif %}</button>
+    <a href="/videos" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}重設{% else %}Reset{% endif %}</a>
+</form>
+
+{% if videos %}
+<div class="video-grid">
+    {% for v in videos %}
+    <a href="/videos/{{ v.id }}" style="text-decoration:none;">
+        <div class="video-card">
+            {% if v.thumbnail_url %}
+            <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            {% endif %}
+            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}>🐾</div>
+            <div class="video-body">
+                <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
+                <div class="card-meta">
+                    {% if v.author %}{% if lang == 'zh' %}作者{% else %}by{% endif %} {{ v.author }} · {% endif %}
+                    {{ v.created_at[:10] if v.created_at else '' }}
+                </div>
+                <div class="video-tags">
+                    {% if v.map_name %}
+                    <span class="tag map">{{ v.map_name }}</span>
+                    {% endif %}
+                    {% if v.time_spent_label %}
+                    <span class="tag time">{{ v.time_spent_label }}</span>
+                    {% endif %}
+                    {% for r in v.rewards[:2] %}
+                    <span class="tag reward">{{ r.name }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <div class="icon">🐾</div>
+    <h3>{% if lang == 'zh' %}找不到影片{% else %}No Videos Found{% endif %}</h3>
+    <p>{% if search_query %}{% if lang == 'zh' %}找不到 "{{ search_query }}" 的相關結果。{% else %}No results for "{{ search_query }}".{% endif %}{% else %}{% if lang == 'zh' %}狩獵場空空如也。{% else %}The hunting grounds are empty.{% endif %}{% endif %}</p>
+</div>
+{% endif %}
+
+{% if total_pages is defined and total_pages > 1 %}
+<div class="pagination">
+    {% if page > 1 %}
+    <a href="/videos?page={{ page - 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page - 1 }}">
+        {% if lang == 'zh' %}上一頁{% else %}Prev{% endif %}
+    </a>
+    {% else %}
+    <span class="pagination-btn disabled">{% if lang == 'zh' %}上一頁{% else %}Prev{% endif %}</span>
+    {% endif %}
+
+    {% set window_start = [1, page - 2] | max %}
+    {% set window_end = [total_pages, page + 2] | min %}
+    {% if window_start > 1 %}
+    <a href="/videos?page=1&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="1">1</a>
+    {% if window_start > 2 %}<span class="pagination-ellipsis">&hellip;</span>{% endif %}
+    {% endif %}
+
+    {% for p in range(window_start, window_end + 1) %}
+    <a href="/videos?page={{ p }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn {% if p == page %}active{% endif %}" data-page="{{ p }}">{{ p }}</a>
+    {% endfor %}
+
+    {% if window_end < total_pages %}
+    {% if window_end < total_pages - 1 %}<span class="pagination-ellipsis">&hellip;</span>{% endif %}
+    <a href="/videos?page={{ total_pages }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ total_pages }}">{{ total_pages }}</a>
+    {% endif %}
+
+    {% if page < total_pages %}
+    <a href="/videos?page={{ page + 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page + 1 }}">
+        {% if lang == 'zh' %}下一頁{% else %}Next{% endif %}
+    </a>
+    {% else %}
+    <span class="pagination-btn disabled">{% if lang == 'zh' %}下一頁{% else %}Next{% endif %}</span>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

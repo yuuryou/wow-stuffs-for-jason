@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}wow stuffs for Jason{% endblock %}
+{% block content %}
+
+<div class="hero-title">
+    <h1>wow stuffs for Jason</h1>
+    <p class="subtitle">{% if lang == 'zh' %}Jason 的魔獸世界收藏{% endif %}</p>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-number">{{ stats.total_videos }}</div>
+        <div class="stat-label">{% if lang == 'zh' %}影片總數{% else %}Total Videos{% endif %}</div>
+        <div class="stat-sub">{% if lang == 'zh' %}已收錄影片{% else %}Archived Videos{% endif %}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">{{ stats.map_coverage }}%</div>
+        <div class="stat-label">{% if lang == 'zh' %}地圖覆蓋率{% else %}Map Coverage{% endif %}</div>
+        <div class="stat-sub">{% if lang == 'zh' %}有對應地圖的影片佔比{% else %}Videos with Map Data{% endif %}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">{{ stats.total_rewards }}</div>
+        <div class="stat-label">{% if lang == 'zh' %}已收藏獎勵{% else %}Rewards Collected{% endif %}</div>
+        <div class="stat-sub">{% if lang == 'zh' %}不重複獎勵物品數{% else %}Unique Reward Items{% endif %}</div>
+    </div>
+</div>
+
+{% endblock %}

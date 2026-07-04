@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block content %}
+
+<div class="page-header">
+    <h2>{% if lang == 'zh' %}追蹤的獎勵{% else %}Tracked Rewards{% endif %}</h2>
+    <p>{% if lang == 'zh' %}來自追蹤影片的坐騎、玩具、幻化和成就。點擊查看對應攻略。{% else %}Mounts, toys, transmog, and achievements from tracked videos. Click to see guides.{% endif %}</p>
+</div>
+
+{% if categories %}
+{% for cat_name, rewards in categories.items() %}
+<!-- Category Section -->
+<div class="reward-category-section">
+    <div class="reward-category-header">
+        <span class="reward-cat-icon">
+            {% if cat_name == 'toy' %}🧸
+            {% elif cat_name == 'mount' %}🐎
+            {% elif cat_name == 'transmog' %}👗
+            {% elif cat_name == 'pet' %}🐾
+            {% elif cat_name == 'achievement' %}🏆
+            {% elif cat_name == 'gear' %}🛡️
+            {% elif cat_name == 'weapon' %}⚔️
+            {% else %}🎁{% endif %}
+        </span>
+        <span class="reward-cat-label">
+            {% if lang == 'zh' %}
+                {% if cat_name == 'toy' %}玩具
+                {% elif cat_name == 'mount' %}坐騎
+                {% elif cat_name == 'transmog' %}幻化
+                {% elif cat_name == 'pet' %}寵物
+                {% elif cat_name == 'achievement' %}成就
+                {% elif cat_name == 'gear' %}裝備
+                {% elif cat_name == 'weapon' %}武器
+                {% else %}其他{% endif %}
+            {% else %}
+                {% if cat_name == 'toy' %}Toys
+                {% elif cat_name == 'mount' %}Mounts
+                {% elif cat_name == 'transmog' %}Transmog
+                {% elif cat_name == 'pet' %}Pets
+                {% elif cat_name == 'achievement' %}Achievements
+                {% elif cat_name == 'gear' %}Gear
+                {% elif cat_name == 'weapon' %}Weapons
+                {% else %}Other{% endif %}
+            {% endif %}
+        </span>
+        <span class="reward-cat-count">{{ rewards|length }}</span>
+    </div>
+
+    <div class="reward-grid">
+        {% for r in rewards %}
+        <a class="reward-card" href="{{ url_for('reward_item_videos', category=cat_name, name=r.name) }}">
+            {% if r.is_time_limited %}
+            <span class="reward-time-badge" title="{{ r.time_limited_note }}">{% if lang == 'zh' %}限時{% else %}LIMITED{% endif %}</span>
+            {% endif %}
+            <div class="reward-card-img-wrap">
+                <img class="reward-card-img"
+                     src="{{ r.wowhead_icon_url }}"
+                     alt="{{ r.name }}"
+                     loading="lazy"
+                     onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            </div>
+            <div class="reward-card-name">{{ r.name }}</div>
+            <div class="reward-card-count">{{ r.count }}x</div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="empty-state">
+    <div class="icon">🎁</div>
+    <h3>{% if lang == 'zh' %}尚無獎勵{% else %}No Rewards Yet{% endif %}</h3>
+    <p>{% if lang == 'zh' %}新增含獎勵物品的影片後，獎勵會在此顯示。{% else %}Rewards appear when videos with reward items are added.{% endif %}</p>
+</div>
+{% endif %}
+
+{% endblock %}
