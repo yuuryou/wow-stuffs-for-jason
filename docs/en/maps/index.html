@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Maps</title>
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="icon" type="image/png" href="../static/favicon.png"></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+<feImage href="#lg-displacement" result="dm"/><feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r"/>
+<feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb"/>
+<feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged"/>
+<feGaussianBlur in="ca-merged" stdDeviation="2" result="glow"/>
+<feComposite in="glow" in2="SourceGraphic" operator="over"/></filter></defs></svg>
+<video autoplay muted loop playsinline id="bg-video"><source src="../static/bg-video.mp4" type="video/mp4"></video>
+<a href="../maps/" class="lang-toggle" data-no-spa title="Switch to Chinese">&#20013;&#25991;</a>
+<button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">&#9685;</button>
+<main class="main-content" id="app-content">
+<div class="page-header"><h2>Hunted Maps</h2><p>WoW zones where tracked videos take place.</p></div><div class="item-list"><a href="../maps/Naigtal/" style="text-decoration:none"><div class="item-entry"><span class="name">&#128506; Naigtal</span><span class="count">1 video</span></div></a><a href="../maps/%E5%A4%9A%E6%81%A9%E5%B3%B6/" style="text-decoration:none"><div class="item-entry"><span class="name">&#128506; 多恩島</span><span class="count">1 video</span></div></a><a href="../maps/%E6%99%82%E5%85%89%E4%B9%8B%E7%A9%B4/" style="text-decoration:none"><div class="item-entry"><span class="name">&#128506; 時光之穴</span><span class="count">1 video</span></div></a><a href="../maps/%E7%93%A6%E5%BE%B7%E6%8B%89%E8%82%AF/" style="text-decoration:none"><div class="item-entry"><span class="name">&#128506; 瓦德拉肯</span><span class="count">1 video</span></div></a><a href="../maps/%E8%99%9B%E5%BD%B1%E9%A2%A8%E6%9A%B4/" style="text-decoration:none"><div class="item-entry"><span class="name">&#128506; 虛影風暴</span><span class="count">1 video</span></div></a></div></main>
+<nav class="bottom-nav"><div class="nav-indicator"></div>
+<a href="../" class="nav-item "><span class="nav-icon">&#128202;</span>Dashboard</a>
+<a href="../videos/" class="nav-item "><span class="nav-icon">&#127916;</span>Videos</a>
+<a href="../maps/" class="nav-item active"><span class="nav-icon">&#128506;</span>Maps</a>
+<a href="../rewards/" class="nav-item "><span class="nav-icon">&#127873;</span>Rewards</a></nav>
+<script src="../static/js/main.js"></script></body></html>
