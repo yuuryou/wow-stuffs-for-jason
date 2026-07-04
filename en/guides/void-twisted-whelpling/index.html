@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void-Twisted Whelpling Guide | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../guides/void-twisted-whelpling/">
+        中文
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Void-Twisted Whelpling — Fishing Mount Guide
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        Voidstorm (50, 30) — Grab your fishing rod and go!
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Source Video</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Author: 珂了不得 · 363 followers · Duration: 00:59 · Likes: 1,256 · Saves: 1,598 · Comments: 109 · Shares: 249
+        </p>
+        <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            Open in Douyin
+        </a>
+    </div>
+
+    <!-- Overview -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">Overview</h2>
+        
+        <p style="font-size: 0.95rem; line-height: 1.7;">The <strong>Void-Twisted Whelpling</strong> is a rare <strong>mount</strong> obtained exclusively through <strong>fishing</strong> in the <strong>Voidstorm</strong> zone. Head to coordinates <strong>(50, 30)</strong> with your fishing rod equipped — no combat required, just patience and luck.</p>
+        <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Warning:</strong> The water in this area may kill your character on contact. Some players reported dying simply by stepping into the water. Proceed with caution.
+        </div>
+        
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Reward</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_charmbeast.jpg"
+                     alt="Void-Twisted Whelpling"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">Void-Twisted Whelpling</div>
+                <span style="background: rgba(100,200,255,0.15); color: #64c8ff; padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.75rem;">Mount</span>
+                <div style="margin-top: 0.75rem;">
+                    <a href="https://www.wowhead.com/item=228656" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--orange); text-decoration: none;">Wowhead →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">Key Tips</h2>
+
+        <!-- Tip 1: Fishing Location -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">1. Fishing Location</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">Go to <strong>Voidstorm</strong> and navigate to the fishing spot at the coordinates below. Equip your fishing rod and start casting.</p>
+            <p style="margin-top: 0.5rem;"><strong>Coordinates:</strong> <button class="way-copy" data-way="/way (虚影风暴) 50, 30" onclick="copyWay(this)"></button></p>
+            
+        </div>
+
+        <!-- Tip 2: Consumables -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">2. Preparation</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">Community tips from the video comments suggest preparing <strong>Perception Potions</strong> and <strong>food buffs</strong> to improve your fishing efficiency. One player mentioned crafting 40 perception potions for this grind.</p>
+            
+        </div>
+
+        <!-- Tip 3: Better Fisher addon -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">3. Recommended Addon — Better Fisher</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">Use the <strong>Better Fisher</strong> addon for one-click fishing and amplified fishing sound effects. This makes the grinding process significantly more comfortable, especially for long sessions.</p>
+            
+        </div>
+
+        <!-- Tip 4: Difficulty -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">4. Drop Rate & Difficulty</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">The drop rate appears to be <strong>low and RNG-dependent</strong>. Comments indicate:</p>
+            <ul style="font-size: 0.85rem; margin-top: 0.5rem;">
+                <li>Some players got it within <strong>5 minutes</strong></li>
+                <li>Others reported needing <strong>3 days</strong> of continuous fishing</li>
+                <li>One player mentioned fishing <strong>from midnight until morning</strong> before it dropped</li>
+            </ul>
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.85rem;">
+                <strong>Bottom line:</strong> Your mileage may vary significantly. Don't get discouraged!
+            </div>
+            
+        </div>
+
+        <!-- Tip 5: Water hazard -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--danger); font-size: 1rem;">5. ⚠ Water Hazard</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">Multiple players in the comments reported that stepping into the water in this area results in <strong>instant death</strong>. The author confirmed this with a humorous reply: "I knew there'd be some rebellious little cuties trying it." Avoid walking into the water — fish from the shore.</p>
+            
+        </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">Tags</h2>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#魔獸世界</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#我比你們多一個世界</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#遊戲日常</span>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Sources</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener" style="color: var(--orange);">Douyin: 珂了不得</a>
+            · <a href="https://www.wowhead.com/item=228656" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../../" class="active">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="../../../videos/" class="">
+            <span class="nav-icon">🎬</span> Videos
+        </a>
+        <a href="../../../maps/" class="">
+            <span class="nav-icon">🗺️</span> Maps
+        </a>
+        <a href="../../../rewards/" class="">
+            <span class="nav-icon">🎁</span> Rewards
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輪椅喵 + 小歪比哇嗚攻略 | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../en/guides/wheelchair-cat-baal/">
+        EN
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        12.07 隱藏解密寵物：輪椅喵 + 小歪比哇嗚
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        時光之穴 · 隱藏解密 · 約45分鐘
+    </p>
+
+    <!-- Video Source -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">來源影片</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            #遊戲破壁計劃 #魔獸世界 #魔獸世界創作者激勵 #魔獸世界新手攻略 #魔獸世界攻略必看
+        </p>
+        <a href="https://www.douyin.com/video/7653317468114423055" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            在抖音開啟
+        </a>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">快速摘要</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">地圖</td>
+                <td style="padding: 8px 12px; font-weight: 700;">時光之穴</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">類型</td>
+                <td style="padding: 8px 12px;">隱藏解密</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">所需時間</td>
+                <td style="padding: 8px 12px;">約45分鐘</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">版本</td>
+                <td style="padding: 8px 12px; font-weight: 700;">12.07</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">獎勵</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">
+                    輪椅喵 + 小歪比哇嗚
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Pet #1: Patch (Wheelchair Cat) -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">
+            🐾 寵物 #1 — 輪椅喵（帕奇）
+        </h2>
+
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+            
+            一隻坐著輪椅的白色貓咪，溫馨致敬《爐石戰記》經典角色「帕奇」。通過爐石週年慶隱藏解密任務獲得，解鎖成就 <strong>「全能帕奇！」</strong>。
+            
+        </p>
+
+        <h3 style="color: var(--orange); font-size: 1rem; margin-bottom: 0.8rem;">
+            獲取方式
+        </h3>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>前往時光之穴</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    前往塔納利斯的時光之穴，找到 <strong>克羅米</strong>。
+                </span>
+            </li>
+            <li>
+                <strong>獲取染血的掃帚</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    在克羅米附近尋找散落的零件並點擊，獲得 <strong>染血的掃帚</strong>。
+                </span>
+            </li>
+            <li>
+                <strong>使用掃帚追蹤零件</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    裝備或持有染血的掃帚，小地圖上會顯示黃點，指示附近可收集的零件位置。
+                </span>
+            </li>
+            <li>
+                <strong>收集全部 5 個零件</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    5 個零件散布在艾澤拉斯各處，常見位置包括：
+                    <ul style="padding-left: 1.5rem; margin: 0.5rem 0; font-size: 0.85rem;">
+                        <li>閃金鎮，艾爾文森林</li>
+                        <li>剃刀嶺，杜隆塔爾</li>
+                        <li>十字路口，貧瘠之地</li>
+                        <li>達拉然，破碎群島</li>
+                        <li>暴風城 / 奧格瑪</li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <strong>組裝帕奇並領取寵物</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    回到時光之穴找克羅米，完成組裝任務後獲得成就 <strong>「全能帕奇！」</strong>，帕奇會寄到你的信箱！
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Pet #2: Baa'l -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">
+            🐐 寵物 #2 — 小歪比哇嗚 (Baa'l)
+        </h2>
+
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+            
+            <strong>小歪比哇嗚 (Baa'l)</strong> 是一隻隱藏的惡魔山羊戰鬥寵物，最早在《決戰艾澤拉斯》亮相。經過 5 年的等待，Baa'l 在 12.07 版本回歸，並提供新的獲取途徑。原本是魔獸史上最複雜的隱藏任務之一，12.07 版本簡化了部分步驟，同時保留了神秘感。
+            
+        </p>
+
+        <h3 style="color: var(--orange); font-size: 1rem; margin-bottom: 0.8rem;">
+            獲取方式（12.07 版本）
+        </h3>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>步驟 1：霜火峰 — 尋找莫羅斯</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    前往霜火峰（德拉諾之霸），在雷霆王氏族要塞附近找到無法直接互動的 NPC <strong>莫羅斯</strong>。
+                </span>
+            </li>
+            <li>
+                <strong>步驟 2：沃魯敦 — 購買符文偵測器</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    前往沃魯敦（決戰艾澤拉斯），尋找 <strong>洛克拉斯</strong> 並購買可看見隱形惡魔符文的特殊道具。
+                </span>
+            </li>
+            <li>
+                <strong>步驟 3：黑海岸 — 追蹤符文線索</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    前往黑海岸（浩劫與重生版本），使用道具顯示隱形的惡魔符文，並沿著符文所示的線索前進。
+                </span>
+            </li>
+            <li>
+                <strong>步驟 4：詛咒之地 — 擊敗 Baa'l</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    前往浩劫與重生版本的詛咒之地，找到並擊敗隱形的 <strong>Baa'l</strong> NPC 以解鎖寵物購買資格。
+                </span>
+            </li>
+            <li>
+                <strong>步驟 5：購買小歪比哇嗚</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    擊敗 Baa'l 後，與地上的「被遺忘的祭品」互動，即可獲得 <strong>小歪比哇嗚</strong> 戰鬥寵物！
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">💡 提示與疑難排解</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li><strong>輪椅喵</strong> 與爐石戰記週年慶活動掛鉤，開始前請先確認活動仍在進行中。</li>
+            <li>染血的掃帚是必要道具——沒有它，小地圖上的黃點將不會出現。</li>
+            <li><strong>小歪比哇嗚</strong> 需要跨越多個資料片（德拉諾、決戰艾澤拉斯、浩劫與重生），請確保角色等級與資料片進度達標。</li>
+            <li>兩隻寵物都可單人完成——無需組隊。</li>
+            <li>如果零件或 NPC 沒出現，嘗試 /reload 或重新登入來重置鏡像。</li>
+            <li>關於 Baa'l，請確保身處正確的區域版本（浩劫與重生版的黑海岸和詛咒之地）。可與希爾多米對話來切換鏡像。</li>
+        </ul>
+    </div>
+
+    <!-- Source -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">資料來源</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7653317468114423055" target="_blank" rel="noopener" style="color: var(--orange);">
+                抖音: 12.07隱藏解謎「輪椅喵」+遲到5年回歸的小歪比哇嗚！
+            </a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="../../videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="../../maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="../../rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../static/js/main.js"></script>
+    
+</body>
+</html>

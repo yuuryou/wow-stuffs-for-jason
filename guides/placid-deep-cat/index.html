@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰然深潛貓攻略 | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../en/guides/placid-deep-cat/">
+        EN
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        泰然深潛貓 — 隱藏解密寵物攻略
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        多恩島 · 解密謎題 · 約3分鐘 · 真香手冊第139集
+    </p>
+
+    <!-- Video Source -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">來源影片</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            作者: 魔獸阿落 · 16.5萬粉絲 · 2720.6萬獲讚 · 時長: 00:54
+        </p>
+        <a href="https://www.douyin.com/video/7653082783199350056" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            在抖音開啟
+        </a>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">快速摘要</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">地圖</td>
+                <td style="padding: 8px 12px; font-weight: 700;">多恩島</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">類型</td>
+                <td style="padding: 8px 12px;">隱藏解密謎題</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">所需時間</td>
+                <td style="padding: 8px 12px;">約3分鐘</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">版本</td>
+                <td style="padding: 8px 12px;">12.07</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">獎勵</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">
+                    泰然深潛貓
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Reward Display -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">獎勵物品</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_pet_baby.jpg"
+                     alt="泰然深潛貓"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">泰然深潛貓</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
+                    <span class="badge" style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.15rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">寵物</span>
+                    <span class="badge" style="background: rgba(140,100,255,0.15); color: var(--purple); padding: 0.15rem 0.5rem; border-radius: 1rem; font-size: 0.7rem; margin-left: 0.25rem;">解密</span>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
+            備註：此為潘達利亞之謎時期火貓寵物的換皮版本。
+        </p>
+    </div>
+
+    <!-- Prerequisites -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">前置準備</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>抵達多恩島</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    前往多恩島區域，此為解密謎題的起始地點。
+                </span>
+            </li>
+            <li>
+                <strong>翻譯裝備（建議）</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    強烈建議準備翻譯裝備，例如 <strong>「翻譯 - 機械俠音語」</strong> 或類似可閱讀島上加密筆記的道具。
+                </span>
+            </li>
+            <li>
+                <strong>確認週常輪換</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    部分解密步驟可能涉及週常輪換。若找不到解密寶箱，可能需要等待下週重置後再嘗試。
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Step 1: Find the Waterlogged Note -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">步驟一 — 尋找浸水的筆記</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>搜尋西北方海岸</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    前往<strong>多恩島</strong>西北方海岸線。在近海的沉船或水下區域尋找。
+                </span>
+            </li>
+            <li>
+                <strong>找到浸水的筆記</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    找到 <strong>「浸水的筆記」</strong> 物品。它可能在水邊多個位置刷新 — 仔細檢查沉船殘骸。
+                </span>
+            </li>
+            <li>
+                <strong>閱讀筆記</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    右鍵點擊筆記閱讀。如果文字顯示為亂碼，裝備翻譯道具後再試 — 隱藏訊息將會顯現。
+                </span>
+            </li>
+        </ol>
+        <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.85rem;">
+            <strong>提示：</strong>
+            若浸水的筆記沒有出現，嘗試切換位面或重新登入。部分玩家反映該筆記可能存在鏡像問題。
+        </div>
+    </div>
+
+    <!-- Step 2: Follow the Hidden Clues -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">步驟二 — 追蹤隱藏線索</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>收集散落的筆記</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    浸水的筆記會指引你尋找散落在多恩島各處的其他筆記。仔細跟隨提示 — 部分筆記隱藏在環境物件下。
+                </span>
+            </li>
+            <li>
+                <strong>解讀摩斯密碼 / 符號</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    部分線索涉及環境中的摩斯密碼或符號。注意岩石、樹木或建築上的異常標記。必要時使用 <code>/sleep</code> 或其他表情動作觸發下一步。
+                </span>
+            </li>
+            <li>
+                <strong>尋找「深處」與「貓」的提示</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    謎題主題圍繞「深處」與「貓」— 預期需要前往島上的水下洞穴或深層區域。
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Step 3: Obtain the Pet -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">步驟三 — 獲取泰然深潛貓</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>進入水下洞穴</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    解開所有線索後，前往多恩島的隱藏水下洞穴。你可能需要一個揭示隱形路徑的暫時增益效果。
+                </span>
+            </li>
+            <li>
+                <strong>尋找隱藏寶箱</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    在洞穴最深處，找到隱藏的寶箱或與隱形 NPC 互動。
+                </span>
+            </li>
+            <li>
+                <strong>拾取寵物</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted;">
+                    打開寶箱獲得 <strong>泰然深潛貓</strong> 寵物。物品將自動加入你的寵物收藏。
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Tips & Troubleshooting -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">提示與疑難排解</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li><strong>找不到寶箱？</strong>部分解密步驟可能與週常輪換有關。若寶箱未出現，請在下週重置後再試。</li>
+            <li><strong>無法閱讀筆記？</strong>確保已裝備翻譯道具（如 <strong>翻譯 - 機械俠音語</strong>）。沒有翻譯道具，筆記內容將顯示為亂碼。</li>
+            <li><strong>此寵物為換皮版本</strong>，原型為潘達利亞之謎時期的火貓寵物 — 相同模型，不同配色。</li>
+            <li><strong>無需戰鬥</strong> — 此為純粹的解謎探索活動。</li>
+            <li><strong>切換位面</strong>有時可解決筆記或寶箱在當前鏡像中不顯示的問題。</li>
+        </ul>
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">資料來源</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7653082783199350056" target="_blank" rel="noopener" style="color: var(--orange);">
+                抖音: 魔獸阿落 — 真香手冊第139集
+            </a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="../../videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="../../maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="../../rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../static/js/main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star River Transmog Guide | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../guides/star-river-transmog/">
+        中文
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Star River Transmog + Infinite Airdrop AFK Farm
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        Patch 12.0 — The Darkest Night · Ep 56 of Complete Profession Guide
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Source Video</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Author: 魔獸阿落 (Warcraft Aluo) · 165K followers · Duration: 00:56 · Likes: 7,217
+        </p>
+        <a href="https://www.douyin.com/video/7624721313411665187" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            Open in Douyin
+        </a>
+    </div>
+
+    <!-- Overview / 概述 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">Overview</h2>
+        
+        <p style="font-size: 0.95rem; line-height: 1.7;">This guide covers how to obtain the <strong>Star River Transmog</strong> appearance for free, together with an <strong>infinite airdrop AFK farming</strong> technique that lets you quickly boost your alt characters to <strong>item level 250</strong>. Also includes the <strong>Super Ghost Chest</strong> acquisition method and the <strong>Magic Stone Whistle</strong> — a toy that increases your DPS by 30%.</p>
+        <div style="background: rgba(255,85,85,0.08); border-left: 3px solid var(--danger); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Faction Warning:</strong> Some steps require the <strong>Alliance</strong> faction. Horde players will not be able to complete certain parts.
+        </div>
+        
+    </div>
+
+    <!-- Rewards Grid / 獎勵清單 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Rewards</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <!-- Star River Transmog -->
+            <div class="glass-card" style="padding: 1rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_chest_cloth_43.jpg"
+                     alt="Star River Transmog"
+                     loading="lazy"
+                     style="width: 56px; height: 56px; border-radius: 8px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.9rem;">Star River Transmog</div>
+                <span style="background: rgba(180,77,216,0.15); color: var(--purple); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">Transmog</span>
+            </div>
+            <!-- Super Ghost Chest -->
+            <div class="glass-card" style="padding: 1rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_chest_mail_raidshaman_k_01.jpg"
+                     alt="Super Ghost Chest"
+                     loading="lazy"
+                     style="width: 56px; height: 56px; border-radius: 8px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.9rem;">Super Ghost Chest</div>
+                <span style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">Item</span>
+            </div>
+            <!-- Airdrop -->
+            <div class="glass-card" style="padding: 1rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hisek_aim.jpg"
+                     alt="Airdrop"
+                     loading="lazy"
+                     style="width: 56px; height: 56px; border-radius: 8px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.9rem;">Airdrop</div>
+                <span style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">Mechanic</span>
+            </div>
+            <!-- Magic Stone Whistle -->
+            <div class="glass-card" style="padding: 1rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_rod_enchantedadamantite.jpg"
+                     alt="Magic Stone Whistle"
+                     loading="lazy"
+                     style="width: 56px; height: 56px; border-radius: 8px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.9rem;">Magic Stone Whistle</div>
+                <span style="background: rgba(100,200,255,0.15); color: #64c8ff; padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">Toy (+30% DPS)</span>
+            </div>
+            <!-- Four Abundance Training Room -->
+            <div class="glass-card" style="padding: 1rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_book_07.jpg"
+                     alt="Four Abundance Alt Training Room"
+                     loading="lazy"
+                     style="width: 56px; height: 56px; border-radius: 8px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.9rem;">Four Abundance Alt Training Room</div>
+                <span style="background: rgba(255,140,42,0.15); color: var(--orange); padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.7rem;">Mechanic</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Techniques / 核心技巧 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">Key Techniques</h2>
+
+        <!-- 1. Star River Transmog -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">1. Star River Transmog — Free Unlock</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">The Star River Transmog appearance is a unique cosmetic that can be obtained without any cost. The exact method is demonstrated in the video. This appearance features a starry / galaxy-themed visual effect, making it highly sought after for transmog collectors.</p>
+            
+        </div>
+
+        <!-- 2. Infinite Airdrop AFK Farm -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">2. Infinite Airdrop AFK Farm (Requires CTK Addon)</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">The <strong>CTK addon</strong> is essential for this technique — it displays airdrop locations and timers. Without it, you will not be able to see when or where airdrops appear. According to community feedback, the CTK addon only supports Patch 11.0 and 12.0 airdrops (no Dragonflight-era support). This AFK farming method allows you to loot airdrops repeatedly with minimal effort, providing gear and resources to boost your alt characters.</p>
+            
+            <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 0.75rem; font-size: 0.85rem;">
+                <strong>Tip:</strong> If the addon is not showing timers after installation, check your addon settings in-game.
+            </div>
+        </div>
+
+        <!-- 3. Alt 250 iLvl -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">3. Alt Character Fast Track to Item Level 250</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">Combining the infinite airdrop farm with the Super Ghost Chest, you can rapidly gear up an alt character to item level 250. The process is designed to be low-effort — ideal for players who want to maintain multiple characters without heavy grinding.</p>
+            
+        </div>
+
+        <!-- 4. Super Ghost Chest -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">4. Super Ghost Chest</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">The Super Ghost Chest is a special container that yields high-quality gear and rewards. The acquisition method is demonstrated in the video. This chest is a key component of the alt-gearing strategy.</p>
+            
+        </div>
+
+        <!-- 5. Magic Stone Whistle -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">5. Magic Stone Whistle — DPS +30%</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">The Magic Stone Whistle is a toy item that provides a massive <strong>30% damage boost</strong>. This is covered in Episode 58 of the series. It synergizes particularly well with Barbed Shot builds — allowing 3 stacks per cast with no effort.</p>
+            
+        </div>
+
+        <!-- 6. Four Abundance Alt Training Room -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">6. Four Abundance Alt Super Training Room (Ep 57)</h3>
+            
+            <p style="font-size: 0.9rem; line-height: 1.6;">This is a dedicated training area for leveling alts quickly. Covered in Episode 57, it combines Journey Level 10 fast completion with the Four Abundance system to create a super-efficient alt-leveling environment.</p>
+            
+        </div>
+    </div>
+
+    <!-- Series Context / 系列背景 -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">Series Context</h2>
+        
+        <p style="font-size: 0.9rem;">This is <strong>Episode 56</strong> of the <strong>12.0 Complete Profession Guide</strong> series by 魔獸阿落. The full series spans Episode 56 through 61, covering a wide range of Patch 12.0 strategies including profession leveling, hero BIS farming, AI matchmaking, and world boss shortcuts.</p>
+        <table style="width: 100%; font-size: 0.85rem; margin-top: 1rem;">
+            <tr style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase;"><th style="text-align: left; padding: 0.5rem;">Ep</th><th style="text-align: left; padding: 0.5rem;">Duration</th><th style="text-align: left; padding: 0.5rem;">Topic</th></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">56</td><td style="padding: 0.4rem 0.5rem;">00:56</td><td style="padding: 0.4rem 0.5rem;">Star River Transmog / Airdrop Farm / Alt 250 iLvl / Ghost Chest</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">57</td><td style="padding: 0.4rem 0.5rem;">00:58</td><td style="padding: 0.4rem 0.5rem;">Hero Alt Farm / Journey Lv10 / Four Abundance Training Room</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">58</td><td style="padding: 0.4rem 0.5rem;">00:25</td><td style="padding: 0.4rem 0.5rem;">Magic Stone Whistle DPS +30% / Barbed Shot 3-Stack</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">59</td><td style="padding: 0.4rem 0.5rem;">00:41</td><td style="padding: 0.4rem 0.5rem;">Summon All Strategy / Hold the Line / Sun Plaza Skip / Grenade OSK</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">60</td><td style="padding: 0.4rem 0.5rem;">00:34</td><td style="padding: 0.4rem 0.5rem;">Class Delay Tolerance / AI Matchmaking / Heroism Sound + Cast Sequence Port</td></tr>
+            <tr><td style="padding: 0.4rem 0.5rem;">61</td><td style="padding: 0.4rem 0.5rem;">02:39</td><td style="padding: 0.4rem 0.5rem;">Midnight Butler Weekly / Hero BIS Loot / World Boss Skip</td></tr>
+        </table>
+        
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Sources</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7624721313411665187" target="_blank" rel="noopener" style="color: var(--orange);">Douyin: 魔獸阿落 Ep 56</a>
+            · <a href="https://www.wowhead.com/" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../../" class="active">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="../../../videos/" class="">
+            <span class="nav-icon">🎬</span> Videos
+        </a>
+        <a href="../../../maps/" class="">
+            <span class="nav-icon">🗺️</span> Maps
+        </a>
+        <a href="../../../rewards/" class="">
+            <span class="nav-icon">🎁</span> Rewards
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>

@@ -12,7 +12,7 @@
     {% for m in maps %}
     <a href="/maps/{{ m.name }}" style="text-decoration:none;">
         <div class="item-entry">
-            <span class="name">🗺️ {{ m.name }}</span>
+            <span class="name">🗺️ {% if lang == 'en' %}{{ m.name_en or m.name }}{% else %}{{ m.name }}{% endif %}</span>
             <span class="count">{{ m.count }} {% if lang == 'zh' %}部影片{% else %}video{{ 's' if m.count != 1 else '' }}{% endif %}</span>
         </div>
     </a>

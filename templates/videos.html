@@ -46,7 +46,7 @@
                 <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
                 <div class="card-meta">
                     {% if v.author %}{% if lang == 'zh' %}作者{% else %}by{% endif %} {{ v.author }} · {% endif %}
-                    {{ v.created_at[:10] if v.created_at else '' }}
+                    {{ v.created_at | format_date if v.created_at else '' }}
                 </div>
                 <div class="video-tags">
                     {% if v.map_name %}
@@ -56,7 +56,7 @@
                     <span class="tag time">{{ v.time_spent_label }}</span>
                     {% endif %}
                     {% for r in v.rewards[:2] %}
-                    <span class="tag reward">{{ r.name }}</span>
+                    <span class="tag reward">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}</span>
                     {% endfor %}
                 </div>
             </div>

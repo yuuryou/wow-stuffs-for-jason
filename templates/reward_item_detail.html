@@ -5,7 +5,7 @@
 <a href="/rewards" class="back-link">← {% if lang == 'zh' %}返回獎勵{% else %}Back to Rewards{% endif %}</a>
 
 <div class="page-header">
-    <h2>{{ reward_name }}{% if is_time_limited %}<span class="reward-time-info" title="{{ time_limited_note }}"><span class="time-icon">&#9888;</span> {% if lang == 'zh' %}限時獎勵{% else %}Time Limited{% endif %}</span>{% endif %}</h2>
+    <h2>{% if lang == 'en' and reward_name_en %}{{ reward_name_en }}{% else %}{{ reward_name }}{% endif %}{% if is_time_limited %}<span class="reward-time-info" title="{{ time_limited_note }}"><span class="time-icon">&#9888;</span> {% if lang == 'zh' %}限時獎勵{% else %}Time Limited{% endif %}</span>{% endif %}</h2>
     <p>{{ videos|length }} {% if lang == 'zh' %}部影片包含此獎勵{% else %}video{{ 's' if videos|length != 1 else '' }} with this reward{% endif %}</p>
 </div>
 
@@ -28,7 +28,7 @@
                     {% if v.time_spent_label %}
                     <span class="tag time">{{ v.time_spent_label }}</span>
                     {% endif %}
-                    <span class="tag reward">{{ reward_name }}</span>
+                    <span class="tag reward">{% if lang == 'en' and reward_name_en %}{{ reward_name_en }}{% else %}{{ reward_name }}{% endif %}</span>
                 </div>
             </div>
         </div>

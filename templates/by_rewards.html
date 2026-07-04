@@ -59,7 +59,7 @@
                      loading="lazy"
                      onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
             </div>
-            <div class="reward-card-name">{{ r.name }}</div>
+            <div class="reward-card-name">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}</div>
             <div class="reward-card-count">{{ r.count }}x</div>
         </a>
         {% endfor %}

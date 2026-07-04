@@ -60,6 +60,34 @@ def zfill_filter(value, width):
     return str(value).zfill(int(width))
 
 
+@app.template_filter('format_date')
+def format_date_filter(value):
+    """Format a date string to ISO YYYY-MM-DD. Handles SQLite datetime format."""
+    if not value:
+        return ''
+    s = str(value)
+    return s[:10] if len(s) >= 10 else s
+
+
+@app.template_filter('reward_type_display')
+def reward_type_display(rtype, lang='zh'):
+    """Map reward type to display name in the given language."""
+    names = {
+        'zh': {
+            'toy': '玩具', 'mount': '坐騎', 'transmog': '幻化', 'pet': '寵物',
+            'achievement': '成就', 'gear': '裝備', 'weapon': '武器',
+            'quest': '任務', 'spell': '法術', 'other': '其他',
+        },
+        'en': {
+            'toy': 'Toys', 'mount': 'Mounts', 'transmog': 'Transmog',
+            'pet': 'Pets', 'achievement': 'Achievements', 'gear': 'Gear',
+            'weapon': 'Weapons', 'quest': 'Quest', 'spell': 'Spell',
+            'other': 'Other',
+        }
+    }
+    return names.get(lang, {}).get(rtype, str(rtype))
+
+
 @app.context_processor
 def inject_lang():
     return {'lang': get_lang()}
@@ -147,7 +175,12 @@ def maps_page():
 def map_videos(map_name):
     lang = get_lang()
     videos = get_videos(lang=lang, map_filter=map_name)
-    return render_template('map_detail.html', map_name=map_name, videos=videos, lang=lang)
+    # Derive display name from videos so English mode shows English map name
+    display_map_name = map_name
+    if videos:
+        display_map_name = videos[0].get('map_name', map_name) or map_name
+    return render_template('map_detail.html', map_name=map_name,
+                          display_map_name=display_map_name, videos=videos, lang=lang)
 
 
 @app.route('/rewards')
@@ -166,10 +199,13 @@ def reward_item_videos(category, name):
     # Find videos that contain this reward
     all_videos = get_all_videos(sort_by='created_at', order='DESC')
     matched = []
+    reward_name_en = ''
     for v in all_videos:
         for r in v.get('rewards', []):
             if r.get('name', '') == name:
                 matched.append(v)
+                if not reward_name_en:
+                    reward_name_en = r.get('name_en', '') or name
                 break
     # Look up time-limited status from reward_cache
     from database import get_db
@@ -183,6 +219,7 @@ def reward_item_videos(category, name):
     time_limited_note = row['time_limited_note'] if row else ''
     return render_template('reward_item_detail.html',
                          category=category, reward_name=name,
+                         reward_name_en=reward_name_en,
                          videos=matched, lang=lang,
                          is_time_limited=is_time_limited,
                          time_limited_note=time_limited_note)

@@ -230,10 +230,10 @@ def delete_video(video_id):
 def get_all_maps():
     conn = get_db()
     rows = conn.execute(
-        'SELECT map_name, COUNT(*) as count FROM videos WHERE map_name != "" GROUP BY map_name ORDER BY count DESC'
+        'SELECT map_name, map_name_en, COUNT(*) as count FROM videos WHERE map_name != "" GROUP BY map_name ORDER BY count DESC'
     ).fetchall()
     conn.close()
-    return [{'name': r['map_name'], 'count': r['count']} for r in rows]
+    return [{'name': r['map_name'], 'name_en': r['map_name_en'] or r['map_name'], 'count': r['count']} for r in rows]
 
 
 def get_all_rewards():
@@ -303,7 +303,6 @@ def get_stats():
         'total_videos': total,
         'total_maps': maps_count,
         'total_time_minutes': total_time,
-        'total_time_label': f"{total_time // 60}小時{total_time % 60}分" if total_time >= 60 else f"{total_time}分鐘",
         'map_coverage': map_coverage,
         'total_rewards': len(rewards_set),
     }
@@ -383,10 +382,12 @@ def get_rewards_by_category():
             if not name:
                 continue
             category = classify_reward_to_category(name, rtype)
+            name_en = item.get('name_en', '') or name
             key = (category, name)
             if key not in reward_lookup:
                 reward_lookup[key] = {
                     'name': name,
+                    'name_en': name_en,
                     'category': category,
                     'original_type': rtype,
                     'count': 0,

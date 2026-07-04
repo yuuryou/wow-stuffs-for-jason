@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}{{ map_name }} {% if lang == 'zh' %}影片{% else %}Videos{% endif %}{% endblock %}
+{% block title %}{{ display_map_name or map_name }} {% if lang == 'zh' %}影片{% else %}Videos{% endif %}{% endblock %}
 {% block content %}
 
 <a href="/maps" class="back-link">← {% if lang == 'zh' %}返回地圖{% else %}Back to Maps{% endif %}</a>
 
 <div class="page-header">
-    <h2>🗺️ {{ map_name }}</h2>
+    <h2>🗺️ {{ display_map_name or map_name }}</h2>
     <p>{% if lang == 'zh' %}{{ videos|length }} 部影片來自此區域{% else %}{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} from this zone{% endif %}</p>
 </div>
 
@@ -26,7 +26,7 @@
                     <span class="tag time">{{ v.time_spent_label }}</span>
                     {% endif %}
                     {% for r in v.rewards[:2] %}
-                    <span class="tag reward">{{ r.name }}</span>
+                    <span class="tag reward">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}</span>
                     {% endfor %}
                 </div>
             </div>

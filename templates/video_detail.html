@@ -39,7 +39,7 @@
     </div>
     <div class="detail-meta-item">
         <div class="label">{% if lang == 'zh' %}新增於{% else %}Added{% endif %}</div>
-        <div class="value">{{ video.created_at[:10] if video.created_at else ('N/A' if lang == 'en' else '無') }}</div>
+        <div class="value">{{ video.created_at | format_date if video.created_at else ('N/A' if lang == 'en' else '無') }}</div>
     </div>
 </div>
 
@@ -57,21 +57,8 @@
     <div class="card-title">{% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}</div>
     <div class="video-tags" style="margin-top:8px;">
         {% for r in video.rewards %}
-        <span class="tag reward">{{ r.name }}
-            <span style="font-size:0.65rem;opacity:0.6;">[
-                {% if lang == 'zh' %}
-                    {% if r.type == 'toy' %}玩具
-                    {% elif r.type == 'mount' %}坐騎
-                    {% elif r.type == 'transmog' %}幻化
-                    {% elif r.type == 'pet' %}寵物
-                    {% elif r.type == 'achievement' %}成就
-                    {% elif r.type == 'gear' %}裝備
-                    {% elif r.type == 'weapon' %}武器
-                    {% elif r.type == 'quest' %}任務
-                    {% elif r.type == 'spell' %}法術
-                    {% else %}{{ r.type }}{% endif %}
-                {% else %}{{ r.type }}{% endif %}
-            ]</span>
+        <span class="tag reward">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}
+            <span style="font-size:0.65rem;opacity:0.6;">[{{ r.type | reward_type_display(lang) }}]</span>
         </span>
         {% endfor %}
     </div>
@@ -85,21 +72,8 @@
     <div class="wowhead-links">
         {% for link in video.wowhead_links %}
         <a href="{{ link.url }}" target="_blank" rel="noopener" class="wowhead-link">
-            🔗 {{ link.name }}
-            <span style="font-size:0.65rem;opacity:0.6;">[
-                {% if lang == 'zh' %}
-                    {% if link.type == 'toy' %}玩具
-                    {% elif link.type == 'mount' %}坐騎
-                    {% elif link.type == 'transmog' %}幻化
-                    {% elif link.type == 'pet' %}寵物
-                    {% elif link.type == 'achievement' %}成就
-                    {% elif link.type == 'gear' %}裝備
-                    {% elif link.type == 'weapon' %}武器
-                    {% elif link.type == 'quest' %}任務
-                    {% elif link.type == 'spell' %}法術
-                    {% else %}{{ link.type }}{% endif %}
-                {% else %}{{ link.type }}{% endif %}
-            ]</span>
+            🔗 {% if lang == 'en' %}{{ link.name_en or link.name }}{% else %}{{ link.name }}{% endif %}
+            <span style="font-size:0.65rem;opacity:0.6;">[{{ link.type | reward_type_display(lang) }}]</span>
         </a>
         {% endfor %}
     </div>

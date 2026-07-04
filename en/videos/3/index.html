@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void-Twisted Whelpling Acquisition</title>
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../videos/3/">
+        中文
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<a href="../../../videos/" class="back-link">← Back to Videos</a>
+
+<div class="detail-header">
+    <h2>Void-Twisted Whelpling Acquisition</h2>
+
+    <div style="display:flex;gap:8px;margin-bottom:16px;">
+        <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Open in Douyin</a>
+        
+        <button class="btn btn-danger btn-sm" data-delete-id="3">Delete</button>
+    </div>
+</div>
+
+<!-- Thumbnail -->
+
+
+<!-- Meta Grid -->
+<div class="detail-meta-grid">
+    <div class="detail-meta-item">
+        <div class="label">Map</div>
+        <div class="value">Voidstorm</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">Time Spent</div>
+        <div class="value">N/A</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">Author</div>
+        <div class="value">珂了不得</div>
+    </div>
+    <div class="detail-meta-item">
+        <div class="label">Added</div>
+        <div class="value">2026-07-03</div>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="card" style="margin-bottom:24px;">
+    <div class="card-title">Description</div>
+    <p style="font-size:0.9rem;color:var(--text-muted);white-space:pre-wrap;">Head to Voidstorm (50, 30) with your fishing rod! Go go go!</p>
+</div>
+
+
+<!-- Rewards -->
+
+<div class="card" style="margin-bottom:24px;">
+    <div class="card-title">Rewards</div>
+    <div class="video-tags" style="margin-top:8px;">
+        
+        <span class="tag reward">Void-Twisted Whelpling
+            <span style="font-size:0.65rem;opacity:0.6;">[Mounts]</span>
+        </span>
+        
+    </div>
+</div>
+
+
+<!-- wowhead Links -->
+
+
+<!-- Douyin Link -->
+<div style="margin-top:24px;">
+    <div class="card">
+        <div class="card-title">Douyin Link</div>
+        <a href="https://www.douyin.com/video/7657069819111427366" target="_blank" rel="noopener"
+           style="font-size:0.85rem;word-break:break-all;">https://www.douyin.com/video/7657069819111427366</a>
+    </div>
+</div>
+
+<!-- Guide Section -->
+
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Void-Twisted Whelpling — Fishing Mount Guide
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        Patch 12.0 — The Darkest Night · Voidstorm Rare Fishing Mount
+    </p>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">🎯 Quick Summary</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">Map</td>
+                <td style="padding: 8px 12px; font-weight: 700;">Voidstorm</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">Coordinates</td>
+                <td style="padding: 8px 12px; font-family: var(--font-mono); font-weight: 700;">
+                    <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;" title="Click to copy">/way 50 30</span>
+                </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">Method</td>
+                <td style="padding: 8px 12px;">Fishing</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">Required</td>
+                <td style="padding: 8px 12px;">Fishing Rod</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">Reward</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">Void-Twisted Whelpling 🐉</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">📋 Step-by-Step Guide</h2>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>Travel to Voidstorm</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    Use your map or flight path to reach the Voidstorm zone.
+                </span>
+            </li>
+            <li>
+                <strong>Go to coordinates (50, 30)</strong><br>
+                <span class="way-copy" onclick="copyWay(this)" style="cursor:pointer;user-select:all;font-family:var(--font-mono);font-size:0.85rem;color:var(--orange);" title="Click to copy">/way 50 30</span>
+                <br><span style="font-size: 0.85rem; color: var(--text-muted);">
+                    Paste this into chat while in-game to set a waypoint.
+                </span>
+            </li>
+            <li>
+                <strong>Equip your Fishing Rod and cast</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    The Void-Twisted Whelpling is a rare fishing drop. Keep casting until you reel it in!
+                </span>
+            </li>
+            <li>
+                <strong>Mount collected — enjoy!</strong>
+            </li>
+        </ol>
+    </div>
+
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">💡 Tips</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>No fishing skill level requirement — any level can catch it.</li>
+            <li>Drop rate may be low; patience is key.</li>
+            <li>Can be obtained in any realm / layer.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="../../../" class="active">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="../../../videos/" class="">
+            <span class="nav-icon">🎬</span> Videos
+        </a>
+        <a href="../../../maps/" class="">
+            <span class="nav-icon">🗺️</span> Maps
+        </a>
+        <a href="../../../rewards/" class="">
+            <span class="nav-icon">🎁</span> Rewards
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>

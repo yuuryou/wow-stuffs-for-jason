@@ -1,27 +1,22 @@
 {% extends "base.html" %}
-{% block title %}{% if lang == 'zh' %}
-    {% if reward_type == 'mount' %}坐騎
-    {% elif reward_type == 'achievement' %}成就
-    {% elif reward_type == 'quest' %}任務
-    {% elif reward_type == 'spell' %}法術
-    {% elif reward_type == 'toy' %}玩具
-    {% elif reward_type == 'transmog' %}幻化
-    {% elif reward_type == 'pet' %}寵物
-    {% elif reward_type == 'gear' %}裝備
-    {% elif reward_type == 'weapon' %}武器
-    {% else %}{{ reward_type }}{% endif %}
-{% else %}{{ reward_type|capitalize }}{% endif %} {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block title %}{{ reward_type | reward_type_display(lang) }} {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
 {% block content %}
 
 <a href="/rewards" class="back-link">← {% if lang == 'zh' %}返回獎勵{% else %}Back to Rewards{% endif %}</a>
 
 <div class="page-header">
     <h2>
-        {% if reward_type == 'mount' %}🐎 {% if lang == 'zh' %}坐騎{% else %}Mount{% endif %}
-        {% elif reward_type == 'achievement' %}🏆 {% if lang == 'zh' %}成就{% else %}Achievement{% endif %}
-        {% elif reward_type == 'quest' %}📜 {% if lang == 'zh' %}任務{% else %}Quest{% endif %}
-        {% elif reward_type == 'spell' %}✨ {% if lang == 'zh' %}法術{% else %}Spell{% endif %}
-        {% else %}⚔️ {{ reward_type|capitalize }}{% endif %}
+        {% if reward_type == 'mount' %}🐎
+        {% elif reward_type == 'achievement' %}🏆
+        {% elif reward_type == 'quest' %}📜
+        {% elif reward_type == 'spell' %}✨
+        {% elif reward_type == 'toy' %}🧸
+        {% elif reward_type == 'transmog' %}👗
+        {% elif reward_type == 'pet' %}🐾
+        {% elif reward_type == 'gear' %}🛡️
+        {% elif reward_type == 'weapon' %}⚔️
+        {% else %}⚔️{% endif %}
+        {{ reward_type | reward_type_display(lang) }}
         {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}
     </h2>
     <p>{% if lang == 'zh' %}{{ videos|length }} 部影片包含此類獎勵{% else %}{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} with this reward type{% endif %}</p>
@@ -44,7 +39,7 @@
                     <span class="tag map">{{ v.map_name }}</span>
                     {% endif %}
                     {% for r in v.rewards %}
-                    <span class="tag reward">{{ r.name }}</span>
+                    <span class="tag reward">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}</span>
                     {% endfor %}
                 </div>
             </div>
@@ -54,7 +49,7 @@
 </div>
 {% else %}
 <div class="empty-state">
-    <p>{% if lang == 'zh' %}尚無 {{ reward_type }} 類型的獎勵影片。{% else %}No videos with {{ reward_type }} rewards yet.{% endif %}</p>
+    <p>{% if lang == 'zh' %}尚無 {{ reward_type | reward_type_display('zh') }} 類型的獎勵影片。{% else %}No videos with {{ reward_type | reward_type_display('en') }} rewards yet.{% endif %}</p>
 </div>
 {% endif %}
 

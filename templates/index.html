@@ -54,7 +54,7 @@
                     {% if video.rewards %}
                     <div style="margin-top: 0.5rem; display: flex; gap: 0.3rem; flex-wrap: wrap;">
                         {% for r in video.rewards[:3] %}
-                        <span style="font-size: 0.65rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.1rem 0.4rem; border-radius: 1rem;">{{ r.name }}</span>
+                        <span style="font-size: 0.65rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.1rem 0.4rem; border-radius: 1rem;">{% if lang == 'en' %}{{ r.name_en or r.name }}{% else %}{{ r.name }}{% endif %}</span>
                         {% endfor %}
                         {% if video.rewards|length > 3 %}
                         <span style="font-size: 0.65rem; color: var(--text-muted);">+{{ video.rewards|length - 3 }}</span>
