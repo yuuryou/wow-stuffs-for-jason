@@ -45,16 +45,16 @@
     <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
     <nav class="bottom-nav">
         <div class="nav-indicator"></div>
-        <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+        <a href="../" class="{% if request.path == '/' %}active{% endif %}">
             <span class="nav-icon">📊</span> {% if lang == 'en' %}Dashboard{% else %}主頁{% endif %}
         </a>
-        <a href="/videos" class="{% if request.path.startswith('/videos') %}active{% endif %}">
+        <a href="../videos/" class="{% if request.path.startswith('/videos') %}active{% endif %}">
             <span class="nav-icon">🎬</span> {% if lang == 'en' %}Videos{% else %}影片{% endif %}
         </a>
-        <a href="/maps" class="{% if request.path.startswith('/maps') %}active{% endif %}">
+        <a href="../maps/" class="{% if request.path.startswith('/maps') %}active{% endif %}">
             <span class="nav-icon">🗺️</span> {% if lang == 'en' %}Maps{% else %}地圖{% endif %}
         </a>
-        <a href="/rewards" class="{% if request.path.startswith('/rewards') %}active{% endif %}">
+        <a href="../rewards/" class="{% if request.path.startswith('/rewards') %}active{% endif %}">
             <span class="nav-icon">🎁</span> {% if lang == 'en' %}Rewards{% else %}獎勵{% endif %}
         </a>
     </nav>
