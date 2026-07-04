@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Server Error{% endblock %}
+{% block title %}{% if lang == 'zh' %}伺服器錯誤{% else %}Server Error{% endif %}{% endblock %}
 {% block content %}
 <div class="empty-state" style="padding-top:100px;">
     <div class="icon" style="font-size:5rem;">💀</div>
-    <h3>Spirit Healer Required</h3>
-    <p>Something went wrong. The server is being resurrected.</p>
-    <a href="/" class="btn btn-primary">Return to Camp</a>
+    <h3>{% if lang == 'zh' %}需要靈魂醫者{% else %}Spirit Healer Required{% endif %}</h3>
+    <p>{% if lang == 'zh' %}出了點問題。伺服器正在復活中。{% else %}Something went wrong. The server is being resurrected.{% endif %}</p>
+    <a href="/" class="btn btn-primary">{% if lang == 'zh' %}返回營地{% else %}Return to Camp{% endif %}</a>
 </div>
 {% endblock %}

@@ -230,6 +230,11 @@ def guide_placid_deep_cat():
     return render_template('guide_placid_deep_cat.html', lang=get_lang())
 
 
+@app.route('/guides/wheelchair-cat-baal')
+def guide_wheelchair_cat_baal():
+    return render_template('guide_wheelchair_cat_baal.html', lang=get_lang())
+
+
 @app.route('/search')
 def search_redirect():
     q = request.args.get('q', '')
@@ -272,7 +277,8 @@ def api_add_video():
 
     douyin_url = data.get('douyin_url', '').strip()
     if not douyin_url:
-        return jsonify({'error': 'Douyin URL is required'}), 400
+        err_msg = '請提供抖音連結' if get_lang() == 'zh' else 'Douyin URL is required'
+        return jsonify({'error': err_msg}), 400
 
     # Auto-parse Douyin metadata if fields are empty
     if not data.get('title') and not data.get('title_zh') and not data.get('title_en'):
@@ -324,7 +330,8 @@ def api_add_video():
 
     try:
         vid = add_video(data)
-        return jsonify({'id': vid, 'message': 'Video added successfully'}), 201
+        msg = '影片已新增' if get_lang() == 'zh' else 'Video added successfully'
+        return jsonify({'id': vid, 'message': msg}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 400
 
@@ -333,7 +340,8 @@ def api_add_video():
 def api_get_video(video_id):
     video = get_video(video_id)
     if not video:
-        return jsonify({'error': 'Video not found'}), 404
+        err_msg = '找不到影片' if get_lang() == 'zh' else 'Video not found'
+        return jsonify({'error': err_msg}), 404
     return jsonify(video)
 
 
@@ -365,13 +373,15 @@ def api_update_video(video_id):
             data['time_spent_minutes'] = int(data['time_spent_label'])
 
     update_video(video_id, data)
-    return jsonify({'message': 'Video updated successfully'})
+    msg = '影片已更新' if get_lang() == 'zh' else 'Video updated successfully'
+    return jsonify({'message': msg})
 
 
 @app.route('/api/videos/<int:video_id>', methods=['DELETE'])
 def api_delete_video(video_id):
     delete_video(video_id)
-    return jsonify({'message': 'Video deleted successfully'})
+    msg = '影片已刪除' if get_lang() == 'zh' else 'Video deleted successfully'
+    return jsonify({'message': msg})
 
 
 @app.route('/api/maps')
@@ -406,7 +416,8 @@ def api_parse_douyin():
         data = request.form.to_dict()
     url = data.get('url', '')
     if not url:
-        return jsonify({'error': 'URL required'}), 400
+        err_msg = '請提供網址' if get_lang() == 'zh' else 'URL required'
+        return jsonify({'error': err_msg}), 400
     result = parse_douyin_url(url)
     return jsonify(result)
 

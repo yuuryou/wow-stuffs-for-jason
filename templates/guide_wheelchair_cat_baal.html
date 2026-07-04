@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Wheelchair Cat + Baa'l Guide{% else %}輪椅喵 + 小歪比哇嗚攻略{% endif %} | wow stuffs for Jason{% endblock %}
+{% block content %}
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Patch 12.07 Hidden Puzzle Pets: Wheelchair Cat + Baa'l{% else %}12.07 隱藏解密寵物：輪椅喵 + 小歪比哇嗚{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Caverns of Time · Secret Puzzle · ~45 Minutes{% else %}時光之穴 · 隱藏解密 · 約45分鐘{% endif %}
+    </p>
+
+    <!-- Video Source -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Source Video{% else %}來源影片{% endif %}</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            {% if lang == 'en' %}#遊戲破壁計劃 #魔獸世界 #魔獸世界創作者激勵 #魔獸世界新手攻略 #魔獸世界攻略必看{% else %}#遊戲破壁計劃 #魔獸世界 #魔獸世界創作者激勵 #魔獸世界新手攻略 #魔獸世界攻略必看{% endif %}
+        </p>
+        <a href="https://www.douyin.com/video/7653317468114423055" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            {% if lang == 'en' %}Open in Douyin{% else %}在抖音開啟{% endif %}
+        </a>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Quick Summary{% else %}快速摘要{% endif %}</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Map{% else %}地圖{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">{% if lang == 'en' %}Caverns of Time{% else %}時光之穴{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Type{% else %}類型{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}Secret Puzzle{% else %}隱藏解密{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Time Required{% else %}所需時間{% endif %}</td>
+                <td style="padding: 8px 12px;">{% if lang == 'en' %}~45 minutes{% else %}約45分鐘{% endif %}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--lg-border-subtle);">
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Patch{% else %}版本{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700;">12.07</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px 12px; color: var(--text-muted); white-space: nowrap;">{% if lang == 'en' %}Rewards{% else %}獎勵{% endif %}</td>
+                <td style="padding: 8px 12px; font-weight: 700; color: var(--purple);">
+                    {% if lang == 'en' %}Patch + Baa'l{% else %}輪椅喵 + 小歪比哇嗚{% endif %}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Pet #1: Patch (Wheelchair Cat) -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">
+            🐾 {% if lang == 'en' %}Pet #1 — Patch (Wheelchair Cat){% else %}寵物 #1 — 輪椅喵（帕奇）{% endif %}
+        </h2>
+
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+            {% if lang == 'en' %}
+            A white cat in a wheelchair, a loving tribute to the classic Hearthstone character "Patches". This pet is obtained through the Hearthstone Anniversary hidden puzzle quest, earning you the achievement <strong>"Patches the Player"</strong> (全能帕奇！).
+            {% else %}
+            一隻坐著輪椅的白色貓咪，溫馨致敬《爐石戰記》經典角色「帕奇」。通過爐石週年慶隱藏解密任務獲得，解鎖成就 <strong>「全能帕奇！」</strong>。
+            {% endif %}
+        </p>
+
+        <h3 style="color: var(--orange); font-size: 1rem; margin-bottom: 0.8rem;">
+            {% if lang == 'en' %}How to Obtain{% else %}獲取方式{% endif %}
+        </h3>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Travel to Caverns of Time{% else %}前往時光之穴{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Go to the Caverns of Time in Tanaris and find <strong>Chromie</strong>.{% else %}前往塔納利斯的時光之穴，找到 <strong>克羅米</strong>。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Obtain the Bloody Broom{% else %}獲取染血的掃帚{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Look for scattered parts on the ground near Chromie and click them. You will receive the <strong>Bloody Broom</strong> (染血的掃帚).{% else %}在克羅米附近尋找散落的零件並點擊，獲得 <strong>染血的掃帚</strong>。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Track Parts with the Broom{% else %}使用掃帚追蹤零件{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Equip or hold the Bloody Broom — yellow dots will appear on your minimap indicating nearby collectible parts.{% else %}裝備或持有染血的掃帚，小地圖上會顯示黃點，指示附近可收集的零件位置。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Collect All 5 Parts{% else %}收集全部 5 個零件{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}The 5 parts are scattered across Azeroth. Common locations include:{% else %}5 個零件散布在艾澤拉斯各處，常見位置包括：{% endif %}
+                    <ul style="padding-left: 1.5rem; margin: 0.5rem 0; font-size: 0.85rem;">
+                        <li>{% if lang == 'en' %}Goldshire, Elwynn Forest{% else %}閃金鎮，艾爾文森林{% endif %}</li>
+                        <li>{% if lang == 'en' %}Razor Hill, Durotar{% else %}剃刀嶺，杜隆塔爾{% endif %}</li>
+                        <li>{% if lang == 'en' %}Crossroads, The Barrens{% else %}十字路口，貧瘠之地{% endif %}</li>
+                        <li>{% if lang == 'en' %}Dalaran, Broken Isles{% else %}達拉然，破碎群島{% endif %}</li>
+                        <li>{% if lang == 'en' %}Stormwind City / Orgrimmar{% else %}暴風城 / 奧格瑪{% endif %}</li>
+                    </ul>
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Assemble Patch and Claim Your Pet{% else %}組裝帕奇並領取寵物{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Return to Chromie at the Caverns of Time. Complete the assembly quest and earn the achievement <strong>"Patches the Player"</strong>. Patch will be mailed to you!{% else %}回到時光之穴找克羅米，完成組裝任務後獲得成就 <strong>「全能帕奇！」</strong>，帕奇會寄到你的信箱！{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Pet #2: Baa'l -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">
+            🐐 {% if lang == 'en' %}Pet #2 — Baa'l (Little Baa'l Wawu){% else %}寵物 #2 — 小歪比哇嗚 (Baa'l){% endif %}
+        </h2>
+
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">
+            {% if lang == 'en' %}
+            <strong>Baa'l</strong> is a secret demonic goat battle pet that first appeared in Battle for Azeroth. After a 5-year wait, Baa'l returns in Patch 12.07 with a new way to obtain this elusive companion. Originally one of the most complex secret hunts in WoW history, the 12.07 version streamlines some steps while preserving the mystery.
+            {% else %}
+            <strong>小歪比哇嗚 (Baa'l)</strong> 是一隻隱藏的惡魔山羊戰鬥寵物，最早在《決戰艾澤拉斯》亮相。經過 5 年的等待，Baa'l 在 12.07 版本回歸，並提供新的獲取途徑。原本是魔獸史上最複雜的隱藏任務之一，12.07 版本簡化了部分步驟，同時保留了神秘感。
+            {% endif %}
+        </p>
+
+        <h3 style="color: var(--orange); font-size: 1rem; margin-bottom: 0.8rem;">
+            {% if lang == 'en' %}How to Obtain (12.07 Version){% else %}獲取方式（12.07 版本）{% endif %}
+        </h3>
+        <ol style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>
+                <strong>{% if lang == 'en' %}Step 1: Frostfire Ridge — Find Marrow{% else %}步驟 1：霜火峰 — 尋找莫羅斯{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Travel to Frostfire Ridge (Warlords of Draenor) and locate the non-interactive NPC <strong>Marrow</strong> near Thunderlord Stronghold.{% else %}前往霜火峰（德拉諾之霸），在雷霆王氏族要塞附近找到無法直接互動的 NPC <strong>莫羅斯</strong>。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Step 2: Vol'dun — Buy the Rune Detector{% else %}步驟 2：沃魯敦 — 購買符文偵測器{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Travel to Vol'dun (Battle for Azeroth) and find <strong>Lok'rath</strong>. Purchase a special item that reveals invisible demonic runes.{% else %}前往沃魯敦（決戰艾澤拉斯），尋找 <strong>洛克拉斯</strong> 並購買可看見隱形惡魔符文的特殊道具。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Step 3: Darkshore — Follow the Rune Trail{% else %}步驟 3：黑海岸 — 追蹤符文線索{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Go to Darkshore (Cataclysm version). Use the item to reveal invisible demonic runes. Follow the trail they reveal.{% else %}前往黑海岸（浩劫與重生版本），使用道具顯示隱形的惡魔符文，並沿著符文所示的線索前進。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Step 4: Blasted Lands — Defeat Baa'l{% else %}步驟 4：詛咒之地 — 擊敗 Baa'l{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}Travel to the Cataclysm version of Blasted Lands. Find and defeat the invisible <strong>Baa'l</strong> NPC to unlock the pet purchase.{% else %}前往浩劫與重生版本的詛咒之地，找到並擊敗隱形的 <strong>Baa'l</strong> NPC 以解鎖寵物購買資格。{% endif %}
+                </span>
+            </li>
+            <li>
+                <strong>{% if lang == 'en' %}Step 5: Purchase Baa'l{% else %}步驟 5：購買小歪比哇嗚{% endif %}</strong><br>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">
+                    {% if lang == 'en' %}After defeating Baa'l, interact with the "Forgotten Offering" on the ground to obtain the <strong>Baa'l</strong> battle pet!{% else %}擊敗 Baa'l 後，與地上的「被遺忘的祭品」互動，即可獲得 <strong>小歪比哇嗚</strong> 戰鬥寵物！{% endif %}
+                </span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">💡 {% if lang == 'en' %}Tips & Troubleshooting{% else %}提示與疑難排解{% endif %}</h2>
+        <ul style="padding-left: 1.5rem; line-height: 1.8; color: var(--text-primary);">
+            <li>{% if lang == 'en' %}<strong>Patch</strong> is tied to the Hearthstone Anniversary event. Verify the event is currently active before attempting.{% else %}<strong>輪椅喵</strong> 與爐石戰記週年慶活動掛鉤，開始前請先確認活動仍在進行中。{% endif %}</li>
+            <li>{% if lang == 'en' %}The Bloody Broom is essential — without it, the yellow minimap dots will not appear.{% else %}染血的掃帚是必要道具——沒有它，小地圖上的黃點將不會出現。{% endif %}</li>
+            <li>{% if lang == 'en' %}<strong>Baa'l</strong> requires access to multiple expansions (WoD, BfA, Cataclysm). Ensure your character meets level and expansion requirements.{% else %}<strong>小歪比哇嗚</strong> 需要跨越多個資料片（德拉諾、決戰艾澤拉斯、浩劫與重生），請確保角色等級與資料片進度達標。{% endif %}</li>
+            <li>{% if lang == 'en' %}Both pets can be obtained solo — no group required.{% else %}兩隻寵物都可單人完成——無需組隊。{% endif %}</li>
+            <li>{% if lang == 'en' %}If a part or NPC isn't showing, try /reload or relogging to reset phasing.{% else %}如果零件或 NPC 沒出現，嘗試 /reload 或重新登入來重置鏡像。{% endif %}</li>
+            <li>{% if lang == 'en' %}For Baa'l, make sure you are in the correct version of each zone (Cataclysm version of Darkshore and Blasted Lands). Talk to Zidormi to switch between phases.{% else %}關於 Baa'l，請確保身處正確的區域版本（浩劫與重生版的黑海岸和詛咒之地）。可與希爾多米對話來切換鏡像。{% endif %}</li>
+        </ul>
+    </div>
+
+    <!-- Source -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">{% if lang == 'en' %}Sources{% else %}資料來源{% endif %}</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7653317468114423055" target="_blank" rel="noopener" style="color: var(--orange);">
+                {% if lang == 'en' %}Douyin: 12.07 Hidden Puzzle — Wheelchair Cat + Baa'l Returns{% else %}抖音: 12.07隱藏解謎「輪椅喵」+遲到5年回歸的小歪比哇嗚！{% endif %}
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

@@ -6,7 +6,7 @@
 
 <div class="page-header">
     <h2>🗺️ {{ map_name }}</h2>
-    <p>{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} {% if lang == 'zh' %}部影片來自此區域{% else %}from this zone{% endif %}</p>
+    <p>{% if lang == 'zh' %}{{ videos|length }} 部影片來自此區域{% else %}{{ videos|length }} video{{ 's' if videos|length != 1 else '' }} from this zone{% endif %}</p>
 </div>
 
 {% if videos %}

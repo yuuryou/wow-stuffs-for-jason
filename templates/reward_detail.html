@@ -1,5 +1,16 @@
 {% extends "base.html" %}
-{% block title %}{{ reward_type|capitalize }} {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
+{% block title %}{% if lang == 'zh' %}
+    {% if reward_type == 'mount' %}坐騎
+    {% elif reward_type == 'achievement' %}成就
+    {% elif reward_type == 'quest' %}任務
+    {% elif reward_type == 'spell' %}法術
+    {% elif reward_type == 'toy' %}玩具
+    {% elif reward_type == 'transmog' %}幻化
+    {% elif reward_type == 'pet' %}寵物
+    {% elif reward_type == 'gear' %}裝備
+    {% elif reward_type == 'weapon' %}武器
+    {% else %}{{ reward_type }}{% endif %}
+{% else %}{{ reward_type|capitalize }}{% endif %} {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
 {% block content %}
 
 <a href="/rewards" class="back-link">← {% if lang == 'zh' %}返回獎勵{% else %}Back to Rewards{% endif %}</a>
