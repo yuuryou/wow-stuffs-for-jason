@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+﻿{% extends "base.html" %}
 {% block title %}{{ reward_name }} - {% if lang == 'zh' %}獎勵{% else %}Rewards{% endif %}{% endblock %}
 {% block content %}
 
@@ -18,7 +18,7 @@
             <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             {% endif %}
-            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}>🐾</div>
+            <div class="video-thumb-placeholder" {% if v.thumbnail_url %}style="display:none;"{% endif %}></div>
             <div class="video-body">
                 <div class="video-title">{{ v.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</div>
                 <div class="video-tags">
