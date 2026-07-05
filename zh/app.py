@@ -272,6 +272,11 @@ def guide_wheelchair_cat_baal():
     return render_template('guide_wheelchair_cat_baal.html', lang=get_lang())
 
 
+@app.route('/guides/heroic-battle-for-the-void')
+def guide_heroic_battle_for_the_void():
+    return render_template('guide_heroic_battle_for_the_void.html', lang=get_lang())
+
+
 @app.route('/search')
 def search_redirect():
     q = request.args.get('q', '')

@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block title %}{% if lang == 'en' %}Heroic: Battle for the Void — Tormented Devourer Mount Guide{% else %}英雄虛空決戰 — 受折磨的饕餮者坐騎攻略{% endif %} | wow stuffs for Jason{% endblock %}
+{% block content %}
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {% if lang == 'en' %}Heroic: Battle for the Void — Tormented Devourer Mount Guide{% else %}英雄虛空決戰 — 受折磨的饕餮者坐騎攻略{% endif %}
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        {% if lang == 'en' %}Patch 12.07 — Complete 6 sub-achievements in Val and Nalgathar to earn the Tormented Devourer mount.{% else %}至暗之夜 12.07 — 在瓦爾和奈格塔爾完成 6 個子成就，解鎖受折磨的饕餮者坐騎。{% endif %}
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Source Video{% else %}來源影片{% endif %}</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            {% if lang == 'en' %}Author: 幼兒園老大-魔獸世界 · Duration: 02:22 · Likes: 115 · Saves: 74 · Comments: 6 · Shares: 16{% else %}作者: 幼兒園老大-魔獸世界 · 時長: 02:22 · 點讚: 115 · 收藏: 74 · 評論: 6 · 轉發: 16{% endif %}
+        </p>
+        <a href="https://www.douyin.com/video/7658693762029194506" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            {% if lang == 'en' %}Open in Douyin{% else %}在抖音開啟{% endif %}
+        </a>
+    </div>
+
+    <!-- Overview -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Overview{% else %}概述{% endif %}</h2>
+        {% if lang == 'en' %}
+        <p style="font-size: 0.95rem; line-height: 1.7;">The <strong>Tormented Devourer</strong> is a <strong>mount</strong> obtained by completing the <strong>&ldquo;Heroic: Battle for the Void&rdquo;</strong> achievement in Patch 12.07. This achievement consists of <strong>6 sub-achievements</strong> spread across the <strong>Val</strong> and <strong>Nalgathar</strong> zones. Once all 6 are completed, exchange <strong>15 Void Radiance</strong> to claim the mount.</p>
+        {% else %}
+        <p style="font-size: 0.95rem; line-height: 1.7;"><strong>受折磨的饕餮者</strong>是一款<strong>坐騎</strong>，透過完成 12.07 版本的<strong>「英雄虛空決戰」</strong>成就獲取。該成就由 <strong>6 個子成就</strong>組成，分佈在<strong>瓦爾</strong>和<strong>奈格塔爾</strong>兩個區域。完成全部 6 個子成就後，用 <strong>15 個虛光輝顏</strong>兌換坐騎。</p>
+        {% endif %}
+    </div>
+
+    <!-- Sub-Achievements Table -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Sub-Achievements (6 Total){% else %}子成就一覽（共 6 個）{% endif %}</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+            <thead>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left;">
+                    <th style="padding: 0.5rem;">#</th>
+                    <th style="padding: 0.5rem;">{% if lang == 'en' %}Achievement{% else %}成就名稱{% endif %}</th>
+                    <th style="padding: 0.5rem;">{% if lang == 'en' %}Requirement{% else %}完成條件{% endif %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if lang == 'en' %}
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">1</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic: Ahead of the World</td>
+                    <td style="padding: 0.5rem;">Complete world quests in Val and Nalgathar on Heroic difficulty</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">2</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic: Energy Surge</td>
+                    <td style="padding: 0.5rem;">Defeat mobs carrying special buff affixes</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">3</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic: Fall of Commanders</td>
+                    <td style="padding: 0.5rem;">Defeat Node Captain Layshel and Imperator Hotinax</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">4</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic Weather Anomaly: Val</td>
+                    <td style="padding: 0.5rem;">Complete Storm Response quests in Val (5 times)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">5</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic Weather Anomaly: Nalgathar</td>
+                    <td style="padding: 0.5rem;">Complete Spore Storm quests in Nalgathar (5 times)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">6</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">Heroic Heavy Hitter</td>
+                    <td style="padding: 0.5rem;">Defeat 15 rare mobs in Val and Nalgathar</td>
+                </tr>
+                {% else %}
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">1</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄：領先世界</td>
+                    <td style="padding: 0.5rem;">在英雄難度下完成瓦爾和奈格塔爾的世界任務</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">2</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄：能量蔓延</td>
+                    <td style="padding: 0.5rem;">擊敗攜帶特殊詞綴 buff 的小怪</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">3</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄：統帥之殤</td>
+                    <td style="padding: 0.5rem;">擊敗節點隊長萊希爾和元首霍提納克斯</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">4</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄氣象異變：瓦爾</td>
+                    <td style="padding: 0.5rem;">完成瓦爾的風暴對策任務（共 5 次）</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">5</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄氣象異變：奈格塔爾</td>
+                    <td style="padding: 0.5rem;">完成奈格塔爾的孢子風暴任務（共 5 次）</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">6</td>
+                    <td style="padding: 0.5rem; font-weight: 600;">英雄重擊</td>
+                    <td style="padding: 0.5rem;">擊敗瓦爾和奈格塔爾的稀有怪（共 15 隻）</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Reward{% else %}獎勵物品{% endif %}</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_ridinghorse.jpg"
+                     alt="{% if lang == 'en' %}Tormented Devourer{% else %}受折磨的饕餮者{% endif %}"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">{% if lang == 'en' %}Tormented Devourer{% else %}受折磨的饕餮者{% endif %}</div>
+                <span style="background: rgba(100,200,255,0.15); color: #64c8ff; padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.75rem;">{% if lang == 'en' %}Mount{% else %}坐騎{% endif %}</span>
+                <div style="margin-top: 0.75rem;">
+                    <a href="https://www.wowhead.com/item=247755" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--orange); text-decoration: none;">Wowhead →</a>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
+            {% if lang == 'en' %}Requires <strong>15 Void Radiance</strong> to exchange. Item not yet in Wowhead database (12.07 is very new); icon is a fallback placeholder.{% else %}需用 <strong>15 個虛光輝顏</strong>兌換。該物品尚未收錄到 Wowhead 資料庫（12.07 版本太新），圖標為暫用替代。{% endif %}
+        </p>
+    </div>
+
+    <!-- Key Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">{% if lang == 'en' %}Key Tips{% else %}核心攻略{% endif %}</h2>
+
+        <!-- Tip 1 -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}1. Maximize Efficiency by Stacking Achievements{% else %}1. 善用子成就重疊進度{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Several sub-achievements can be progressed simultaneously. While doing world quests in Val and Nalgathar, you will naturally encounter rare mobs and buff-carrying enemies. Prioritize quests that overlap with rare spawn or energy mob zones for maximum efficiency.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">多個子成就可同步推進。在瓦爾和奈格塔爾做世界任務的同時，你自然會遇到稀有怪和攜帶 buff 的小怪。優先選擇與稀有怪或能量怪區域重疊的任務以最大化效率。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 2 -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}2. Weather Anomaly Quests Are Time-Gated{% else %}2. 氣象異變任務有時限{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">The weather anomaly quests (Storm Response in Val and Spore Storm in Nalgathar) each require <strong>5 completions</strong>. These spawn on a rotating schedule. Check both zones regularly and prioritize these whenever they appear.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">氣象異變任務（瓦爾的風暴對策和奈格塔爾的孢子風暴）各需完成 <strong>5 次</strong>。它們會按照輪換排程出現。定期檢查兩個區域，一旦出現就優先完成。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 3 -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}3. Bosses: Node Captain Layshel &amp; Imperator Hotinax{% else %}3. 首領戰：節點隊長萊希爾 &amp; 元首霍提納克斯{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Heroic: Fall of Commanders requires defeating both bosses. These are zone-level elites. Form a group or look for pickup groups in the Group Finder to make this significantly easier.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">「英雄：統帥之殤」需要擊敗兩位首領。它們是區域級菁英。建議組隊或透過預組隊伍尋找器找隊友，大幅降低難度。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}4. Rare Mobs: Use RareScanner{% else %}4. 稀有怪：使用 RareScanner 插件{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">Heroic Heavy Hitter requires defeating <strong>15 rare mobs</strong>. Install <strong>RareScanner</strong> addon for audible alerts whenever a rare mob spawns nearby. Combine this with world quest farming for natural progress.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">「英雄重擊」需擊殺 <strong>15 隻稀有怪</strong>。安裝 <strong>RareScanner</strong> 插件可在稀有怪出現時發出音效提示。搭配世界任務刷取可自然推進進度。</p>
+            {% endif %}
+        </div>
+
+        <!-- Tip 5 -->
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">{% if lang == 'en' %}5. Collect 15 Void Radiance to Exchange{% else %}5. 收集 15 虛光輝顏兌換坐騎{% endif %}</h3>
+            {% if lang == 'en' %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">After completing all 6 sub-achievements, you still need <strong>15 Void Radiance</strong> to purchase the mount from the reward vendor. These are obtained throughout the achievement process. Make sure you have enough before heading to the vendor.</p>
+            {% else %}
+            <p style="font-size: 0.9rem; line-height: 1.6;">完成全部 6 個子成就後，還需 <strong>15 個虛光輝顏</strong>向獎勵商人購買坐騎。虛光輝顏在完成成就過程中逐步獲取。出發兌換前確認數量足夠。</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.1rem; margin-bottom: 0.75rem;">{% if lang == 'en' %}Tags{% else %}標籤{% endif %}</h2>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="font-size: 0.75rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem;">{% if lang == 'en' %}Patch 12.07{% else %}至暗之夜 12.07{% endif %}</span>
+            <span style="font-size: 0.75rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem;">{% if lang == 'en' %}Mount{% else %}坐騎{% endif %}</span>
+            <span style="font-size: 0.75rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem;">Val</span>
+            <span style="font-size: 0.75rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem;">Nalgathar</span>
+            <span style="font-size: 0.75rem; background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem;">{% if lang == 'en' %}Achievement{% else %}成就{% endif %}</span>
+        </div>
+    </div>
+
+    <!-- Source -->
+    <div class="glass-card" style="padding: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+        {% if lang == 'en' %}
+        <p>Source: <strong>幼兒園老大-魔獸世界</strong> on Douyin · Published 2026-07-04 · Video ID: 7658693762029194506</p>
+        {% else %}
+        <p>資料來源：抖音 <strong>幼兒園老大-魔獸世界</strong> · 發布於 2026-07-04 · 影片 ID: 7658693762029194506</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

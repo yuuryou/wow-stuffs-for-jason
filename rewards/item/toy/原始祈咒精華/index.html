@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原始祈咒精華 - Rewards</title>
+    <link rel="stylesheet" href="../../../../static/css/style.css?v=20260704">
+    <link rel="icon" type="image/png" href="../../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <!-- Chromatic aberration: red channel offset -->
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <!-- Soft glow -->
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-screen Background Video (never unloads — SPA navigation) -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Language Toggle Button -->
+    <a href="../../../../zh/rewards/item/toy/原始祈咒精華/">
+        中文
+    </a>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">◐</button>
+
+    <!-- Main Content (only this container is replaced during SPA navigation) -->
+    <main class="main-content" id="app-content">
+        
+
+<a href="../../../../rewards/" class="back-link">← Back to Rewards</a>
+
+<div class="page-header">
+    <h2>Primordial Anima Essence</h2>
+    <p>1 video with this reward</p>
+</div>
+
+
+<div class="video-grid">
+    
+    <a href="../../../../videos/4/" style="text-decoration:none;">
+        <div class="video-card">
+            
+            <img class="reward-detail-img" src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg" alt="Primordial Anima Essence" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%23333%22 width=%2256%22 height=%2256%22 rx=%228%22/><text x=%2228%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2218%22>?</text></svg>';">
+            <div class="video-body">
+                <div class="video-title">魔獸隱藏盲盒變身玩具｜原始祈咒精華</div>
+                <div class="video-tags">
+                    
+                    
+                    <span class="tag reward">Primordial Anima Essence</span>
+                </div>
+            </div>
+        </div>
+    </a>
+    
+</div>
+
+
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="/">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="/videos/">
+            <span class="nav-icon">🎬</span> Videos
+        </a>
+        <a href="/maps/">
+            <span class="nav-icon">🗺️</span> Maps
+        </a>
+        <a href="/rewards/" class="active">
+            <span class="nav-icon">🎁</span> Rewards
+        </a>
+</nav>
+
+    <script src="../../../../static/js/main.js"></script>
+    
+</body>
+</html>

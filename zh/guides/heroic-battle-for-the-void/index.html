@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄虛空決戰 — 受折磨的饕餮者坐騎攻略 | wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../../../static/css/style.css">
+    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+</head>
+<body>
+    <!-- Liquid Glass SVG Refraction Filter -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <filter id="liquid-glass-refract" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feImage href="#lg-displacement" result="dm" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="R" yChannelSelector="G" result="ca-r" />
+                <feDisplacementMap in="SourceGraphic" in2="dm" scale="0" xChannelSelector="G" yChannelSelector="B" result="ca-gb" />
+                <feBlend in="ca-r" in2="ca-gb" mode="screen" result="ca-merged" />
+                <feGaussianBlur in="ca-merged" stdDeviation="2" result="glow" />
+                <feComposite in="glow" in2="SourceGraphic" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="../../../static/bg-video.mp4" type="video/mp4">
+    </video>
+
+    <a href="../../../guides/heroic-battle-for-the-void/">
+        EN
+    </a>
+
+    <button id="theme-toggle" class="theme-toggle" title="切換深淺色" aria-label="切換深淺色">◐</button>
+
+    <main class="main-content" id="app-content">
+        
+
+<div class="glass-panel glass-surface-section guide-section" style="padding: 2rem;">
+    <h1 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.25rem; background: linear-gradient(135deg, var(--orange), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        英雄虛空決戰 — 受折磨的饕餮者坐騎攻略
+    </h1>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+        至暗之夜 12.07 · 瓦爾 &amp; 奈格塔爾
+    </p>
+
+    <!-- Video Embed -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">來源影片</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+            作者: 幼兒園老大-魔獸世界 · 時長: 02:22 · 點讚: 115 · 收藏: 74 · 評論: 6 · 轉發: 16
+        </p>
+        <a href="https://www.douyin.com/video/7658693762029194506" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: var(--radius-md); font-weight: 600;">
+            在抖音開啟
+        </a>
+    </div>
+
+    <!-- Overview -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">概述</h2>
+        <p style="font-size: 0.95rem; line-height: 1.7;">完成<strong>英雄虛空決戰</strong>綜合成就 — 包含在<strong>瓦爾</strong>和<strong>奈格塔爾</strong>區域的 <strong>6 個子成就</strong> — 收集 <strong>15 個虛光輝顏</strong> 兌換 <strong>受折磨的饕餮者</strong> 坐騎。</p>
+        <div style="background: rgba(255,140,42,0.08); border-left: 3px solid var(--orange); padding: 0.75rem; border-radius: 0 0.5rem 0.5rem 0; margin-top: 1rem; font-size: 0.9rem;">
+            <strong>版本：</strong>12.07 至暗之夜 · <strong>難度：</strong>英雄 · <strong>預計耗時：</strong>數天至數週（視刷新週期而定）
+        </div>
+    </div>
+
+    <!-- Reward -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1rem;">獎勵物品</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            <div class="glass-card" style="padding: 1.25rem; text-align: center;">
+                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_mount_ridinghorse.jpg"
+                     alt="受折磨的饕餮者"
+                     loading="lazy"
+                     style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 0.5rem;"
+                     onerror="this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <div style="font-weight: 600; font-size: 0.95rem;">受折磨的饕餮者</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Tormented Devourer</div>
+                <span style="background: rgba(100,200,255,0.15); color: #64c8ff; padding: 0.15rem 0.6rem; border-radius: 1rem; font-size: 0.75rem;">坐騎</span>
+                <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+                    花費：15 虛光輝顏
+                </div>
+                <div style="margin-top: 0.75rem;">
+                    <a href="https://www.wowhead.com/item=247755" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--orange); text-decoration: none;">Wowhead →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Breakdown -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">綜合成就：英雄虛空決戰</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">需要完成 6 個子成就，全部必須在英雄難度下完成。</p>
+        
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+            <thead>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <th style="text-align: left; padding: 0.5rem; color: var(--orange);">#</th>
+                    <th style="text-align: left; padding: 0.5rem; color: var(--orange);">子成就</th>
+                    <th style="text-align: left; padding: 0.5rem; color: var(--orange);">說明</th>
+                    <th style="text-align: left; padding: 0.5rem; color: var(--orange);">區域</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">1</td>
+                    <td style="padding: 0.5rem;"><strong>英雄：領先世界</strong></td>
+                    <td style="padding: 0.5rem;">在英雄難度下完成瓦爾和奈格塔爾的世界任務</td>
+                    <td style="padding: 0.5rem;">瓦爾、奈格塔爾</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">2</td>
+                    <td style="padding: 0.5rem;"><strong>英雄：能量蔓延</strong></td>
+                    <td style="padding: 0.5rem;">擊敗攜帶特殊詞綴 buff 的小怪</td>
+                    <td style="padding: 0.5rem;">瓦爾、奈格塔爾</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">3</td>
+                    <td style="padding: 0.5rem;"><strong>英雄：統帥之殤</strong></td>
+                    <td style="padding: 0.5rem;">擊敗節點隊長萊希爾和元首霍提納克斯</td>
+                    <td style="padding: 0.5rem;">瓦爾、奈格塔爾</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">4</td>
+                    <td style="padding: 0.5rem;"><strong>英雄氣象異變：瓦爾</strong></td>
+                    <td style="padding: 0.5rem;">完成 5 次瓦爾風暴對策任務</td>
+                    <td style="padding: 0.5rem;">瓦爾</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.5rem;">5</td>
+                    <td style="padding: 0.5rem;"><strong>英雄氣象異變：奈格塔爾</strong></td>
+                    <td style="padding: 0.5rem;">完成 5 次奈格塔爾孢子風暴任務</td>
+                    <td style="padding: 0.5rem;">奈格塔爾</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">6</td>
+                    <td style="padding: 0.5rem;"><strong>英雄重擊</strong></td>
+                    <td style="padding: 0.5rem;">擊敗瓦爾和奈格塔爾的 15 隻稀有怪</td>
+                    <td style="padding: 0.5rem;">瓦爾、奈格塔爾</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Key Tips -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--purple); font-size: 1.2rem; margin-bottom: 1rem;">核心攻略</h2>
+
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">1. 貨幣兌換</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">完成全部 6 個子成就後，收集 <strong>15 個虛光輝顏</strong> 即可兌換受折磨的饕餮者坐騎。虛光輝顏可透過瓦爾和奈格塔爾區域的活動獲得。</p>
+        </div>
+
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">2. 氣象異變時機</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">瓦爾的風暴對策和奈格塔爾的孢子風暴任務與區域天氣事件掛鉤。注意監控區域狀況，在天氣異變活躍時安排攻略時間。</p>
+        </div>
+
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">3. 稀有怪追蹤</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">「英雄重擊」需要擊殺 15 隻稀有怪。推薦使用 <strong>RareScanner</strong> 或 <strong>SilverDragon</strong> 等插件追蹤刷新，並與其他玩家組隊加快進度。</p>
+        </div>
+
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">4. 統帥 Boss</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">節點隊長萊希爾和元首霍提納克斯為精英 Boss，可能需要小隊規模的組隊挑戰。建議查看預組隊伍尋找器中的組隊資訊。</p>
+        </div>
+
+        <div class="glass-card" style="padding: 1rem; margin-bottom: 1rem;">
+            <h3 style="color: var(--orange); font-size: 1rem;">5. 詞綴小怪</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">「能量蔓延」需要尋找帶有特殊發光 buff 的小怪，可透過怪物身上獨特的視覺特效辨識。具體擊殺數量可能有所不同。</p>
+        </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">標籤</h2>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#受折磨的饕餮者</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#英雄虛空決戰</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#至暗之夜</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#瓦爾</span>
+            <span style="background: rgba(255,140,42,0.1); color: var(--orange); padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 0.8rem;">#奈格塔爾</span>
+        </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="glass-card" style="padding: 1.5rem;">
+        <h2 style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">資料來源</h2>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            <a href="https://www.douyin.com/video/7658693762029194506" target="_blank" rel="noopener" style="color: var(--orange);">抖音: 幼兒園老大-魔獸世界</a>
+            · <a href="https://www.wowhead.com/item=247755" target="_blank" rel="noopener" style="color: var(--orange);">Wowhead</a>
+        </p>
+    </div>
+</div>
+
+
+    </main>
+
+    <nav class="bottom-nav">
+        <div class="nav-indicator"></div>
+        <a href="/zh/" class="active">
+            <span class="nav-icon">📊</span> 主頁
+        </a>
+        <a href="/zh/videos/" class="">
+            <span class="nav-icon">🎬</span> 影片
+        </a>
+        <a href="/zh/maps/" class="">
+            <span class="nav-icon">🗺️</span> 地圖
+        </a>
+        <a href="/zh/rewards/" class="">
+            <span class="nav-icon">🎁</span> 獎勵
+        </a>
+    </nav>
+
+    <script src="../../../static/js/main.js"></script>
+    
+</body>
+</html>
