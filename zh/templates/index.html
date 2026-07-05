@@ -29,7 +29,7 @@
 {% if recent %}
 <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; margin-bottom: 1rem;">
     <h2 style="font-size: 1.3rem; color: var(--orange);">{% if lang == 'zh' %}最新收錄{% else %}Recently Added{% endif %}</h2>
-    <a href="/videos" class="btn btn-secondary btn-sm" style="text-decoration: none;">{% if lang == 'zh' %}檢視全部{% else %}View All{% endif %}</a>
+    <a href="/wow-stuffs-for-jason/videos" class="btn btn-secondary btn-sm" style="text-decoration: none;">{% if lang == 'zh' %}檢視全部{% else %}View All{% endif %}</a>
 </div>
 <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
     {% for video in recent %}

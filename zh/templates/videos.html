@@ -8,7 +8,7 @@
 </div>
 
 <!-- Filter Bar -->
-<form class="filter-bar" method="get" action="/videos">
+<form class="filter-bar" method="get" action="/wow-stuffs-for-jason/videos">
     <select name="sort" id="sort-select">
         <option value="created_at" {% if current_sort == 'created_at' %}selected{% endif %}>{% if lang == 'zh' %}最新優先{% else %}Newest First{% endif %}</option>
         <option value="time_spent_minutes" {% if current_sort == 'time_spent_minutes' %}selected{% endif %}>{% if lang == 'zh' %}花費時間{% else %}Time Spent{% endif %}</option>
@@ -29,13 +29,13 @@
     <input type="hidden" name="q" value="{{ search_query }}">
     {% endif %}
     <button type="button" class="btn btn-secondary btn-sm" onclick="applyFilters()">{% if lang == 'zh' %}套用{% else %}Apply{% endif %}</button>
-    <a href="/videos" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}重設{% else %}Reset{% endif %}</a>
+    <a href="/wow-stuffs-for-jason/videos" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}重設{% else %}Reset{% endif %}</a>
 </form>
 
 {% if videos %}
 <div class="video-grid">
     {% for v in videos %}
-    <a href="/videos/{{ v.id }}" style="text-decoration:none;">
+    <a href="/wow-stuffs-for-jason/videos/{{ v.id }}" style="text-decoration:none;">
         <div class="video-card">
             {% if v.thumbnail_url %}
             <img class="video-thumb" src="{{ v.thumbnail_url }}" alt="{{ v.title }}" loading="lazy"
@@ -75,7 +75,7 @@
 {% if total_pages is defined and total_pages > 1 %}
 <div class="pagination">
     {% if page > 1 %}
-    <a href="/videos?page={{ page - 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page - 1 }}">
+    <a href="/wow-stuffs-for-jason/videos?page={{ page - 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page - 1 }}">
         {% if lang == 'zh' %}上一頁{% else %}Prev{% endif %}
     </a>
     {% else %}
@@ -85,21 +85,21 @@
     {% set window_start = [1, page - 2] | max %}
     {% set window_end = [total_pages, page + 2] | min %}
     {% if window_start > 1 %}
-    <a href="/videos?page=1&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="1">1</a>
+    <a href="/wow-stuffs-for-jason/videos?page=1&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="1">1</a>
     {% if window_start > 2 %}<span class="pagination-ellipsis">&hellip;</span>{% endif %}
     {% endif %}
 
     {% for p in range(window_start, window_end + 1) %}
-    <a href="/videos?page={{ p }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn {% if p == page %}active{% endif %}" data-page="{{ p }}">{{ p }}</a>
+    <a href="/wow-stuffs-for-jason/videos?page={{ p }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn {% if p == page %}active{% endif %}" data-page="{{ p }}">{{ p }}</a>
     {% endfor %}
 
     {% if window_end < total_pages %}
     {% if window_end < total_pages - 1 %}<span class="pagination-ellipsis">&hellip;</span>{% endif %}
-    <a href="/videos?page={{ total_pages }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ total_pages }}">{{ total_pages }}</a>
+    <a href="/wow-stuffs-for-jason/videos?page={{ total_pages }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ total_pages }}">{{ total_pages }}</a>
     {% endif %}
 
     {% if page < total_pages %}
-    <a href="/videos?page={{ page + 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page + 1 }}">
+    <a href="/wow-stuffs-for-jason/videos?page={{ page + 1 }}&sort={{ current_sort }}&order={{ current_order }}{% if current_map %}&map={{ current_map }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="pagination-btn" data-page="{{ page + 1 }}">
         {% if lang == 'zh' %}下一頁{% else %}Next{% endif %}
     </a>
     {% else %}

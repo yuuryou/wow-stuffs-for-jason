@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}wow stuffs for Jason{% endblock %}</title>
-    <link rel="stylesheet" href="/static/css/style.css?v=20260704">
-    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="stylesheet" href="/wow-stuffs-for-jason/static/css/style.css?v=20260704">
+    <link rel="icon" type="image/png" href="/wow-stuffs-for-jason/static/favicon.png">
 </head>
 <body>
     <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
@@ -30,7 +30,7 @@
     </video>
 
     <!-- Language Toggle Button -->
-    <a href="/set-lang/{% if lang == 'zh' %}en{% else %}zh{% endif %}" class="lang-toggle" data-no-spa title="{% if lang == 'zh' %}Switch to English{% else %}切換為繁體中文{% endif %}">
+    <a href="/wow-stuffs-for-jason/set-lang/{% if lang == 'zh' %}en{% else %}zh{% endif %}" class="lang-toggle" data-no-spa title="{% if lang == 'zh' %}Switch to English{% else %}切換為繁體中文{% endif %}">
         {% if lang == 'zh' %}EN{% else %}中文{% endif %}
     </a>
 
@@ -45,16 +45,16 @@
     <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
     <nav class="bottom-nav">
         <div class="nav-indicator"></div>
-        <a href="/zh/" class="{% if request.path == '/' %}active{% endif %}">
+        <a href="/wow-stuffs-for-jason/zh/" class="{% if request.path == '/' %}active{% endif %}">
             <span class="nav-icon">📊</span> {% if lang == 'en' %}Dashboard{% else %}主頁{% endif %}
         </a>
-        <a href="/zh/videos/" class="{% if request.path.startswith('/videos') %}active{% endif %}">
+        <a href="/wow-stuffs-for-jason/zh/videos/" class="{% if request.path.startswith('/videos') %}active{% endif %}">
             <span class="nav-icon">🎬</span> {% if lang == 'en' %}Videos{% else %}影片{% endif %}
         </a>
-        <a href="/zh/maps/" class="{% if request.path.startswith('/maps') %}active{% endif %}">
+        <a href="/wow-stuffs-for-jason/zh/maps/" class="{% if request.path.startswith('/maps') %}active{% endif %}">
             <span class="nav-icon">🗺️</span> {% if lang == 'en' %}Maps{% else %}地圖{% endif %}
         </a>
-        <a href="/zh/rewards/" class="{% if request.path.startswith('/rewards') %}active{% endif %}">
+        <a href="/wow-stuffs-for-jason/zh/rewards/" class="{% if request.path.startswith('/rewards') %}active{% endif %}">
             <span class="nav-icon">🎁</span> {% if lang == 'en' %}Rewards{% else %}獎勵{% endif %}
         </a>
     </nav>

@@ -2,14 +2,14 @@
 {% block title %}{{ video.title or ('Video' if lang == 'en' else '影片') }}{% endblock %}
 {% block content %}
 
-<a href="/videos" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Videos{% endif %}</a>
+<a href="/wow-stuffs-for-jason/videos" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Videos{% endif %}</a>
 
 <div class="detail-header">
     <h2>{{ video.title or ('Untitled Video' if lang == 'en' else '未命名影片') }}</h2>
 
     <div style="display:flex;gap:8px;margin-bottom:16px;">
         <a href="{{ video.douyin_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}在抖音開啟{% else %}Open in Douyin{% endif %}</a>
-        <a href="/edit/{{ video.id }}" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}編輯{% else %}Edit{% endif %}</a>
+        <a href="/wow-stuffs-for-jason/edit/{{ video.id }}" class="btn btn-secondary btn-sm">{% if lang == 'zh' %}編輯{% else %}Edit{% endif %}</a>
         <button class="btn btn-danger btn-sm" data-delete-id="{{ video.id }}">{% if lang == 'zh' %}刪除{% else %}Delete{% endif %}</button>
     </div>
 </div>

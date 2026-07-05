@@ -2,7 +2,7 @@
 {% block title %}{% if lang == 'zh' %}編輯影片{% else %}Edit Video{% endif %} - {{ video.title or ('Untitled' if lang == 'en' else '未命名') }}{% endblock %}
 {% block content %}
 
-<a href="/videos/{{ video.id }}" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Video{% endif %}</a>
+<a href="/wow-stuffs-for-jason/videos/{{ video.id }}" class="back-link">← {% if lang == 'zh' %}返回影片{% else %}Back to Video{% endif %}</a>
 
 <div class="page-header">
     <h2>{% if lang == 'zh' %}編輯狩獵記錄{% else %}Edit Hunt Record{% endif %}</h2>
@@ -119,7 +119,7 @@
 
     <div class="btn-group" style="margin-top:24px;">
         <button type="submit" class="btn btn-primary">{% if lang == 'zh' %}儲存變更{% else %}Save Changes{% endif %}</button>
-        <a href="/videos/{{ video.id }}" class="btn btn-secondary">{% if lang == 'zh' %}取消{% else %}Cancel{% endif %}</a>
+        <a href="/wow-stuffs-for-jason/videos/{{ video.id }}" class="btn btn-secondary">{% if lang == 'zh' %}取消{% else %}Cancel{% endif %}</a>
     </div>
 </form>
 

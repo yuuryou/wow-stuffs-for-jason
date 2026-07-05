@@ -169,8 +169,8 @@ function updateNavActive(url) {
             absHref = href;
         }
 
-        if (absHref === '/') {
-            link.classList.toggle('active', absUrl === '/');
+        if (absHref === '/wow-stuffs-for-jason/') {
+            link.classList.toggle('active', absUrl === '/wow-stuffs-for-jason/');
         } else {
             link.classList.toggle('active', absUrl === absHref || absUrl.startsWith(absHref + '/'));
         }
@@ -244,7 +244,7 @@ function applyFilters() {
     params.set('order', order);
     if (map) params.set('map', map);
 
-    navigateTo(`/videos?${params.toString()}`);
+    navigateTo(`/wow-stuffs-for-jason/videos?${params.toString()}`);
 }
 
 
@@ -325,10 +325,10 @@ function initDeleteButtons() {
             if (!confirm(_('confirmDelete'))) return;
 
             try {
-                const resp = await fetch(`/api/videos/${id}`, { method: 'DELETE' });
+                const resp = await fetch(`/wow-stuffs-for-jason/api/videos/${id}`, { method: 'DELETE' });
                 if (resp.ok) {
                     showToast(_('deleted'), 'success');
-                    setTimeout(() => navigateTo('/videos'), 800);
+                    setTimeout(() => navigateTo('/wow-stuffs-for-jason/videos'), 800);
                 } else {
                     showToast(_('deleteFail'), 'error');
                 }
@@ -358,7 +358,7 @@ function initWowheadSearch() {
         if (resultsDiv) resultsDiv.innerHTML = '<span class="loading-spinner"></span>';
 
         try {
-            const resp = await fetch(`/api/wowhead/search?q=${encodeURIComponent(q)}`);
+            const resp = await fetch(`/wow-stuffs-for-jason/api/wowhead/search?q=${encodeURIComponent(q)}`);
             const results = await resp.json();
 
             if (resultsDiv) {
@@ -427,7 +427,7 @@ function initEditVideoForm() {
         data.rewards = rewards;
 
         try {
-            const resp = await fetch('/api/videos/' + videoId, {
+            const resp = await fetch('/wow-stuffs-for-jason/api/videos/' + videoId, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -436,7 +436,7 @@ function initEditVideoForm() {
 
             if (resp.ok) {
                 showToast(_('videoUpdated'), 'success');
-                setTimeout(() => navigateTo('/videos/' + videoId), 500);
+                setTimeout(() => navigateTo('/wow-stuffs-for-jason/videos/' + videoId), 500);
             } else {
                 showToast(_('updateError') + (result.error || _('unknownError')), 'error');
             }
@@ -830,7 +830,7 @@ function initPaginationLinks() {
             if (map) params.set('map', map);
             if (q) params.set('q', q);
 
-            navigateTo(`/videos?${params.toString()}`);
+            navigateTo(`/wow-stuffs-for-jason/videos?${params.toString()}`);
         });
     });
 }
