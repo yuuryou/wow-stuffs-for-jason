@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW" data-lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>找不到頁面</title>
-    <link rel="stylesheet" href="../../../static/css/style.css?v=20260704">
-    <link rel="icon" type="image/png" href="../../../static/favicon.png">
+    <title>頁面未找到 — wow stuffs for Jason</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" type="image/png" href="../static/favicon.png">
 </head>
 <body>
     <!-- Liquid Glass SVG Refraction Filter (Level 3 - Chromium only) -->
@@ -26,11 +26,11 @@
 
     <!-- Full-screen Background Video (never unloads — SPA navigation) -->
     <video autoplay muted loop playsinline id="bg-video">
-        <source src="../../../static/bg-video.mp4" type="video/mp4">
+        <source src="../static/bg-video.mp4" type="video/mp4">
     </video>
 
     <!-- Language Toggle Button -->
-    <a href="../../../">
+    <a href="/">
         EN
     </a>
 
@@ -40,11 +40,13 @@
     <!-- Main Content (only this container is replaced during SPA navigation) -->
     <main class="main-content" id="app-content">
         
-<div class="empty-state" style="padding-top:100px;">
-    <div class="icon" style="font-size:5rem;">🐾</div>
-    <h3>迷失在荒野中</h3>
-    <p>你追蹤的頁面已經消失在陰影中。</p>
-    <a href="../../" class="btn btn-primary">返回營地</a>
+<div class="hero-title">
+    <h1>頁面未找到</h1>
+    <p class="subtitle">您查找的頁面不存在或已被移動。</p>
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="/zh/" class="btn btn-primary" style="text-decoration: none;">返回主頁</a>
 </div>
 
     </main>
@@ -52,21 +54,21 @@
     <!-- Floating Bottom Navigation Bar (iOS Liquid Glass) -->
     <nav class="bottom-nav">
         <div class="nav-indicator"></div>
-        <a href="./" class="active">
+        <a href="/zh/">
             <span class="nav-icon">📊</span> 主頁
         </a>
-        <a href="./videos/">
+        <a href="/zh/videos/">
             <span class="nav-icon">🎬</span> 影片
         </a>
-        <a href="./maps/">
+        <a href="/zh/maps/">
             <span class="nav-icon">🗺️</span> 地圖
         </a>
-        <a href="./rewards/">
+        <a href="/zh/rewards/">
             <span class="nav-icon">🎁</span> 獎勵
         </a>
     </nav>
 
-    <script src="../../../static/js/main.js"></script>
+    <script src="../static/js/main.js"></script>
     
 </body>
 </html>
